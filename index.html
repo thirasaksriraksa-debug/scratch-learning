@@ -2,18 +2,27 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>บทเรียนออนไลน์ Scratch</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>บทเรียน Scratch หน่วยที่ 1</title>
 
 <style>
+
 body{
-font-family:Tahoma;
-background:#f4f6f9;
+font-family: Arial;
+background:#f1f5f9;
 margin:0;
 }
 
+header{
+background:#2563eb;
+color:white;
+padding:20px;
+text-align:center;
+}
+
 .container{
-width:90%;
-max-width:800px;
+max-width:900px;
 margin:auto;
 padding:20px;
 }
@@ -21,53 +30,96 @@ padding:20px;
 .card{
 background:white;
 padding:20px;
-margin:20px 0;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+margin-bottom:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e3a8a;
 }
 
 button{
-background:#4CAF50;
+background:#2563eb;
 color:white;
 border:none;
 padding:10px 20px;
-border-radius:5px;
+border-radius:6px;
 cursor:pointer;
 }
 
 button:hover{
-background:#45a049;
+background:#1e40af;
 }
 
-h1{
-text-align:center;
-}
-
-.result{
-font-size:20px;
-color:green;
-}
 </style>
-
 </head>
 
 <body>
+
+<header>
+<h1>บทเรียนออนไลน์</h1>
+<p>เรื่อง การแก้ปัญหาด้วย Scratch สำหรับนักเรียน ม.2</p>
+</header>
 
 <div class="container">
 
 <div class="card">
 
-<h1>บทเรียนออนไลน์</h1>
+<h2>กรอกชื่อผู้เรียน</h2>
 
-<h2>เรื่อง การแก้ปัญหาด้วย Scratch</h2>
-
-<p>สำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 2</p>
-
-กรอกชื่อนักเรียน
-<input type="text" id="name">
+<input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px">
 
 </div>
 
+<div class="card">
+
+<h2>หน่วยที่ 1 รู้จัก Scratch</h2>
+
+<h3>1.1 ความหมายของ Scratch</h3>
+
+<p>
+Scratch เป็นโปรแกรมสำหรับการเรียนรู้การเขียนโปรแกรม
+โดยใช้การลากบล็อกคำสั่งมาประกอบกัน
+ช่วยให้ผู้เรียนสามารถสร้างเกม แอนิเมชัน และสื่อการเรียนรู้ได้ง่าย
+</p>
+
+<h3>1.2 ประโยชน์ของ Scratch</h3>
+
+<ul>
+<li>ช่วยฝึกการคิดอย่างเป็นระบบ</li>
+<li>ช่วยพัฒนาทักษะการแก้ปัญหา</li>
+<li>สามารถสร้างเกมและแอนิเมชันได้</li>
+<li>ช่วยให้เข้าใจพื้นฐานการเขียนโปรแกรม</li>
+</ul>
+
+<h3>1.3 ส่วนประกอบของโปรแกรม</h3>
+
+<ul>
+<li>Stage พื้นที่แสดงผล</li>
+<li>Sprite ตัวละคร</li>
+<li>Blocks Palette คลังบล็อกคำสั่ง</li>
+<li>Scripts Area พื้นที่เขียนโปรแกรม</li>
+</ul>
+
+<h3>1.4 ประเภทของบล็อกคำสั่ง</h3>
+
+<ul>
+<li>Motion</li>
+<li>Looks</li>
+<li>Sound</li>
+<li>Events</li>
+<li>Control</li>
+</ul>
+
+<h3>1.5 การสร้างตัวละครและฉาก</h3>
+
+<p>
+ผู้ใช้สามารถสร้างตัวละคร (Sprite) และฉาก (Stage)
+ได้จากคลังของโปรแกรม หรืออัปโหลดรูปภาพของตนเอง
+</p>
+
+</div>
 
 <div class="card">
 
@@ -183,8 +235,7 @@ allowfullscreen>
 
 <br>
 
-<button onclick="finish()">ส่งแบบประเมิน</button>
-
+<button type="button" onclick="finish()">ส่งแบบประเมิน</button>
 <p id="finish"></p>
 
 </div>
