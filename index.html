@@ -2,202 +2,167 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>บทเรียนออนไลน์ Scratch</title>
+<title>บทเรียน Scratch</title>
 
 <style>
-
 body{
-font-family: Arial;
+font-family:Tahoma;
 margin:40px;
-background:#f5f5f5;
+background:#f4f4f4;
 }
 
-section{
+.box{
 background:white;
 padding:20px;
-margin-bottom:30px;
+margin-bottom:20px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-h1{
-color:#333;
 }
 
 button{
 padding:10px 20px;
-background:#4CAF50;
-color:white;
-border:none;
-border-radius:5px;
-cursor:pointer;
+font-size:16px;
 }
-
 </style>
-
-<script>
-
-function checkPretest(){
-
-let score=0
-
-if(document.querySelector('input[name="q1"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="q2"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="q3"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="q4"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="q5"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="q6"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="q7"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="q8"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="q9"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="q10"]:checked')?.value=="b")score++
-
-alert("คะแนนก่อนเรียน = "+score+"/10")
-
-}
-
-function checkPosttest(){
-
-let score=0
-
-if(document.querySelector('input[name="p1"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="p2"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="p3"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="p4"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="p5"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="p6"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="p7"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="p8"]:checked')?.value=="b")score++
-if(document.querySelector('input[name="p9"]:checked')?.value=="a")score++
-if(document.querySelector('input[name="p10"]:checked')?.value=="b")score++
-
-alert("คะแนนหลังเรียน = "+score+"/10")
-
-}
-
-</script>
 
 </head>
 
 <body>
 
+<div class="box">
+
 <h1>บทเรียนออนไลน์ เรื่องการแก้ปัญหาด้วย Scratch</h1>
 <h3>สำหรับนักเรียนชั้นมัธยมศึกษาปีที่ 2</h3>
 
-<section>
+<label>กรอกชื่อนักเรียน</label>
+<input type="text" id="student">
 
-<h2>ขั้นตอนการเรียน</h2>
+</div>
 
-<ol>
-<li>ทำแบบทดสอบก่อนเรียน</li>
-<li>เรียนบทเรียน Scratch</li>
-<li>ทำแบบทดสอบหลังเรียน</li>
-<li>ตอบแบบประเมินความพึงพอใจ</li>
-</ol>
-
-</section>
-
-<section>
+<div class="box">
 
 <h2>แบบทดสอบก่อนเรียน</h2>
 
 <p>1. โปรแกรม Scratch ใช้ทำอะไร</p>
-<input type="radio" name="q1" value="a">สร้างโปรแกรมและเกม<br>
-<input type="radio" name="q1" value="b">ตัดต่อวิดีโอ<br>
-<input type="radio" name="q1" value="c">ทำเอกสาร<br>
+
+<input type="radio" name="pre1" value="1">สร้างโปรแกรม<br>
+<input type="radio" name="pre1" value="0">ตัดต่อวิดีโอ<br>
+<input type="radio" name="pre1" value="0">ทำเอกสาร<br>
+
 
 <p>2. Scratch เป็นโปรแกรมแบบใด</p>
-<input type="radio" name="q2" value="a">พิมพ์โค้ดทั้งหมด<br>
-<input type="radio" name="q2" value="b">ลากบล็อกคำสั่ง<br>
-<input type="radio" name="q2" value="c">วาดภาพ<br>
 
-<p>3. คำสั่งใดทำให้ตัวละครเคลื่อนที่</p>
-<input type="radio" name="q3" value="a">Move 10 steps<br>
-<input type="radio" name="q3" value="b">Say Hello<br>
-<input type="radio" name="q3" value="c">Wait 1 second<br>
+<input type="radio" name="pre2" value="1">ลากบล็อกคำสั่ง<br>
+<input type="radio" name="pre2" value="0">พิมพ์โค้ดทั้งหมด<br>
+<input type="radio" name="pre2" value="0">ดูอย่างเดียว<br>
 
-<p>4. บล็อกคำสั่งมีลักษณะอย่างไร</p>
-<input type="radio" name="q4" value="a">ข้อความยาว<br>
-<input type="radio" name="q4" value="b">บล็อกสีต่อกันได้<br>
-<input type="radio" name="q4" value="c">รูปภาพ<br>
+<button onclick="pretest()">ส่งคำตอบ</button>
 
-<p>5. Scratch เหมาะกับการเรียนรู้ด้านใด</p>
-<input type="radio" name="q5" value="a">การเขียนโปรแกรมเบื้องต้น<br>
-<input type="radio" name="q5" value="b">ตัดต่อวิดีโอ<br>
-<input type="radio" name="q5" value="c">ทำเอกสาร<br>
+<p id="prescore"></p>
 
-<p>6. Scratch เป็นโปรแกรมประเภทใด</p>
-<input type="radio" name="q6" value="a">Database<br>
-<input type="radio" name="q6" value="b">Programming<br>
-<input type="radio" name="q6" value="c">Office<br>
+</div>
 
-<p>7. คำสั่ง Move ใช้ทำอะไร</p>
-<input type="radio" name="q7" value="a">ให้ตัวละครเคลื่อนที่<br>
-<input type="radio" name="q7" value="b">เปลี่ยนเสียง<br>
-<input type="radio" name="q7" value="c">หยุดโปรแกรม<br>
-
-<p>8. Scratch ใช้วิธีเขียนโปรแกรมแบบใด</p>
-<input type="radio" name="q8" value="a">พิมพ์โค้ด<br>
-<input type="radio" name="q8" value="b">ลากบล็อก<br>
-<input type="radio" name="q8" value="c">วาดรูป<br>
-
-<p>9. Scratch ใช้สร้างอะไรได้</p>
-<input type="radio" name="q9" value="a">เกมและแอนิเมชัน<br>
-<input type="radio" name="q9" value="b">เอกสาร<br>
-<input type="radio" name="q9" value="c">ตาราง<br>
-
-<p>10. Scratch เหมาะกับใคร</p>
-<input type="radio" name="q10" value="a">ผู้เริ่มต้นเขียนโปรแกรม<br>
-<input type="radio" name="q10" value="b">นักบัญชี<br>
-<input type="radio" name="q10" value="c">แพทย์<br>
-
-<br>
-<button onclick="checkPretest()">ส่งคำตอบ</button>
-
-</section>
-
-<section>
+<div class="box">
 
 <h2>บทเรียน Scratch</h2>
 
-<iframe src="https://scratch.mit.edu/projects/editor/?tutorial=getStarted"
-width="600" height="400"></iframe>
+<p>
+Scratch คือโปรแกรมสำหรับการเรียนรู้การเขียนโปรแกรม
+โดยใช้บล็อกคำสั่งในการสร้างเกม แอนิเมชัน และสื่อโต้ตอบ
+เหมาะสำหรับผู้เริ่มต้นเรียนเขียนโปรแกรม
+</p>
 
-</section>
+<iframe
+width="560"
+height="315"
+src="https://www.youtube.com/embed/jXUZaf5D12Y">
+</iframe>
 
-<section>
+</div>
+
+<div class="box">
 
 <h2>แบบทดสอบหลังเรียน</h2>
 
-<p>ใช้ข้อสอบชุดเดียวกับก่อนเรียน</p>
+<p>1. คำสั่งใดทำให้ตัวละครเคลื่อนที่</p>
 
-<button onclick="checkPosttest()">กดตรวจคะแนนหลังเรียน</button>
+<input type="radio" name="post1" value="1">Move 10 steps<br>
+<input type="radio" name="post1" value="0">Say Hello<br>
+<input type="radio" name="post1" value="0">Wait 1 second<br>
 
-</section>
 
-<section>
+<p>2. Scratch ใช้สำหรับอะไร</p>
+
+<input type="radio" name="post2" value="1">สร้างโปรแกรม<br>
+<input type="radio" name="post2" value="0">ตัดต่อวิดีโอ<br>
+<input type="radio" name="post2" value="0">ทำเอกสาร<br>
+
+<button onclick="posttest()">ส่งคำตอบ</button>
+
+<p id="postscore"></p>
+
+</div>
+
+<div class="box">
 
 <h2>แบบประเมินความพึงพอใจ</h2>
 
 <p>บทเรียนเข้าใจง่าย</p>
 
-<input type="radio" name="s1">มากที่สุด<br>
-<input type="radio" name="s1">มาก<br>
-<input type="radio" name="s1">ปานกลาง<br>
-<input type="radio" name="s1">น้อย<br>
-
-<p>เว็บไซต์ใช้งานง่าย</p>
-
-<input type="radio" name="s2">มากที่สุด<br>
-<input type="radio" name="s2">มาก<br>
-<input type="radio" name="s2">ปานกลาง<br>
-<input type="radio" name="s2">น้อย<br>
+<input type="radio" name="sat1">มากที่สุด<br>
+<input type="radio" name="sat1">มาก<br>
+<input type="radio" name="sat1">ปานกลาง<br>
+<input type="radio" name="sat1">น้อย<br>
+<input type="radio" name="sat1">น้อยที่สุด<br>
 
 <br>
 
-<button>ส่งแบบประเมิน</button>
+<p>บทเรียนมีความน่าสนใจ</p>
 
-</section>
+<input type="radio" name="sat2">มากที่สุด<br>
+<input type="radio" name="sat2">มาก<br>
+<input type="radio" name="sat2">ปานกลาง<br>
+<input type="radio" name="sat2">น้อย<br>
+<input type="radio" name="sat2">น้อยที่สุด<br>
+
+<br>
+
+<button onclick="alert('บันทึกข้อมูลเรียบร้อย')">ส่งแบบประเมิน</button>
+
+</div>
+
+<script>
+
+function pretest(){
+
+let score=0
+
+let q1=document.querySelector('input[name="pre1"]:checked')
+let q2=document.querySelector('input[name="pre2"]:checked')
+
+if(q1) score+=parseInt(q1.value)
+if(q2) score+=parseInt(q2.value)
+
+document.getElementById("prescore").innerHTML=
+"คะแนนก่อนเรียน = "+score+" / 2"
+
+}
+
+function posttest(){
+
+let score=0
+
+let q1=document.querySelector('input[name="post1"]:checked')
+let q2=document.querySelector('input[name="post2"]:checked')
+
+if(q1) score+=parseInt(q1.value)
+if(q2) score+=parseInt(q2.value)
+
+document.getElementById("postscore").innerHTML=
+"คะแนนหลังเรียน = "+score+" / 2"
+
+}
+
+</script>
 
 </body>
   </html>
