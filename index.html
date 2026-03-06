@@ -101,8 +101,7 @@ background:#1e40af;
 
 </div>
 
-<div class="card">
-
+<div class="card" id="lesson" style="display:none;">
 <h2>หน่วยที่ 1 รู้จัก Scratch</h2>
 
 <h3>1.1 ความหมายของ Scratch</h3>
@@ -249,7 +248,7 @@ document.querySelectorAll('input[name="pre1"]:checked').forEach(e=>score+=parseI
 document.querySelectorAll('input[name="pre2"]:checked').forEach(e=>score+=parseInt(e.value))
 
 document.getElementById("preScore").innerHTML="คะแนนก่อนเรียน = "+score+" / 2"
-
+document.getElementById("lesson").style.display="block"
 }
 
 function posttest(){
@@ -260,7 +259,7 @@ document.querySelectorAll('input[name="post1"]:checked').forEach(e=>score+=parse
 document.querySelectorAll('input[name="post2"]:checked').forEach(e=>score+=parseInt(e.value))
 
 document.getElementById("postScore").innerHTML="คะแนนหลังเรียน = "+score+" / 2"
-
+document.getElementById("lesson").style.display="block"
 }
 
 function finish(){
