@@ -66,9 +66,15 @@ background:#1e40af;
 
 <div class="card">
 
-<h2>กรอกชื่อผู้เรียน</h2>
+<h2>ข้อมูลผู้เรียน</h2>
 
+<label>ชื่อ-นามสกุล</label>
 <input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px">
+
+<br><br>
+
+<label>เลขที่</label>
+<input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px">
 
 </div>
 
@@ -240,14 +246,17 @@ allowfullscreen>
 </div>
 
 <script>
-
+  
+let preScoreValue = 0
+let postScoreValue = 0
+  
 function pretest(){
 
 let score=0
 
 document.querySelectorAll('input[name="pre1"]:checked').forEach(e=>score+=parseInt(e.value))
 document.querySelectorAll('input[name="pre2"]:checked').forEach(e=>score+=parseInt(e.value))
-
+preScoreValue = score
 document.getElementById("preScore").innerHTML="คะแนนก่อนเรียน = "+score+" / 2"
 document.getElementById("lesson").style.display="block"
 document.getElementById("lesson2").style.display="block"
@@ -259,7 +268,7 @@ let score=0
 
 document.querySelectorAll('input[name="post1"]:checked').forEach(e=>score+=parseInt(e.value))
 document.querySelectorAll('input[name="post2"]:checked').forEach(e=>score+=parseInt(e.value))
-
+preScoreValue = score
 document.getElementById("postScore").innerHTML="คะแนนหลังเรียน = "+score+" / 2"
 document.getElementById("survey").style.display="block"
 
@@ -279,8 +288,31 @@ behavior: "smooth"
 function finish(){
 
 let name=document.getElementById("name").value
+let number=document.getElementById("number").value
 
-document.getElementById("finish").innerHTML="ขอบคุณ "+name+" สำหรับการทำแบบประเมิน"
+let q1=document.querySelector('input[name="q1"]:checked')?.value
+let q2=document.querySelector('input[name="q2"]:checked')?.value
+let q3=document.querySelector('input[name="q3"]:checked')?.value
+let q4=document.querySelector('input[name="q4"]:checked')?.value
+
+let data={
+name:name,
+number:number,
+pretest:preScoreValue,
+posttest:postScoreValue,
+q1:q1,
+q2:q2,
+q3:q3,
+q4:q4
+}
+
+fetch("URL_APPS_SCRIPT",{
+method:"POST",
+body:JSON.stringify(data)
+})
+
+document.getElementById("finish").innerHTML=
+"บันทึกข้อมูลเรียบร้อย ขอบคุณ "+name
 
 }
 
