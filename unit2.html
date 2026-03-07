@@ -1,1 +1,373 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>บทเรียน Scratch หน่วยที่ 2</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f1f5f9;
+margin:0;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e3a8a;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>บทเรียนออนไลน์</h1>
+<p>เรื่อง การแก้ปัญหาด้วย Scratch สำหรับนักเรียน ม.2</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>ข้อมูลผู้เรียน</h2>
+
+<label>ชื่อ-นามสกุล</label>
+<input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px">
+
+<br><br>
+
+<label>เลขที่</label>
+<input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px">
+
+</div>
+
+
+
+<div class="card">
+
+<h3>แบบทดสอบก่อนเรียน</h3>
+
+<p>1. บล็อก Motion ใช้ทำอะไร</p>
+
+<input type="radio" name="pre1" value="1"> ควบคุมการเคลื่อนที่<br>
+<input type="radio" name="pre1" value="0"> ควบคุมเสียง<br>
+<input type="radio" name="pre1" value="0"> ควบคุมตัวแปร<br>
+<input type="radio" name="pre1" value="0"> ควบคุมเงื่อนไข<br>
+
+
+<p>2. บล็อก Looks ใช้ทำอะไร</p>
+
+<input type="radio" name="pre2" value="1"> เปลี่ยนการแสดงผลของตัวละคร<br>
+<input type="radio" name="pre2" value="0"> ควบคุมการเคลื่อนที่<br>
+<input type="radio" name="pre2" value="0"> ควบคุมเสียง<br>
+<input type="radio" name="pre2" value="0"> สร้างตัวแปร<br>
+
+<br>
+
+<button onclick="pretest()">ส่งคำตอบ</button>
+
+<p id="preScore" class="result"></p>
+
+</div>
+
+<div class="card" id="lesson" style="display:none;">
+<h2>หน่วยที่ 2 บล็อกคำสั่งพื้นฐาน</h2>
+
+<h3>2.1 บล็อก Motion</h3>
+<p>
+บล็อก Motion ใช้ควบคุมการเคลื่อนที่ของตัวละคร เช่น
+การเดิน การหมุน และการเคลื่อนที่ไปยังตำแหน่งต่าง ๆ
+</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Scratch_Motion.png"
+width="300">
+
+<ul>
+<li>move 10 steps</li>
+<li>turn 15 degrees</li>
+<li>go to x: y:</li>
+</ul>
+<h3>2.2 บล็อก Looks</h3>
+<p>
+บล็อก Looks ใช้ควบคุมการแสดงผลของตัวละคร เช่น
+การเปลี่ยนชุด การพูด หรือการแสดงข้อความ
+</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Scratch_Looks.png"
+width="300">
+
+<ul>
+<li>say Hello</li>
+<li>switch costume</li>
+<li>show / hide</li>
+</ul>
+<h3>2.3 บล็อก Sound</h3>
+<p>
+บล็อก Sound ใช้สำหรับควบคุมเสียง เช่น
+การเล่นเสียงดนตรี หรือเสียงเอฟเฟกต์
+</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Scratch_Sound.png"
+width="300">
+<h3>2.4 บล็อก Events</h3>
+<p>
+บล็อก Events ใช้กำหนดเหตุการณ์เริ่มต้นของโปรแกรม
+เช่น เมื่อคลิกธงเขียว หรือเมื่อกดปุ่มบนคีย์บอร์ด
+</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Scratch_Events.png"
+width="300">
+<hr>
+
+<h2>ตัวอย่างโค้ด Scratch</h2>
+
+<p>
+ตัวอย่างโปรแกรม: เมื่อกดธงเขียว ตัวละครจะเดินและพูด
+</p>
+
+<pre style="background:#f3f4f6;padding:15px;border-radius:8px">
+when green flag clicked
+move 10 steps
+say "Hello"
+</pre>
+<h3>กิจกรรมฝึกปฏิบัติ</h3>
+
+<p>
+ให้นักเรียนสร้างโปรแกรม Scratch ตามเงื่อนไขต่อไปนี้
+</p>
+
+<ul>
+<li>เมื่อกดธงเขียว</li>
+<li>ตัวละครเดิน 10 ก้าว</li>
+<li>พูดคำว่า Hello</li>
+</ul>
+</div>
+<div class="card" id="lesson2" style="display:none;">
+<h3>บทเรียน Scratch</h3>
+
+<p>
+Scratch คือโปรแกรมสำหรับการเรียนรู้การเขียนโปรแกรม
+โดยใช้บล็อกคำสั่งในการสร้างเกม แอนิเมชัน และสื่อต่างๆ
+เหมาะสำหรับผู้เริ่มต้น
+</p>
+
+<iframe width="100%" height="315"
+src="https://www.youtube.com/embed/jXJ6r3XzqGk"
+frameborder="0"
+allowfullscreen>
+</iframe>
+<br><br>
+<button onclick="finishLesson()">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+</div>
+
+
+<div class="card" id="posttest" style="display:none;">
+<h3>แบบทดสอบหลังเรียน</h3>
+
+<p>1. บล็อก Motion ใช้ทำอะไร</p>
+
+<input type="radio" name="post1" value="1"> ควบคุมการเคลื่อนที่<br>
+<input type="radio" name="post1" value="0"> ควบคุมเสียง<br>
+<input type="radio" name="post1" value="0"> ควบคุมตัวแปร<br>
+<input type="radio" name="post1" value="0"> ควบคุมเงื่อนไข<br>
+
+
+<p>2. บล็อก Looks ใช้ทำอะไร</p>
+
+<input type="radio" name="post2" value="1"> เปลี่ยนการแสดงผลของตัวละคร<br>
+<input type="radio" name="post2" value="0"> ควบคุมการเคลื่อนที่<br>
+<input type="radio" name="post2" value="0"> ควบคุมเสียง<br>
+<input type="radio" name="post2" value="0"> สร้างตัวแปร<br>
+
+<br>
+
+<button onclick="posttest()">ส่งคำตอบ</button>
+
+<p id="postScore" class="result"></p>
+
+</div>
+
+
+<div class="card" id="survey" style="display:none;">
+<h3>แบบประเมินความพึงพอใจ</h3>
+
+<section>
+<h2>แบบประเมินความพึงพอใจของนักเรียน</h2>
+
+<form>
+
+<p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+<label><input type="radio" name="q1" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q1" value="4"> มาก</label><br>
+<label><input type="radio" name="q1" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q1" value="2"> น้อย</label><br>
+<label><input type="radio" name="q1" value="1"> น้อยที่สุด</label>
+
+<p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+<label><input type="radio" name="q2" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q2" value="4"> มาก</label><br>
+<label><input type="radio" name="q2" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q2" value="2"> น้อย</label><br>
+<label><input type="radio" name="q2" value="1"> น้อยที่สุด</label>
+
+<p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+<label><input type="radio" name="q3" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q3" value="4"> มาก</label><br>
+<label><input type="radio" name="q3" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q3" value="2"> น้อย</label><br>
+<label><input type="radio" name="q3" value="1"> น้อยที่สุด</label>
+
+<p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+<label><input type="radio" name="q4" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q4" value="4"> มาก</label><br>
+<label><input type="radio" name="q4" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q4" value="2"> น้อย</label><br>
+<label><input type="radio" name="q4" value="1"> น้อยที่สุด</label>
+
+
+<br>
+
+<button type="button" onclick="finish()">ส่งคำตอบ</button>
+<p id="finish"></p>
+
+</div>
+
+</div>
+
+<script>
+  
+let preScoreValue = 0
+let postScoreValue = 0
+  
+function pretest(){
+
+let score=0
+
+document.querySelectorAll('input[name="pre1"]:checked').forEach(e=>score+=parseInt(e.value))
+document.querySelectorAll('input[name="pre2"]:checked').forEach(e=>score+=parseInt(e.value))
+preScoreValue = score
+document.getElementById("preScore").innerHTML="คะแนนก่อนเรียน = "+score+" / 2"
+document.getElementById("lesson").style.display="block"
+document.getElementById("lesson2").style.display="block"
+}
+
+function posttest(){
+
+let score=0
+
+document.querySelectorAll('input[name="post1"]:checked').forEach(e=>score+=parseInt(e.value))
+document.querySelectorAll('input[name="post2"]:checked').forEach(e=>score+=parseInt(e.value))
+postScoreValue = score
+document.getElementById("postScore").innerHTML="คะแนนหลังเรียน = "+score+" / 2"
+document.getElementById("survey").style.display="block"
+
+}
+function finishLesson(){
+
+document.getElementById("posttest").style.display="block"
+
+window.scrollTo({
+top: document.getElementById("posttest").offsetTop,
+behavior: "smooth"
+})
+
+}
+
+  
+function finish(){
+
+let name=document.getElementById("name").value
+let number=document.getElementById("number").value
+if(name=="" || number==""){
+alert("กรุณากรอกชื่อและเลขที่")
+return
+}
+let q1=document.querySelector('input[name="q1"]:checked')?.value
+let q2=document.querySelector('input[name="q2"]:checked')?.value
+let q3=document.querySelector('input[name="q3"]:checked')?.value
+let q4=document.querySelector('input[name="q4"]:checked')?.value
+
+let data={
+unit:"2",
+name:name,
+number:number,
+pretest:preScoreValue,
+posttest:postScoreValue,
+q1:q1,
+q2:q2,
+q3:q3,
+q4:q4
+}
+
+fetch("https://script.google.com/macros/s/AKfycbw9or0X-WKnf1gYrGf4IA7mApICRwNkX-C2tpzEUkkShOyUNuSt5MBcCI6cYTrZd7Af/exec",{
+method:"POST",
+body:JSON.stringify(data)
+})
+
+document.getElementById("finish").innerHTML=
+"บันทึกข้อมูลเรียบร้อย ขอบคุณ "+name
+
+}
+
+</script>
+<script>
+
+
+
+function sendData(){
+
+  const data = {
+    name: document.getElementById("name")?.value || "",
+    number: document.getElementById("number")?.value || "",
+    pretest: localStorage.getItem("pretestScore"),
+    posttest: localStorage.getItem("posttestScore"),
+    satisfaction: localStorage.getItem("satisfactionScore")
+  };
+
+ fetch("https://script.google.com/macros/s/AKfycbyEwuMVBbF_1wmph2_040b0FxxFvfCvyx3AmZ6Cnjx4XkiEB3QLr-TJV1xfTXtuX7s/exec",{
+method:"POST",
+body:JSON.stringify(data)
+})
+  .then(res=>alert("บันทึกข้อมูลเรียบร้อย"))
+  .catch(err=>alert("เกิดข้อผิดพลาด"))
+
+}
+
+</script> 
+
+</body>
+</html>
 
