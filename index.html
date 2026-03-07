@@ -306,7 +306,7 @@ q3:q3,
 q4:q4
 }
 
-fetch("URL_APPS_SCRIPT",{
+fetch("https://script.google.com/macros/s/AKfycbyEwuMVBbF_1wmph2_040b0FxxFvfCvyx3AmZ6Cnjx4XkiEB3QLr-TJV1xfTXtuX7s/exec",{
 method:"POST",
 body:JSON.stringify(data)
 })
@@ -319,7 +319,7 @@ document.getElementById("finish").innerHTML=
 </script>
 <script>
 
-const scriptURL = https://script.google.com/macros/s/AKfycbwqrtPyihGDoA0kY7QxZkQ03cbb-HHeVK6OiO-aLAmJUdGyXfqph8tiyhh4QkEUQWVX/exec
+const scriptURL = 
 
 function sendData(){
 
@@ -331,10 +331,10 @@ function sendData(){
     satisfaction: localStorage.getItem("satisfactionScore")
   };
 
-  fetch(scriptURL,{
-    method:"POST",
-    body:JSON.stringify(data)
-  })
+ fetch("https://script.google.com/macros/s/AKfycbyEwuMVBbF_1wmph2_040b0FxxFvfCvyx3AmZ6Cnjx4XkiEB3QLr-TJV1xfTXtuX7s/exec",{
+method:"POST",
+body:JSON.stringify(data)
+})
   .then(res=>alert("บันทึกข้อมูลเรียบร้อย"))
   .catch(err=>alert("เกิดข้อผิดพลาด"))
 
