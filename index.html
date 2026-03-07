@@ -268,7 +268,7 @@ let score=0
 
 document.querySelectorAll('input[name="post1"]:checked').forEach(e=>score+=parseInt(e.value))
 document.querySelectorAll('input[name="post2"]:checked').forEach(e=>score+=parseInt(e.value))
-preScoreValue = score
+postScoreValue = score
 document.getElementById("postScore").innerHTML="คะแนนหลังเรียน = "+score+" / 2"
 document.getElementById("survey").style.display="block"
 
@@ -317,7 +317,30 @@ document.getElementById("finish").innerHTML=
 }
 
 </script>
- 
+<script>
+
+const scriptURL = https://script.google.com/macros/s/AKfycbwqrtPyihGDoA0kY7QxZkQ03cbb-HHeVK6OiO-aLAmJUdGyXfqph8tiyhh4QkEUQWVX/exec
+
+function sendData(){
+
+  const data = {
+    name: document.getElementById("name")?.value || "",
+    number: document.getElementById("number")?.value || "",
+    pretest: localStorage.getItem("pretestScore"),
+    posttest: localStorage.getItem("posttestScore"),
+    satisfaction: localStorage.getItem("satisfactionScore")
+  };
+
+  fetch(scriptURL,{
+    method:"POST",
+    body:JSON.stringify(data)
+  })
+  .then(res=>alert("บันทึกข้อมูลเรียบร้อย"))
+  .catch(err=>alert("เกิดข้อผิดพลาด"))
+
+}
+
+</script> 
 
 </body>
 </html>
