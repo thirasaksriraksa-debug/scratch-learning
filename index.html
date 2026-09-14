@@ -112,7 +112,7 @@ background:#1e40af;
 <input type="radio" name="pre2" value="0"> ดูอย่างเดียว<br>
 <input type="radio" name="pre2" value="0"> ตัดต่อรูปภาพ<br>
 
- <p>5. Scratch เป็นโปรแกรมแบบใด</p>
+<p>5. Scratch เป็นโปรแกรมแบบใด</p>
 
 <input type="radio" name="pre2" value="1"> ลากบล็อกคำสั่ง<br>
 <input type="radio" name="pre2" value="0"> พิมพ์โค้ดทั้งหมด<br>
@@ -325,7 +325,7 @@ let score=0
 document.querySelectorAll('input[name="pre1"]:checked').forEach(e=>score+=parseInt(e.value))
 document.querySelectorAll('input[name="pre2"]:checked').forEach(e=>score+=parseInt(e.value))
 preScoreValue = score
-document.getElementById("preScore").innerHTML="คะแนนก่อนเรียน = "+score+" / 2"
+document.getElementById("preScore").innerHTML="คะแนนก่อนเรียน = "+score+" / 12"
 document.getElementById("lesson").style.display="block"
 document.getElementById("lesson2").style.display="block"
 }
@@ -337,7 +337,7 @@ let score=0
 document.querySelectorAll('input[name="post1"]:checked').forEach(e=>score+=parseInt(e.value))
 document.querySelectorAll('input[name="post2"]:checked').forEach(e=>score+=parseInt(e.value))
 postScoreValue = score
-document.getElementById("postScore").innerHTML="คะแนนหลังเรียน = "+score+" / 2"
+document.getElementById("postScore").innerHTML="คะแนนหลังเรียน = "+score+" / 12"
 document.getElementById("survey").style.display="block"
 
 }
@@ -379,12 +379,11 @@ fetch("https://script.google.com/macros/s/AKfycbwvC6WqA_RhDkIor3NI5v7HWJ-N7-S9Wz
 method:"POST",
 body:JSON.stringify(data)
 })
-<!-- ตัวอย่างปุ่มย้ายไปหน่วยที่ 2 -->
+
 <a href="unit2.html">
     <button type="button">ไปบทเรียนหน่วยที่ 2</button>
 </a>
 
-<!-- ตัวอย่างปุ่มกลับหน้าแรก (index.html) -->
 <a href="index.html">
     <button type="button" style="background:#64748b;">กลับหน้าแรก</button>
 </a>
