@@ -20,6 +20,37 @@ padding:20px;
 text-align:center;
 }
 
+/* สไตล์สำหรับแถบปุ่มเลือกหน่วย */
+.unit-nav{
+background:#1e40af;
+padding:10px;
+text-align:center;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.unit-btn{
+background:#3b82f6;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:5px;
+cursor:pointer;
+font-size:14px;
+text-decoration:none;
+}
+
+.unit-btn:hover{
+background:#60a5fa;
+}
+
+.unit-btn.active{
+background:#10b981;
+font-weight:bold;
+}
+
 .container{
 max-width:900px;
 margin:auto;
@@ -59,6 +90,14 @@ background:#1e40af;
 <h1>บทเรียนออนไลน์</h1>
 <p>เรื่อง เงื่อนไข (Conditions) ในโปรแกรม Scratch สำหรับนักเรียน ม.2</p>
 </header>
+
+<!-- แถบเมนูปุ่มเลือกหน่วยการเรียน -->
+<div class="unit-nav">
+<a href="index.html" class="unit-btn">หน่วยที่ 1 รู้จัก Scratch</a>
+<a href="unit2.html" class="unit-btn active">หน่วยที่ 2 การเคลื่อนไหว</a>
+<a href="unit3.html" class="unit-btn">หน่วยที่ 3 การควบคุม</a>
+<a href="unit4.html" class="unit-btn">หน่วยที่ 4 ตัวแปร</a>
+</div>
 
 <div class="container">
 
@@ -130,7 +169,7 @@ background:#1e40af;
 <input type="radio" name="pre9" value="0"> (timer) <br>
 
 <p>10. การนำเงื่อนไขมาใช้ร่วมกับตัวแปร เช่น ตรวจสอบว่า `[score] = 10` แล้วให้แสดงข้อความชนะเกม มีประโยชน์อย่างไร</p>
-<input type="radio" name="pre10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยน ísการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
+<input type="radio" name="pre10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยนการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
 <input type="radio" name="pre10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
 <input type="radio" name="pre10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
 <input type="radio" name="pre10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
@@ -363,7 +402,7 @@ function finish(){
     })
     document.getElementById("finish").innerHTML = 
         "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + 
-        "<br><br><a href='unit6.html'><button type='button' style='background:#16a34a;'> จบเนื้อหา </button></a>";
+        "<br><br><a href='unit6.html'><button type='button' style='background:#16a34a;'>ไปบทเรียนหน่วยที่ 6 ➡️</button></a>";
 }
 </script>
 
