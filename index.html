@@ -10,7 +10,1361 @@
 body{
 font-family: Arial;
 background:#f1f5f9;
+margin:0;<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทเรียน Scratch (หน่วยที่ 1-5)</title>
+
+<style>
+body{
+font-family: Arial;
+background:#f1f5f9;
 margin:0;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.unit-nav{
+background:#1e40af;
+padding:10px;
+text-align:center;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.unit-btn{
+background:#3b82f6;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:5px;
+cursor:pointer;
+font-size:14px;
+text-decoration:none;
+}
+
+.unit-btn:hover{
+background:#60a5fa;
+}
+
+.unit-btn.active{
+background:#10b981;
+font-weight:bold;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e3a8a;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+
+.unit-section {
+display: none;
+}
+.unit-section.active {
+display: block;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>บทเรียนออนไลน์ Scratch</h1>
+<p>สำหรับนักเรียน ม.2 — สลับดูได้ทั้ง 5 หน่วยในหน้าเดียว</p>
+</header>
+
+<div class="unit-nav" id="unitNav">
+<button class="unit-btn active" onclick="switchUnit(1)">หน่วยที่ 1 รู้จัก Scratch</button>
+<button class="unit-btn" onclick="switchUnit(2)">หน่วยที่ 2 การเคลื่อนไหว</button>
+<button class="unit-btn" onclick="switchUnit(3)">หน่วยที่ 3 การควบคุม</button>
+<button class="unit-btn" onclick="switchUnit(4)">หน่วยที่ 4 ตัวแปร</button>
+<button class="unit-btn" onclick="switchUnit(5)">หน่วยที่ 5 เงื่อนไข</button>
+</div>
+
+<div class="container">
+
+<div class="card">
+<h2>ข้อมูลผู้เรียน</h2>
+<label>ชื่อ-นามสกุล</label>
+<input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px;box-sizing:border-box;">
+<br><br>
+<label>เลขที่</label>
+<input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px;box-sizing:border-box;">
+</div>
+
+<div id="unit1-content" class="unit-section active">
+    <!-- ================= แบบทดสอบก่อนเรียน ================= -->
+    <div class="card">
+    <h3>แบบทดสอบก่อนเรียน (หน่วยที่ 1 รู้จัก Scratch)</h3>
+
+    <p>1. ข้อใดคือความหมายของโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u1pre1" value="1"> ภาษาโปรแกรมในรูปแบบบล็อกคำสั่ง (Block-based Programming) สำหรับสร้างงานกราฟิก เกม และนิทาน<br>
+    <input type="radio" name="u1pre1" value="0"> โปรแกรมสำหรับพิมพ์เอกสารและรายงานส่งครู<br>
+    <input type="radio" name="u1pre1" value="0"> โปรแกรมสำหรับตกแต่งภาพถ่ายและสร้างวิดีโอ<br>
+    <input type="radio" name="u1pre1" value="0"> ระบบปฏิบัติการสำหรับควบคุมคอมพิวเตอร์<br>
+
+    <p>2. หน่วยงานใดเป็นผู้พัฒนาโปรแกรม Scratch ขึ้นมา</p>
+    <input type="radio" name="u1pre2" value="1"> MIT Media Lab (สถาบันเทคโนโลยีแมตชูเซตส์)<br>
+    <input type="radio" name="u1pre2" value="0"> Microsoft Corporation<br>
+    <input type="radio" name="u1pre2" value="0"> Google LLC<br>
+    <input type="radio" name="u1pre2" value="0"> Apple Inc.<br>
+
+    <p>3. สัญลักษณ์หรือมาสคอต (Mascot) ประจำโปรแกรม Scratch คือสัตว์ชนิดใด</p>
+    <input type="radio" name="u1pre3" value="1"> แมว (Cat)<br>
+    <input type="radio" name="u1pre3" value="0"> สุนัข (Dog)<br>
+    <input type="radio" name="u1pre3" value="0"> หมี (Bear)<br>
+    <input type="radio" name="u1pre3" value="0"> นกฮูก (Owl)<br>
+
+    <p>4. พื้นที่ส่วนใดในหน้าจอโปรแกรม Scratch ที่ใช้สำหรับแสดงผลลัพธ์ของโปรแกรม (ตัวละครเคลื่อนไหวตามคำสั่ง)</p>
+    <input type="radio" name="u1pre4" value="1"> เวที (Stage)<br>
+    <input type="radio" name="u1pre4" value="0"> พื้นที่เขียนโค้ด (Script Area)<br>
+    <input type="radio" name="u1pre4" value="0"> จานสีบล็อก (Block Palette)<br>
+    <input type="radio" name="u1pre4" value="0"> รายการตัวละคร (Sprite List)<br>
+
+    <p>5. พื้นที่ส่วนใดที่ใช้สำหรับจัดวางและต่อบล็อกคำสั่งเพื่อสั่งให้ตัวละครทำงาน</p>
+    <input type="radio" name="u1pre5" value="1"> พื้นที่เขียนสคริปต์ (Script Area)<br>
+    <input type="radio" name="u1pre5" value="0"> เวที (Stage)<br>
+    <input type="radio" name="u1pre5" value="0"> แถบเมนูไฟล์ (Menu Bar)<br>
+    <input type="radio" name="u1pre5" value="0"> หน้าต่างคลังภาพ (Costumes Library)<br>
+
+    <p>6. ปุ่มธงสีเขียว (Green Flag) ในโปรแกรม Scratch มีหน้าที่หลักทำอะไร</p>
+    <input type="radio" name="u1pre6" value="1"> เริ่มต้นการทำงานของโปรแกรมหรือสคริปต์ที่สร้างไว้<br>
+    <input type="radio" name="u1pre6" value="0"> หยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
+    <input type="radio" name="u1pre6" value="0"> บันทึกชิ้นงานลงในคอมพิวเตอร์<br>
+    <input type="radio" name="u1pre6" value="0"> ขยายหน้าจอเวทีให้เป็นเต็มจอ (Full Screen)<br>
+
+    <p>7. ปุ่มสีแดง (Stop Sign) มีหน้าที่ตรงกับข้อใด</p>
+    <input type="radio" name="u1pre7" value="1"> หยุดการทำงานของโปรแกรม<br>
+    <input type="radio" name="u1pre7" value="0"> ลบตัวละครทิ้ง<br>
+    <input type="radio" name="u1pre7" value="0"> เริ่มต้นเกมใหม่<br>
+    <input type="radio" name="u1pre7" value="0"> สลับฉากหลัง<br>
+
+    <p>8. ในโปรแกรม Scratch คำว่า "Sprite" หมายถึงอะไร</p>
+    <input type="radio" name="u1pre8" value="1"> ตัวละครหรือวัตถุที่สามารถเขียนโปรแกรมสั่งให้เคลื่อนไหวหรือทำงานได้<br>
+    <input type="radio" name="u1pre8" value="0"> ฉากหลังของเวที<br>
+    <input type="radio" name="u1pre8" value="0"> เสียงประกอบในเกม<br>
+    <input type="radio" name="u1pre8" value="0"> ชุดคำสั่งบล็อกสี<br>
+
+    <p>9. หากต้องการเปลี่ยนฉากหลัง (Background) ของเวที ควรเลือกที่เมนูหรือส่วนใด</p>
+    <input type="radio" name="u1pre9" value="1"> Backdrop<br>
+    <input type="radio" name="u1pre9" value="0"> Costume<br>
+    <input type="radio" name="u1pre9" value="0"> Sound<br>
+    <input type="radio" name="u1pre9" value="0"> Variable<br>
+
+    <p>10. ข้อใดคือข้อดีของการเขียนโปรแกรมแบบบล็อกคำสั่ง (Block-based Programming)</p>
+    <input type="radio" name="u1pre10" value="1"> ใช้งานง่าย ไม่ต้องจำรูปแบบ syntax ที่ซับซ้อน ช่วยลดข้อผิดพลาดในการพิมพ์<br>
+    <input type="radio" name="u1pre10" value="0"> ทำให้คอมพิวเตอร์ประมวลผลเร็วกว่าภาษาซี<br>
+    <input type="radio" name="u1pre10" value="0"> สามารถใช้งานทดแทนอินเทอร์เน็ตได้ทั้งหมด<br>
+    <input type="radio" name="u1pre10" value="0"> ไม่จำเป็นต้องใช้ความคิดสร้างสรรค์<br>
+
+    <p>11. มุมมองหรือแถบใดที่ใช้สำหรับปรับแต่ง แก้ไข หรือวาดรูปภาพเพิ่มเติมให้กับตัวละคร</p>
+    <input type="radio" name="u1pre11" value="1"> ชุดตัวละคร (Costumes)<br>
+    <input type="radio" name="u1pre11" value="0"> เสียง (Sounds)<br>
+    <input type="radio" name="u1pre11" value="0"> เวที (Stage)<br>
+    <input type="radio" name="u1pre11" value="0"> โค้ด (Code)<br>
+
+    <p>12. วิธีการใช้งานโปรแกรม Scratch สามารถทำได้ผ่านช่องทางใดบ้าง</p>
+    <input type="radio" name="u1pre12" value="1"> ใช้งานผ่านเว็บเบราว์เซอร์ (Online) และดาวน์โหลดมาติดตั้งบนเครื่อง (Offline Editor)<br>
+    <input type="radio" name="u1pre12" value="0"> ใช้งานผ่านแอปพลิเคชันโทรศัพท์มือถือระบบ iOS เท่านั้น<br>
+    <input type="radio" name="u1pre12" value="0"> ต้องซื้อแผ่นซีดีติดตั้งจากศูนย์บริการเท่านั้น<br>
+    <input type="radio" name="u1pre12" value="0"> เขียนผ่านโปรแกรม WordPad ใน Windows เท่านั้น<br>
+    <br>
+
+    <button onclick="pretest(1)">ส่งคำตอบ</button>
+    <p id="u1preScore" class="result"></p>
+    </div>
+
+    <!-- ================= เนื้อหาบทเรียน ================= -->
+    <div class="card" id="u1lesson" style="display:none;">
+    <h2>หน่วยที่ 1 รู้จัก Scratch (Introduction to Scratch)</h2>
+    <h3>1.1 ความหมายของโปรแกรม Scratch</h3>
+    <p>Scratch (สแครทช์) คือ ภาษาโปรแกรมในรูปแบบบล็อกคำสั่ง (Block-based Programming) ที่พัฒนาโดย MIT Media Lab เหมาะสำหรับการเรียนรู้การเขียนโปรแกรมขั้นพื้นฐาน ผู้เรียนสามารถลากและวางบล็อกคำสั่งมาต่อกันเพื่อสร้างเกม ภาพเคลื่อนไหว นิทาน หรือดนตรีได้อย่างง่ายดายโดยไม่ต้องพิมพ์โค้ดคำสั่งที่ซับซ้อน</p>
+
+    <h3>1.2 ส่วนประกอบหลักของหน้าจอ Scratch</h3>
+    <p>เมื่อเข้าสู่โปรแกรม Scratch หน้าจอการทำงานหลักจะแบ่งออกเป็นส่วนสำคัญ ดังนี้:</p>
+    <ul>
+        <li><strong>Block Palette (จานสีบล็อก):</strong> แหล่งรวมบล็อกคำสั่งตามหมวดหมู่สีต่างๆ เช่น การเคลื่อนไหว รูปร่าง เสียง เหตุการณ์ และการควบคุม</li>
+        <li><strong>Script Area (พื้นที่เขียนสคริปต์):</strong> พื้นที่สำหรับนำบล็อกคำสั่งมาวางต่อกันเพื่อสร้างชุดคำสั่งให้ตัวละครทำงาน</li>
+        <li><strong>Stage (เวที):</strong> พื้นที่แสดงผลลัพธ์การทำงานของโปรแกรมตามโค้ดที่เราเขียนไว้</li>
+        <li><strong>Sprite List (รายการตัวละคร):</strong> ส่วนแสดงตัวละครทั้งหมดที่ใช้งานอยู่ในโปรเจกต์ สามารถเพิ่ม ลบ หรือเลือกตัวละครเพื่อเขียนโค้ดได้</li>
+    </ul>
+
+    <h3>1.3 แนวคิดพื้นฐานในการใช้งาน</h3>
+    <p>การสั่งให้ตัวละคร (Sprite) ทำงานใน Scratch เริ่มต้นจากการเลือกตัวละครและฉากหลัง จากนั้นลากบล็อกเหตุการณ์ (Events) เช่น <code>When [Green Flag] Clicked</code> มาวางเป็นจุดเริ่มต้น และนำบล็อกคำสั่งการกระทำอื่นๆ มาต่อด้านล่าง เพื่อให้โปรแกรมรันเมื่อคลิกที่ธงเขียว</p>
+    </div>
+
+    <div class="card" id="u1lesson2" style="display:none;">
+    <h3>สื่อวิดีโอประกอบบทเรียน</h3>
+    <p>ศึกษาเพิ่มเติมเกี่ยวกับการทำความรู้จักโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    <br><br>
+    <button onclick="finishLesson(1)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+    </div>
+
+    <!-- ================= แบบทดสอบหลังเรียน ================= -->
+    <div class="card" id="u1posttest" style="display:none;">
+    <h3>แบบทดสอบหลังเรียน (หน่วยที่ 1 รู้จัก Scratch)</h3>
+
+    <p>1. ข้อใดคือความหมายของโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u1post1" value="1"> ภาษาโปรแกรมในรูปแบบบล็อกคำสั่ง (Block-based Programming) สำหรับสร้างงานกราฟิก เกม และนิทาน<br>
+    <input type="radio" name="u1post1" value="0"> โปรแกรมสำหรับพิมพ์เอกสารและรายงานส่งครู<br>
+    <input type="radio" name="u1post1" value="0"> โปรแกรมสำหรับตกแต่งภาพถ่ายและสร้างวิดีโอ<br>
+    <input type="radio" name="u1post1" value="0"> ระบบปฏิบัติการสำหรับควบคุมคอมพิวเตอร์<br>
+
+    <p>2. หน่วยงานใดเป็นผู้พัฒนาโปรแกรม Scratch ขึ้นมา</p>
+    <input type="radio" name="u1post2" value="1"> MIT Media Lab (สถาบันเทคโนโลยีแมตชูเซตส์)<br>
+    <input type="radio" name="u1post2" value="0"> Microsoft Corporation<br>
+    <input type="radio" name="u1post2" value="0"> Google LLC<br>
+    <input type="radio" name="u1post2" value="0"> Apple Inc.<br>
+
+    <p>3. สัญลักษณ์หรือมาสคอต (Mascot) ประจำโปรแกรม Scratch คือสัตว์ชนิดใด</p>
+    <input type="radio" name="u1post3" value="1"> แมว (Cat)<br>
+    <input type="radio" name="u1post3" value="0"> สุนัข (Dog)<br>
+    <input type="radio" name="u1post3" value="0"> หมี (Bear)<br>
+    <input type="radio" name="u1post3" value="0"> นกฮูก (Owl)<br>
+
+    <p>4. พื้นที่ส่วนใดในหน้าจอโปรแกรม Scratch ที่ใช้สำหรับแสดงผลลัพธ์ของโปรแกรม (ตัวละครเคลื่อนไหวตามคำสั่ง)</p>
+    <input type="radio" name="u1post4" value="1"> เวที (Stage)<br>
+    <input type="radio" name="u1post4" value="0"> พื้นที่เขียนโค้ด (Script Area)<br>
+    <input type="radio" name="u1post4" value="0"> จานสีบล็อก (Block Palette)<br>
+    <input type="radio" name="u1post4" value="0"> รายการตัวละคร (Sprite List)<br>
+
+    <p>5. พื้นที่ส่วนใดที่ใช้สำหรับจัดวางและต่อบล็อกคำสั่งเพื่อสั่งให้ตัวละครทำงาน</p>
+    <input type="radio" name="u1post5" value="1"> พื้นที่เขียนสคริปต์ (Script Area)<br>
+    <input type="radio" name="u1post5" value="0"> เวที (Stage)<br>
+    <input type="radio" name="u1post5" value="0"> แถบเมนูไฟล์ (Menu Bar)<br>
+    <input type="radio" name="u1post5" value="0"> หน้าต่างคลังภาพ (Costumes Library)<br>
+
+    <p>6. ปุ่มธงสีเขียว (Green Flag) ในโปรแกรม Scratch มีหน้าที่หลักทำอะไร</p>
+    <input type="radio" name="u1post6" value="1"> เริ่มต้นการทำงานของโปรแกรมหรือสคริปต์ที่สร้างไว้<br>
+    <input type="radio" name="u1post6" value="0"> หยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
+    <input type="radio" name="u1post6" value="0"> บันทึกชิ้นงานลงในคอมพิวเตอร์<br>
+    <input type="radio" name="u1post6" value="0"> ขยายหน้าจอเวทีให้เป็นเต็มจอ (Full Screen)<br>
+
+    <p>7. ปุ่มสีแดง (Stop Sign) มีหน้าที่ตรงกับข้อใด</p>
+    <input type="radio" name="u1post7" value="1"> หยุดการทำงานของโปรแกรม<br>
+    <input type="radio" name="u1post7" value="0"> ลบตัวละครทิ้ง<br>
+    <input type="radio" name="u1post7" value="0"> เริ่มต้นเกมใหม่<br>
+    <input type="radio" name="u1post7" value="0"> สลับฉากหลัง<br>
+
+    <p>8. ในโปรแกรม Scratch คำว่า "Sprite" หมายถึงอะไร</p>
+    <input type="radio" name="u1post8" value="1"> ตัวละครหรือวัตถุที่สามารถเขียนโปรแกรมสั่งให้เคลื่อนไหวหรือทำงานได้<br>
+    <input type="radio" name="u1post8" value="0"> ฉากหลังของเวที<br>
+    <input type="radio" name="u1post8" value="0"> เสียงประกอบในเกม<br>
+    <input type="radio" name="u1post8" value="0"> ชุดคำสั่งบล็อกสี<br>
+
+    <p>9. หากต้องการเปลี่ยนฉากหลัง (Background) ของเวที ควรเลือกที่เมนูหรือส่วนใด</p>
+    <input type="radio" name="u1post9" value="1"> Backdrop<br>
+    <input type="radio" name="u1post9" value="0"> Costume<br>
+    <input type="radio" name="u1post9" value="0"> Sound<br>
+    <input type="radio" name="u1post9" value="0"> Variable<br>
+
+    <p>10. ข้อใดคือข้อดีของการเขียนโปรแกรมแบบบล็อกคำสั่ง (Block-based Programming)</p>
+    <input type="radio" name="u1post10" value="1"> ใช้งานง่าย ไม่ต้องจำรูปแบบ syntax ที่ซับซ้อน ช่วยลดข้อผิดพลาดในการพิมพ์<br>
+    <input type="radio" name="u1post10" value="0"> ทำให้คอมพิวเตอร์ประมวลผลเร็วกว่าภาษาซี<br>
+    <input type="radio" name="u1post10" value="0"> สามารถใช้งานทดแทนอินเทอร์เน็ตได้ทั้งหมด<br>
+    <input type="radio" name="u1post10" value="0"> ไม่จำเป็นต้องใช้ความคิดสร้างสรรค์<br>
+
+    <p>11. มุมมองหรือแถบใดที่ใช้สำหรับปรับแต่ง แก้ไข หรือวาดรูปภาพเพิ่มเติมให้กับตัวละคร</p>
+    <input type="radio" name="u1post11" value="1"> ชุดตัวละคร (Costumes)<br>
+    <input type="radio" name="u1post11" value="0"> เสียง (Sounds)<br>
+    <input type="radio" name="u1post11" value="0"> เวที (Stage)<br>
+    <input type="radio" name="u1post11" value="0"> โค้ด (Code)<br>
+
+    <p>12. วิธีการใช้งานโปรแกรม Scratch สามารถทำได้ผ่านช่องทางใดบ้าง</p>
+    <input type="radio" name="u1post12" value="1"> ใช้งานผ่านเว็บเบราว์เซอร์ (Online) และดาวน์โหลดมาติดตั้งบนเครื่อง (Offline Editor)<br>
+    <input type="radio" name="u1post12" value="0"> ใช้งานผ่านแอปพลิเคชันโทรศัพท์มือถือระบบ iOS เท่านั้น<br>
+    <input type="radio" name="u1post12" value="0"> ต้องซื้อแผ่นซีดีติดตั้งจากศูนย์บริการเท่านั้น<br>
+    <input type="radio" name="u1post12" value="0"> เขียนผ่านโปรแกรม WordPad ใน Windows เท่านั้น<br>
+    <br>
+
+    <button onclick="posttest(1)">ส่งคำตอบ</button>
+    <p id="u1postScore" class="result"></p>
+    </div>
+
+    <!-- ================= แบบประเมินความพึงพอใจ ================= -->
+    <div class="card" id="u1survey" style="display:none;">
+    <h3>แบบประเมินความพึงพอใจ</h3>
+    <section>
+    <h2>แบบประเมินความพึงพอใจของนักเรียน</h2>
+    <form>
+    <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+    <label><input type="radio" name="u1q1" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u1q1" value="4"> มาก</label><br>
+    <label><input type="radio" name="u1q1" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u1q1" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u1q1" value="1"> น้อยที่สุด</label>
+
+    <p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+    <label><input type="radio" name="u1q2" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u1q2" value="4"> มาก</label><br>
+    <label><input type="radio" name="u1q2" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u1q2" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u1q2" value="1"> น้อยที่สุด</label>
+
+    <p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+    <label><input type="radio" name="u1q3" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u1q3" value="4"> มาก</label><br>
+    <label><input type="radio" name="u1q3" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u1q3" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u1q3" value="1"> น้อยที่สุด</label>
+
+    <p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+    <label><input type="radio" name="u1q4" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u1q4" value="4"> มาก</label><br>
+    <label><input type="radio" name="u1q4" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u1q4" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u1q4" value="1"> น้อยที่สุด</label>
+
+    <br><br>
+    <button type="button" onclick="finish(1)">ส่งคำตอบ</button>
+    <p id="u1finish"></p>
+    </form>
+    </section>
+    </div>
+
+</div>
+
+<div id="unit2-content" class="unit-section">
+  <!-- แบบทดสอบก่อนเรียน -->
+  <div class="card">
+    <h3>แบบทดสอบก่อนเรียน (หน่วยที่ 2 การเคลื่อนไหว)</h3>
+    <p>1. กลุ่มบล็อกคำสั่งเกี่ยวกับการเคลื่อนไหว (Motion) ในโปรแกรม Scratch มีสีอะไร</p>
+    <input type="radio" name="u2pre1" value="1"> สีฟ้าเข้ม<br>
+    <input type="radio" name="u2pre1" value="0"> สีส้ม<br>
+    <input type="radio" name="u2pre1" value="0"> สีม่วง<br>
+    <input type="radio" name="u2pre1" value="0"> สีเขียวอ่อน<br>
+
+    <p>2. บล็อกคำสั่งใดใช้สำหรับสั่งให้ตัวละครเคลื่อนที่ไปข้างหน้าตามจำนวนก้าวที่กำหนด</p>
+    <input type="radio" name="u2pre2" value="1"> move (10) steps<br>
+    <input type="radio" name="u2pre2" value="0"> turn right (15) degrees<br>
+    <input type="radio" name="u2pre2" value="0"> go to x: (0) y: (0)<br>
+    <input type="radio" name="u2pre2" value="0"> glide (1) secs to x: (0) y: (0)<br>
+
+    <p>3. หากต้องการให้ตัวละครหมุนตามเข็มนาฬิกา ควรใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u2pre3" value="1"> turn right (15) degrees<br>
+    <input type="radio" name="u2pre3" value="0"> turn left (15) degrees<br>
+    <input type="radio" name="u2pre3" value="0"> point in direction (90)<br>
+    <input type="radio" name="u2pre3" value="0"> change x by (10)<br>
+
+    <p>4. บนเวที (Stage) ของ Scratch พิกัดจุดกึ่งกลางหน้าจอตรงกับค่า X และ Y เท่าใด</p>
+    <input type="radio" name="u2pre4" value="1"> x: 0, y: 0<br>
+    <input type="radio" name="u2pre4" value="0"> x: 240, y: 180<br>
+    <input type="radio" name="u2pre4" value="0"> x: -240, y: -180<br>
+    <input type="radio" name="u2pre4" value="0"> x: 100, y: 100<br>
+
+    <p>5. บล็อกคำสั่ง go to x: (0) y: (0) มีลักษณะการเคลื่อนที่ของตัวละครอย่างไร</p>
+    <input type="radio" name="u2pre5" value="1"> ย้ายไปยังตำแหน่งพิกัดเป้าหมายทันทีในพริบตา<br>
+    <input type="radio" name="u2pre5" value="0"> ค่อยๆ ลื่นไหลเคลื่อนที่ไปตามเวลาที่กำหนด<br>
+    <input type="radio" name="u2pre5" value="0"> เดินไปข้างหน้าทีละก้าวช้าๆ<br>
+    <input type="radio" name="u2pre5" value="0"> สุ่มตำแหน่งบนหน้าจอ<br>
+
+    <p>6. หากต้องการให้ตัวละครเคลื่อนที่ไปยังตำแหน่งเป้าหมายแบบค่อยเป็นค่อยไป (ใช้เวลาตามกำหนด) ต้องใช้บล็อกใด</p>
+    <input type="radio" name="u2pre6" value="1"> glide (1) secs to x: (0) y: (0)<br>
+    <input type="radio" name="u2pre6" value="0"> go to x: (0) y: (0)<br>
+    <input type="radio" name="u2pre6" value="0"> move (10) steps<br>
+    <input type="radio" name="u2pre6" value="0"> point towards mouse-pointer<br>
+
+    <p>7. ค่าพิกัดแกนนอน (แกน X) บนเวที Scratch มีค่าตั้งแต่เท่าใดถึงเท่าใด</p>
+    <input type="radio" name="u2pre7" value="1"> -240 ถึง 240<br>
+    <input type="radio" name="u2pre7" value="0"> -180 ถึง 180<br>
+    <input type="radio" name="u2pre7" value="0"> 0 ถึง 500<br>
+    <input type="radio" name="u2pre7" value="0"> -100 ถึง 100<br>
+
+    <p>8. ค่าพิกัดแกนตั้ง (แกน Y) บนเวที Scratch มีค่าตั้งแต่เท่าใดถึงเท่าใด</p>
+    <input type="radio" name="u2pre8" value="1"> -180 ถึง 180<br>
+    <input type="radio" name="u2pre8" value="0"> -240 ถึง 240<br>
+    <input type="radio" name="u2pre8" value="0"> 0 ถึง 360<br>
+    <input type="radio" name="u2pre8" value="0"> -50 ถึง 50<br>
+
+    <p>9. บล็อกคำสั่งใดทำให้ตัวละครหันกลับด้านอัตโนมัติเมื่อเดินไปชนขอบฉาก</p>
+    <input type="radio" name="u2pre9" value="1"> if on edge, bounce<br>
+    <input type="radio" name="u2pre9" value="0"> point in direction (90)<br>
+    <input type="radio" name="u2pre9" value="0"> set rotation style left-right<br>
+    <input type="radio" name="u2pre9" value="0"> move (-10) steps<br>
+
+    <p>10. หากต้องการกำหนดทิศทางให้ตัวละครหันไปทางขวาตรงกับค่าองศาเท่าใดใน Scratch</p>
+    <input type="radio" name="u2pre10" value="1"> 90 องศา<br>
+    <input type="radio" name="u2pre10" value="0"> 0 องศา<br>
+    <input type="radio" name="u2pre10" value="0"> 180 องศา<br>
+    <input type="radio" name="u2pre10" value="0"> -90 องศา<br>
+
+    <p>11. บล็อกคำสั่ง change x by (10) จะทำให้ตัวละครเกิดการเปลี่ยนแปลงอย่างไร</p>
+    <input type="radio" name="u2pre11" value="1"> ขยับตำแหน่งไปทางขวาเพิ่มขึ้น 10 หน่วยตามแนวนอน<br>
+    <input type="radio" name="u2pre11" value="0"> ขยับตำแหน่งขึ้นด้านบน 10 หน่วยตามแนวตั้ง<br>
+    <input type="radio" name="u2pre11" value="0"> หมุนตัวไปทางขวา 10 องศา<br>
+    <input type="radio" name="u2pre11" value="0"> ขยายขนาดตัวละครเพิ่มขึ้น 10%<br>
+
+    <p>12. บล็อกคำสั่งใดใช้สำหรับดึงค่าพิกัดตำแหน่งแกน X ปัจจุบันของตัวละครออกมาใช้งาน</p>
+    <input type="radio" name="u2pre12" value="1"> (x position)<br>
+    <input type="radio" name="u2pre12" value="0"> (y position)<br>
+    <input type="radio" name="u2pre12" value="0"> (direction)<br>
+    <input type="radio" name="u2pre12" value="0"> (size)<br>
+    <br>
+    <button onclick="pretest(2)">ส่งคำตอบ</button>
+    <p id="u2preScore"></p>
+  </div>
+
+  <!-- เนื้อหาบทเรียน -->
+  <div class="card" id="u2lesson" style="display:none;">
+    <h2>หน่วยที่ 2 การเคลื่อนไหว (Motion)</h2>
+    <h3>2.1 ความรู้เบื้องต้นเกี่ยวกับบล็อกเคลื่อนไหว</h3>
+    <p>กลุ่มบล็อกคำสั่ง <strong>Motion (การเคลื่อนไหว)</strong> ในโปรแกรม Scratch มีสัญลักษณ์เป็น<strong>สีฟ้าเข้ม</strong> ใช้สำหรับควบคุมตำแหน่ง ทิศทาง และการเคลื่อนที่ของตัวละคร (Sprite) บนหน้าจอเวที (Stage)</p>
+    <h3>2.2 การเคลื่อนที่พื้นฐาน</h3>
+    <ul>
+      <li><code>move (10) steps</code>: สั่งให้ตัวละครเดินไปข้างหน้าตามทิศทางที่หันอยู่</li>
+      <li><code>turn right / left (degrees)</code>: สั่งให้ตัวละครหมุนตามองศาที่กำหนด</li>
+    </ul>
+    <h3>2.3 ระบบพิกัดบนเวที (Stage Coordinates)</h3>
+    <p>เวทีของ Scratch มีจุดศูนย์กลางอยู่ที่พิกัด <strong>x: 0, y: 0</strong> แกนนอน (X) มีค่าตั้งแต่ -240 ถึง 240 และแกนตั้ง (Y) มีค่าตั้งแต่ -180 ถึง 180</p>
+  </div>
+
+  <div class="card" id="u2lesson2" style="display:none;">
+    <h3>สื่อวิดีโอประกอบบทเรียน</h3>
+    <p>ศึกษาเพิ่มเติมเกี่ยวกับการเคลื่อนไหว (Motion) ในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+    <br><br>
+    <button onclick="finishLesson(2)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+  </div>
+
+  <!-- แบบทดสอบหลังเรียน -->
+  <div class="card" id="u2posttest" style="display:none;">
+    <h3>แบบทดสอบหลังเรียน (หน่วยที่ 2 การเคลื่อนไหว)</h3>
+    <p>1. กลุ่มบล็อกคำสั่งเกี่ยวกับการเคลื่อนไหว (Motion) ในโปรแกรม Scratch มีสีอะไร</p>
+    <input type="radio" name="u2post1" value="1"> สีฟ้าเข้ม<br>
+    <input type="radio" name="u2post1" value="0"> สีส้ม<br>
+    <input type="radio" name="u2post1" value="0"> สีม่วง<br>
+    <input type="radio" name="u2post1" value="0"> สีเขียวอ่อน<br>
+
+    <p>2. บล็อกคำสั่งใดใช้สำหรับสั่งให้ตัวละครเคลื่อนที่ไปข้างหน้าตามจำนวนก้าวที่กำหนด</p>
+    <input type="radio" name="u2post2" value="1"> move (10) steps<br>
+    <input type="radio" name="u2post2" value="0"> turn right (15) degrees<br>
+    <input type="radio" name="u2post2" value="0"> go to x: (0) y: (0)<br>
+    <input type="radio" name="u2post2" value="0"> glide (1) secs to x: (0) y: (0)<br>
+
+    <p>3. หากต้องการให้ตัวละครหมุนตามเข็มนาฬิกา ควรใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u2post3" value="1"> turn right (15) degrees<br>
+    <input type="radio" name="u2post3" value="0"> turn left (15) degrees<br>
+    <input type="radio" name="u2post3" value="0"> point in direction (90)<br>
+    <input type="radio" name="u2post3" value="0"> change x by (10)<br>
+
+    <p>4. บนเวที (Stage) ของ Scratch พิกัดจุดกึ่งกลางหน้าจอตรงกับค่า X และ Y เท่าใด</p>
+    <input type="radio" name="u2post4" value="1"> x: 0, y: 0<br>
+    <input type="radio" name="u2post4" value="0"> x: 240, y: 180<br>
+    <input type="radio" name="u2post4" value="0"> x: -240, y: -180<br>
+    <input type="radio" name="u2post4" value="0"> x: 100, y: 100<br>
+
+    <p>5. บล็อกคำสั่ง go to x: (0) y: (0) มีลักษณะการเคลื่อนที่ของตัวละครอย่างไร</p>
+    <input type="radio" name="u2post5" value="1"> ย้ายไปยังตำแหน่งพิกัดเป้าหมายทันทีในพริบตา<br>
+    <input type="radio" name="u2post5" value="0"> ค่อยๆ ลื่นไหลเคลื่อนที่ไปตามเวลาที่กำหนด<br>
+    <input type="radio" name="u2post5" value="0"> เดินไปข้างหน้าทีละก้าวช้าๆ<br>
+    <input type="radio" name="u2post5" value="0"> สุ่มตำแหน่งบนหน้าจอ<br>
+
+    <p>6. หากต้องการให้ตัวละครเคลื่อนที่ไปยังตำแหน่งเป้าหมายแบบค่อยเป็นค่อยไป (ใช้เวลาตามกำหนด) ต้องใช้บล็อกใด</p>
+    <input type="radio" name="u2post6" value="1"> glide (1) secs to x: (0) y: (0)<br>
+    <input type="radio" name="u2post6" value="0"> go to x: (0) y: (0)<br>
+    <input type="radio" name="u2post6" value="0"> move (10) steps<br>
+    <input type="radio" name="u2post6" value="0"> point towards mouse-pointer<br>
+
+    <p>7. ค่าพิกัดแกนนอน (แกน X) บนเวที Scratch มีค่าตั้งแต่เท่าใดถึงเท่าใด</p>
+    <input type="radio" name="u2post7" value="1"> -240 ถึง 240<br>
+    <input type="radio" name="u2post7" value="0"> -180 ถึง 180<br>
+    <input type="radio" name="u2post7" value="0"> 0 ถึง 500<br>
+    <input type="radio" name="u2post7" value="0"> -100 ถึง 100<br>
+
+    <p>8. ค่าพิกัดแกนตั้ง (แกน Y) บนเวที Scratch มีค่าตั้งแต่เท่าใดถึงเท่าใด</p>
+    <input type="radio" name="u2post8" value="1"> -180 ถึง 180<br>
+    <input type="radio" name="u2post8" value="0"> -240 ถึง 240<br>
+    <input type="radio" name="u2post8" value="0"> 0 ถึง 360<br>
+    <input type="radio" name="u2post8" value="0"> -50 ถึง 50<br>
+
+    <p>9. บล็อกคำสั่งใดทำให้ตัวละครหันกลับด้านอัตโนมัติเมื่อเดินไปชนขอบฉาก</p>
+    <input type="radio" name="u2post9" value="1"> if on edge, bounce<br>
+    <input type="radio" name="u2post9" value="0"> point in direction (90)<br>
+    <input type="radio" name="u2post9" value="0"> set rotation style left-right<br>
+    <input type="radio" name="u2post9" value="0"> move (-10) steps<br>
+
+    <p>10. หากต้องการกำหนดทิศทางให้ตัวละครหันไปทางขวาตรงกับค่าองศาเท่าใดใน Scratch</p>
+    <input type="radio" name="u2post10" value="1"> 90 องศา<br>
+    <input type="radio" name="u2post10" value="0"> 0 องศา<br>
+    <input type="radio" name="u2post10" value="0"> 180 องศา<br>
+    <input type="radio" name="u2post10" value="0"> -90 องศา<br>
+
+    <p>11. บล็อกคำสั่ง change x by (10) จะทำให้ตัวละครเกิดการเปลี่ยนแปลงอย่างไร</p>
+    <input type="radio" name="u2post11" value="1"> ขยับตำแหน่งไปทางขวาเพิ่มขึ้น 10 หน่วยตามแนวนอน<br>
+    <input type="radio" name="u2post11" value="0"> ขยับตำแหน่งขึ้นด้านบน 10 หน่วยตามแนวตั้ง<br>
+    <input type="radio" name="u2post11" value="0"> หมุนตัวไปทางขวา 10 องศา<br>
+    <input type="radio" name="u2post11" value="0"> ขยายขนาดตัวละครเพิ่มขึ้น 10%<br>
+
+    <p>12. บล็อกคำสั่งใดใช้สำหรับดึงค่าพิกัดตำแหน่งแกน X ปัจจุบันของตัวละครออกมาใช้งาน</p>
+    <input type="radio" name="u2post12" value="1"> (x position)<br>
+    <input type="radio" name="u2post12" value="0"> (y position)<br>
+    <input type="radio" name="u2post12" value="0"> (direction)<br>
+    <input type="radio" name="u2post12" value="0"> (size)<br>
+    <br>
+    <button onclick="posttest(2)">ส่งคำตอบ</button>
+    <p id="u2postScore"></p>
+  </div>
+
+  <!-- แบบประเมินความพึงพอใจ -->
+  <div class="card" id="u2survey" style="display:none;">
+    <h3>แบบประเมินความพึงพอใจ</h3>
+    <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+    <label><input type="radio" name="u2q1" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u2q1" value="4"> มาก</label><br>
+    <label><input type="radio" name="u2q1" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u2q1" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u2q1" value="1"> น้อยที่สุด</label>
+
+    <p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+    <label><input type="radio" name="u2q2" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u2q2" value="4"> มาก</label><br>
+    <label><input type="radio" name="u2q2" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u2q2" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u2q2" value="1"> น้อยที่สุด</label>
+
+    <p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+    <label><input type="radio" name="u2q3" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u2q3" value="4"> มาก</label><br>
+    <label><input type="radio" name="u2q3" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u2q3" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u2q3" value="1"> น้อยที่สุด</label>
+
+    <p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+    <label><input type="radio" name="u2q4" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u2q4" value="4"> มาก</label><br>
+    <label><input type="radio" name="u2q4" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u2q4" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u2q4" value="1"> น้อยที่สุด</label>
+    <br><br>
+    <button type="button" onclick="finish(2)">ส่งคำตอบ</button>
+    <p id="u2finish"></p>
+  </div>
+
+
+</div>
+
+<div id="unit3-content" class="unit-section">
+  <!-- แบบทดสอบก่อนเรียน หน่วยที่ 3 -->
+  <div class="card">
+    <h3>แบบทดสอบก่อนเรียน (หน่วยที่ 3 การควบคุม)</h3>
+
+    <p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
+    <input type="radio" name="u3pre1" value="1"> ใช้สำหรับควบคุมลำดับการทำงาน เงื่อนไข และการทำซ้ำของโปรแกรม<br>
+    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับเปลี่ยนสีชุดตัวละครและฉากหลัง<br>
+    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับคำนวณทางคณิตศาสตร์และตัวเลข<br>
+    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับบันทึกเสียงและดนตรีประกอบ<br>
+
+    <p>2. บล็อกคำสั่งเริ่มต้นการทำงานเมื่อคลิกธงเขียว (When Green Flag Clicked) อยู่ในหมวดหมู่ใด</p>
+    <input type="radio" name="u3pre2" value="1"> Events (เหตุการณ์)<br>
+    <input type="radio" name="u3pre2" value="0"> Control (ควบคุม)<br>
+    <input type="radio" name="u3pre2" value="0"> Motion (การเคลื่อนไหว)<br>
+    <input type="radio" name="u3pre2" value="0"> Looks (รูปร่าง)<br>
+
+    <p>3. หากต้องการให้ชุดคำสั่งภายในลูปทำงานซ้ำไปเรื่อยๆ ไม่มีที่สิ้นสุด ต้องใช้บล็อกใด</p>
+    <input type="radio" name="u3pre3" value="1"> forever<br>
+    <input type="radio" name="u3pre3" value="0"> repeat ( )<br>
+    <input type="radio" name="u3pre3" value="0"> wait ( ) secs<br>
+    <input type="radio" name="u3pre3" value="0"> stop all<br>
+
+    <p>4. หากต้องการให้ตัวละครทำซ้ำตามจำนวนครั้งที่กำหนด เช่น ทำซ้ำ 10 ครั้ง ควรใช้บล็อกใด</p>
+    <input type="radio" name="u3pre4" value="1"> repeat (10)<br>
+    <input type="radio" name="u3pre4" value="0"> forever<br>
+    <input type="radio" name="u3pre4" value="0"> wait (10) secs<br>
+    <input type="radio" name="u3pre4" value="0"> stop (all)<br>
+
+    <p>5. บล็อกคำสั่ง "wait ( ) secs" มีหน้าที่หลักตามข้อใด</p>
+    <input type="radio" name="u3pre5" value="1"> หน่วงเวลาหรือหยุดรอการทำงานชั่วคราวก่อนไปคำสั่งถัดไป<br>
+    <input type="radio" name="u3pre5" value="0"> สั่งให้โปรแกรมเริ่มทำงานใหม่ทันที<br>
+    <input type="radio" name="u3pre5" value="0"> สั่งหยุดการทำงานของสคริปต์ทั้งหมดทันที<br>
+    <input type="radio" name="u3pre5" value="0"> ตรวจจับเวลาที่ใช้ไปในการรันโปรแกรม<br>
+
+    <p>6. ข้อใดคือประโยชน์ของการใช้บล็อกการหน่วงเวลา (Wait)</p>
+    <input type="radio" name="u3pre6" value="1"> ช่วยให้การแสดงผลแอนิเมชันหรือเหตุการณ์มีความต่อเนื่องและไม่เร็วเกินไป<br>
+    <input type="radio" name="u3pre6" value="0"> ช่วยเพิ่มความเร็วในการประมวลผลของโค้ดให้สูงขึ้น<br>
+    <input type="radio" name="u3pre6" value="0"> ช่วยลดขนาดไฟล์ของโปรเจกต์ Scratch<br>
+    <input type="radio" name="u3pre6" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งการเคลื่อนไหว<br>
+
+    <p>7. หากต้องการหยุดการทำงานของสคริปต์เฉพาะตัวละครนี้หรือหยุดทั้งหมด ต้องใช้กลุ่มคำสั่งใด</p>
+    <input type="radio" name="u3pre7" value="1"> stop (all / this script)<br>
+    <input type="radio" name="u3pre7" value="0"> wait ( ) secs<br>
+    <input type="radio" name="u3pre7" value="0"> repeat until<br>
+    <input type="radio" name="u3pre7" value="0"> green flag clicked<br>
+
+    <p>8. การใช้บล็อกทำซ้ำ (Loop) มีข้อดีอย่างไรในการเขียนโปรแกรม</p>
+    <input type="radio" name="u3pre8" value="1"> ลดความซ้ำซ้อนในการเขียนบล็อกคำสั่ง และทำให้โค้ดสั้นกระชับขึ้น<br>
+    <input type="radio" name="u3pre8" value="0"> ทำให้โปรแกรมสามารถรันได้โดยไม่ต้องใช้คอมพิวเตอร์<br>
+    <input type="radio" name="u3pre8" value="0"> ช่วยแปลงโค้ดเป็นภาษา Python โดยอัตโนมัติ<br>
+    <input type="radio" name="u3pre8" value="0"> ป้องกันไม่ให้โปรแกรมเกิดข้อผิดพลาดทางคณิตศาสตร์<br>
+
+    <p>9. หากต้องการให้ตัวละครเดินไปข้างหน้า 10 ก้าว สลับกับการหยุดรอ 1 วินาที วนซ้ำแบบนี้ไปเรื่อยๆ ควรเลือกใช้บล็อกใดร่วมกัน</p>
+    <input type="radio" name="u3pre9" value="1"> forever, move steps, และ wait secs<br>
+    <input type="radio" name="u3pre9" value="0"> stop all และ go to x y<br>
+    <input type="radio" name="u3pre9" value="0"> turn degrees และ say for secs<br>
+    <input type="radio" name="u3pre9" value="0"> point in direction และ set size<br>
+
+    <p>10. บล็อกคำสั่งในกลุ่ม Control ส่วนใหญ่จะมีลักษณะเด่นทางกายภาพอย่างไร</p>
+    <input type="radio" name="u3pre10" value="1"> มีลักษณะเป็นช่องว่าง (C-shape) สำหรับนำบล็อกอื่นมาใส่ไว้ข้างใน<br>
+    <input type="radio" name="u3pre10" value="0"> มีลักษณะเป็นวงกลมสำหรับใส่ค่าตัวเลข<br>
+    <input type="radio" name="u3pre10" value="0"> มีขอบด้านบนโค้งมนและไม่มีช่องต่อ<br>
+    <input type="radio" name="u3pre10" value="0"> มีสีชมพูเข้มและมีปุ่มกดในตัว<br>
+
+    <p>11. ข้อใดกล่าวถึงความสัมพันธ์ของคำสั่งเริ่มต้น (When Green Flag Clicked) และคำสั่งควบคุม (Control) ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u3pre11" value="1"> ใช้เป็นจุดเริ่มต้นในการสั่งให้ชุดคำสั่งควบคุมและการวนซ้ำเริ่มทำงานพร้อมกัน<br>
+    <input type="radio" name="u3pre11" value="0"> ใช้สำหรับปิดโปรแกรม Scratch เมื่อกดธงเขียว<br>
+    <input type="radio" name="u3pre11" value="0"> ใช้สำหรับเปลี่ยนภาษาของโปรแกรม<br>
+    <input type="radio" name="u3pre11" value="0"> ไม่มีความเกี่ยวข้องกันในการเขียนโปรแกรม<br>
+
+    <p>12. หากต้องการหยุดสคริปต์การทำงานเฉพาะชุดคำสั่งที่กำลังทำงานอยู่ ควรเลือกตัวเลือกใดในบล็อก Stop</p>
+    <input type="radio" name="u3pre12" value="1"> this script<br>
+    <input type="radio" name="u3pre12" value="0"> all<br>
+    <input type="radio" name="u3pre12" value="0"> green flag<br>
+    <input type="radio" name="u3pre12" value="0"> repeat<br>
+    <br>
+    <button onclick="pretest(3)">ส่งคำตอบ</button>
+    <p id="u3preScore"></p>
+  </div>
+
+  <!-- เนื้อหาบทเรียน หน่วยที่ 3 -->
+  <div class="card" id="u3lesson" style="display:none;">
+    <h2>หน่วยที่ 3 การควบคุม (Control)</h2>
+    <h3>3.1 ความหมายของคำสั่งควบคุมการทำงาน</h3>
+    <p>กลุ่มคำสั่งควบคุม (Control Blocks) เป็นบล็อกคำสั่งที่มีสีส้ม ใช้สำหรับควบคุมลำดับการทำงานของโปรแกรม การสร้างเงื่อนไขทางเลือก การทำซ้ำ (Loop) รวมถึงการจัดการเวลาและการหยุดการทำงาน เพื่อให้โปรแกรมเป็นไปตามตรรกะที่ต้องการ</p>
+
+    <h3>3.2 คำสั่งเริ่มต้นการทำงาน (When Green Flag Clicked)</h3>
+    <p>เป็นคำสั่งเหตุการณ์ (Events - สีน้ำตาลอ่อน/ส้มอมเหลือง) ที่ทำหน้าที่เป็นจุดเริ่มต้นหลักของโปรแกรม เมื่อผู้ใช้คลิกที่สัญลักษณ์ธงเขียวที่มุมบนของเวที ชุดคำสั่งที่ต่ออยู่ด้านล่างจะเริ่มทำงานทันที</p>
+
+    <h3>3.3 คำสั่งการทำซ้ำ (Loop)</h3>
+    <p>ใช้สำหรับสั่งให้บล็อกคำสั่งภายในทำงานซ้ำๆ กันหลายครั้ง ช่วยลดความซ้ำซ้อนในการต่อบล็อก คำสั่งที่นิยมใช้ ได้แก่ <code>repeat ( )</code> สำหรับทำซ้ำตามจำนวนครั้งที่กำหนด และ <code>forever</code> สำหรับทำซ้ำไม่รู้จบ</p>
+
+    <h3>3.4 คำสั่งการหน่วงเวลา (Wait)</h3>
+    <p>ใช้คำสั่ง <code>wait ( ) secs</code> เพื่อหน่วงเวลาหรือหยุดรอการทำงานตามระยะเวลาที่เป็นวินาทีที่กำหนด ช่วยให้การแสดงผลแอนิเมชันหรือขั้นตอนการทำงานมีความราบรื่นและดูเป็นธรรมชาติมากขึ้น</p>
+
+    <h3>3.5 การใช้คำสั่งหยุดการทำงาน (Stop)</h3>
+    <p>ใช้บล็อก <code>stop ( )</code> เพื่อยุติการทำงานของโปรแกรม สามารถเลือกรูปแบบการหยุดได้ เช่น หยุดสคริปต์ทั้งหมด (all) หรือหยุดเฉพาะสคริปต์นี้ (this script) เพื่อควบคุมการจบการทำงานของตัวละครหรือเกมได้อย่างแม่นยำ</p>
+  </div>
+
+  <div class="card" id="u3lesson2" style="display:none;">
+    <h3>สื่อวิดีโอประกอบบทเรียน</h3>
+    <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมการทำงานในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+    <br><br>
+    <button onclick="finishLesson(3)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+  </div>
+
+  <!-- แบบทดสอบหลังเรียน หน่วยที่ 3 -->
+  <div class="card" id="u3posttest" style="display:none;">
+    <h3>แบบทดสอบหลังเรียน (หน่วยที่ 3 การควบคุม)</h3>
+
+    <p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
+    <input type="radio" name="u3post1" value="1"> ใช้สำหรับควบคุมลำดับการทำงาน เงื่อนไข และการทำซ้ำของโปรแกรม<br>
+    <input type="radio" name="u3post1" value="0"> ใช้สำหรับเปลี่ยนสีชุดตัวละครและฉากหลัง<br>
+    <input type="radio" name="u3post1" value="0"> ใช้สำหรับคำนวณทางคณิตศาสตร์และตัวเลข<br>
+    <input type="radio" name="u3post1" value="0"> ใช้สำหรับบันทึกเสียงและดนตรีประกอบ<br>
+
+    <p>2. บล็อกคำสั่งเริ่มต้นการทำงานเมื่อคลิกธงเขียว (When Green Flag Clicked) อยู่ในหมวดหมู่ใด</p>
+    <input type="radio" name="u3post2" value="1"> Events (เหตุการณ์)<br>
+    <input type="radio" name="u3post2" value="0"> Control (ควบคุม)<br>
+    <input type="radio" name="u3post2" value="0"> Motion (การเคลื่อนไหว)<br>
+    <input type="radio" name="u3post2" value="0"> Looks (รูปร่าง)<br>
+
+    <p>3. หากต้องการให้ชุดคำสั่งภายในลูปทำงานซ้ำไปเรื่อยๆ ไม่มีที่สิ้นสุด ต้องใช้บล็อกใด</p>
+    <input type="radio" name="u3post3" value="1"> forever<br>
+    <input type="radio" name="u3post3" value="0"> repeat ( )<br>
+    <input type="radio" name="u3post3" value="0"> wait ( ) secs<br>
+    <input type="radio" name="u3post3" value="0"> stop all<br>
+
+    <p>4. หากต้องการให้ตัวละครทำซ้ำตามจำนวนครั้งที่กำหนด เช่น ทำซ้ำ 10 ครั้ง ควรใช้บล็อกใด</p>
+    <input type="radio" name="u3post4" value="1"> repeat (10)<br>
+    <input type="radio" name="u3post4" value="0"> forever<br>
+    <input type="radio" name="u3post4" value="0"> wait (10) secs<br>
+    <input type="radio" name="u3post4" value="0"> stop (all)<br>
+
+    <p>5. บล็อกคำสั่ง "wait ( ) secs" มีหน้าที่หลักตามข้อใด</p>
+    <input type="radio" name="u3post5" value="1"> หน่วงเวลาหรือหยุดรอการทำงานชั่วคราวก่อนไปคำสั่งถัดไป<br>
+    <input type="radio" name="u3post5" value="0"> สั่งให้โปรแกรมเริ่มทำงานใหม่ทันที<br>
+    <input type="radio" name="u3post5" value="0"> สั่งหยุดการทำงานของสคริปต์ทั้งหมดทันที<br>
+    <input type="radio" name="u3post5" value="0"> ตรวจจับเวลาที่ใช้ไปในการรันโปรแกรม<br>
+
+    <p>6. ข้อใดคือประโยชน์ของการใช้บล็อกการหน่วงเวลา (Wait)</p>
+    <input type="radio" name="u3post6" value="1"> ช่วยให้การแสดงผลแอนิเมชันหรือเหตุการณ์มีความต่อเนื่องและไม่เร็วเกินไป<br>
+    <input type="radio" name="u3post6" value="0"> ช่วยเพิ่มความเร็วในการประมวลผลของโค้ดให้สูงขึ้น<br>
+    <input type="radio" name="u3post6" value="0"> ช่วยลดขนาดไฟล์ของโปรเจกต์ Scratch<br>
+    <input type="radio" name="u3post6" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งการเคลื่อนไหว<br>
+
+    <p>7. หากต้องการหยุดการทำงานของสคริปต์เฉพาะตัวละครนี้หรือหยุดทั้งหมด ต้องใช้กลุ่มคำสั่งใด</p>
+    <input type="radio" name="u3post7" value="1"> stop (all / this script)<br>
+    <input type="radio" name="u3post7" value="0"> wait ( ) secs<br>
+    <input type="radio" name="u3post7" value="0"> repeat until<br>
+    <input type="radio" name="u3post7" value="0"> green flag clicked<br>
+
+    <p>8. การใช้บล็อกทำซ้ำ (Loop) มีข้อดีอย่างไรในการเขียนโปรแกรม</p>
+    <input type="radio" name="u3post8" value="1"> ลดความซ้ำซ้อนในการเขียนบล็อกคำสั่ง และทำให้โค้ดสั้นกระชับขึ้น<br>
+    <input type="radio" name="u3post8" value="0"> ทำให้โปรแกรมสามารถรันได้โดยไม่ต้องใช้คอมพิวเตอร์<br>
+    <input type="radio" name="u3post8" value="0"> ช่วยแปลงโค้ดเป็นภาษา Python โดยอัตโนมัติ<br>
+    <input type="radio" name="u3post8" value="0"> ป้องกันไม่ให้โปรแกรมเกิดข้อผิดพลาดทางคณิตศาสตร์<br>
+
+    <p>9. หากต้องการให้ตัวละครเดินไปข้างหน้า 10 ก้าว สลับกับการหยุดรอ 1 วินาที วนซ้ำแบบนี้ไปเรื่อยๆ ควรเลือกใช้บล็อกใดร่วมกัน</p>
+    <input type="radio" name="u3post9" value="1"> forever, move steps, และ wait secs<br>
+    <input type="radio" name="u3post9" value="0"> stop all และ go to x y<br>
+    <input type="radio" name="u3post9" value="0"> turn degrees และ say for secs<br>
+    <input type="radio" name="u3post9" value="0"> point in direction และ set size<br>
+
+    <p>10. บล็อกคำสั่งในกลุ่ม Control ส่วนใหญ่จะมีลักษณะเด่นทางกายภาพอย่างไร</p>
+    <input type="radio" name="u3post10" value="1"> มีลักษณะเป็นช่องว่าง (C-shape) สำหรับนำบล็อกอื่นมาใส่ไว้ข้างใน<br>
+    <input type="radio" name="u3post10" value="0"> มีลักษณะเป็นวงกลมสำหรับใส่ค่าตัวเลข<br>
+    <input type="radio" name="u3post10" value="0"> มีขอบด้านบนโค้งมนและไม่มีช่องต่อ<br>
+    <input type="radio" name="u3post10" value="0"> มีสีชมพูเข้มและมีปุ่มกดในตัว<br>
+
+    <p>11. ข้อใดกล่าวถึงความสัมพันธ์ของคำสั่งเริ่มต้น (When Green Flag Clicked) และคำสั่งควบคุม (Control) ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u3post11" value="1"> ใช้เป็นจุดเริ่มต้นในการสั่งให้ชุดคำสั่งควบคุมและการวนซ้ำเริ่มทำงานพร้อมกัน<br>
+    <input type="radio" name="u3post11" value="0"> ใช้สำหรับปิดโปรแกรม Scratch เมื่อกดธงเขียว<br>
+    <input type="radio" name="u3post11" value="0"> ใช้สำหรับเปลี่ยนภาษาของโปรแกรม<br>
+    <input type="radio" name="u3post11" value="0"> ไม่มีความเกี่ยวข้องกันในการเขียนโปรแกรม<br>
+
+    <p>12. หากต้องการหยุดสคริปต์การทำงานเฉพาะชุดคำสั่งที่กำลังทำงานอยู่ ควรเลือกตัวเลือกใดในบล็อก Stop</p>
+    <input type="radio" name="u3post12" value="1"> this script<br>
+    <input type="radio" name="u3post12" value="0"> all<br>
+    <input type="radio" name="u3post12" value="0"> green flag<br>
+    <input type="radio" name="u3post12" value="0"> repeat<br>
+    <br>
+    <button onclick="posttest(3)">ส่งคำตอบ</button>
+    <p id="u3postScore"></p>
+  </div>
+
+  <!-- แบบประเมินความพึงพอใจ หน่วยที่ 3 -->
+  <div class="card" id="u3survey" style="display:none;">
+    <h3>แบบประเมินความพึงพอใจ (หน่วยที่ 3)</h3>
+    <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+    <label><input type="radio" name="u3q1" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u3q1" value="4"> มาก</label><br>
+    <label><input type="radio" name="u3q1" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u3q1" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u3q1" value="1"> น้อยที่สุด</label>
+
+    <p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+    <label><input type="radio" name="u3q2" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u3q2" value="4"> มาก</label><br>
+    <label><input type="radio" name="u3q2" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u3q2" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u3q2" value="1"> น้อยที่สุด</label>
+
+    <p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+    <label><input type="radio" name="u3q3" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u3q3" value="4"> มาก</label><br>
+    <label><input type="radio" name="u3q3" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u3q3" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u3q3" value="1"> น้อยที่สุด</label>
+
+    <p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+    <label><input type="radio" name="u3q4" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u3q4" value="4"> มาก</label><br>
+    <label><input type="radio" name="u3q4" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u3q4" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u3q4" value="1"> น้อยที่สุด</label>
+    <br><br>
+    <button type="button" onclick="finish(3)">ส่งคำตอบ</button>
+    <p id="u3finish"></p>
+  </div>
+
+
+</div>
+
+<div id="unit4-content" class="unit-section">
+    <!-- ================= แบบทดสอบก่อนเรียน ================= -->
+    <div class="card">
+    <h3>แบบทดสอบก่อนเรียน (หน่วยที่ 4 ตัวแปร)</h3>
+
+    <p>1. ข้อใดให้ความหมายของ "ตัวแปร (Variable)" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u4pre1" value="1"> พื้นที่ในหน่วยความจำสำหรับเก็บข้อมูลที่สามารถเปลี่ยนแปลงค่าได้ตลอดการทำงาน<br>
+    <input type="radio" name="u4pre1" value="0"> บล็อกคำสั่งสำหรับเปลี่ยนสีฉากหลังเวทีโดยอัตโนมัติ<br>
+    <input type="radio" name="u4pre1" value="0"> เครื่องมือสำหรับบันทึกเสียงพูดของตัวละคร<br>
+    <input type="radio" name="u4pre1" value="0"> ค่าคงที่ที่ไม่สามารถเปลี่ยนแปลงได้ตลอดการรันโปรแกรม<br>
+
+    <p>2. หากต้องการสร้างตัวแปรใหม่ขึ้นมาใช้งานในโปรแกรม Scratch ต้องไปที่หมวดหมู่บล็อกใด</p>
+    <input type="radio" name="u4pre2" value="1"> Variables (ตัวแปร)<br>
+    <input type="radio" name="u4pre2" value="0"> Operators (ตัวดำเนินการ)<br>
+    <input type="radio" name="u4pre2" value="0"> Sensing (การรับรู้)<br>
+    <input type="radio" name="u4pre2" value="0"> Events (เหตุการณ์)<br>
+
+    <p>3. เมื่อสร้างตัวแปรขึ้นมาใหม่ใน Scratch บล็อกคำสั่งที่เกี่ยวข้องกับตัวแปรจะมีลักษณะเป็นสีใด</p>
+    <input type="radio" name="u4pre3" value="1"> สีส้มเข้ม / สีส้มแดง<br>
+    <input type="radio" name="u4pre3" value="0"> สีฟ้าเข้ม<br>
+    <input type="radio" name="u4pre3" value="0"> สีเขียวอ่อน<br>
+    <input type="radio" name="u4pre3" value="0"> สีม่วง<br>
+
+    <p>4. บล็อกคำสั่งใดใช้สำหรับกำหนดค่าเริ่มต้นให้กับตัวแปร เช่น กำหนดให้ตัวแปร score มีค่าเท่ากับ 0</p>
+    <input type="radio" name="u4pre4" value="1"> set [score v] to (0)<br>
+    <input type="radio" name="u4pre4" value="0"> change [score v] by (1)<br>
+    <input type="radio" name="u4pre4" value="0"> show variable [score v]<br>
+    <input type="radio" name="u4pre4" value="0"> hide variable [score v]<br>
+
+    <p>5. หากต้องการเพิ่มค่าคะแนนทีละ 1 แต้มเมื่อตัวละครเก็บเหรียญได้ ควรใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u4pre5" value="1"> change [score v] by (1)<br>
+    <input type="radio" name="u4pre5" value="0"> set [score v] to (1)<br>
+    <input type="radio" name="u4pre5" value="0"> add (1) to [score v]<br>
+    <input type="radio" name="u4pre5" value="0"> join [score v] (1)<br>
+
+    <p>6. หากต้องการลดค่าพลังชีวิต (HP) ลงทีละ 10 เมื่อตัวละครถูกโจมตี ควรใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u4pre6" value="1"> change [HP v] by (-10)<br>
+    <input type="radio" name="u4pre6" value="0"> set [HP v] to (-10)<br>
+    <input type="radio" name="u4pre6" value="0"> change [HP v] by (10)<br>
+    <input type="radio" name="u4pre6" value="0"> set [HP v] to (10)<br>
+
+    <p>7. การแสดงค่าตัวแปรบนหน้าจอเวที (Stage) สามารถทำได้โดยวิธีใด</p>
+    <input type="radio" name="u4pre7" value="1"> ทำเครื่องหมายถูก (Tick) ที่หน้าชื่อตัวแปรในหมวดหมู่ Variables หรือใช้บล็อก show variable<br>
+    <input type="radio" name="u4pre7" value="0"> พิมพ์ชื่อตัวแปรลงในบล็อก Motion เท่านั้น<br>
+    <input type="radio" name="u4pre7" value="0"> ต้องสร้างตัวละครใหม่ขึ้นมาเพื่อแสดงผลข้อความแทน<br>
+    <input type="radio" name="u4pre7" value="0"> ตัวแปรจะแสดงบนหน้าจอโดยอัตโนมัติเสมอโดยไม่ต้องตั้งค่าใดๆ<br>
+
+    <p>8. ข้อใดคือประโยชน์หลักของการใช้ตัวแปรในการสร้างเกมด้วย Scratch</p>
+    <input type="radio" name="u4pre8" value="1"> ช่วยในการเก็บบันทึกและติดตามข้อมูล เช่น คะแนน เวลา หรือพลังชีวิตของเกม<br>
+    <input type="radio" name="u4pre8" value="0"> ช่วยให้โปรแกรมรันอินเทอร์เน็ตได้เร็วขึ้น<br>
+    <input type="radio" name="u4pre8" value="0"> ช่วยลดขั้นตอนการวาดภาพตัวละคร<br>
+    <input type="radio" name="u4pre8" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งควบคุมเงื่อนไข<br>
+
+    <p>9. หากต้องการซ่อนไม่ให้ตัวแปรแสดงอยู่บนหน้าจอเวที (Stage) ต้องใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u4pre9" value="1"> hide variable [variable name v]<br>
+    <input type="radio" name="u4pre9" value="0"> show variable [variable name v]<br>
+    <input type="radio" name="u4pre9" value="0"> set [variable name v] to (0)<br>
+    <input type="radio" name="u4pre9" value="0"> stop all<br>
+
+    <p>10. ตัวเลือกใดในการสร้างตัวแปรที่ระบุว่าตัวแปรนี้ใช้งานได้สำหรับทุกตัวละครหรือเฉพาะตัวละครนี้เท่านั้น</p>
+    <input type="radio" name="u4pre10" value="1"> For all sprites / For this sprite only<br>
+    <input type="radio" name="u4pre10" value="0"> Public / Private<br>
+    <input type="radio" name="u4pre10" value="0"> Global / Local function<br>
+    <input type="radio" name="u4pre10" value="0"> Main / Sub sprite<br>
+
+    <p>11. หากเราต้องการนำค่าที่เก็บอยู่ในตัวแปรไปแสดงร่วมกับคำพูดของตัวละคร ควรนำบล็อกตัวแปรไปใส่ไว้ที่ใด</p>
+    <input type="radio" name="u4pre11" value="1"> ช่องข้อความของบล็อกพูด (say ... for ... secs)<br>
+    <input type="radio" name="u4pre11" value="0"> ช่องจำนวนก้าวของบล็อกเคลื่อนไหว (move ... steps)<br>
+    <input type="radio" name="u4pre11" value="0"> ช่องสีของบล็อกรูปร่าง (change color effect)<br>
+    <input type="radio" name="u4pre11" value="0"> ไม่สามารถนำตัวแปรไปใช้ร่วมกับบล็อกพูดได้<br>
+
+    <p>12. ข้อใดกล่าวถึงความแตกต่างระหว่างคำสั่ง `set` และ `change` ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u4pre12" value="1"> set ใช้กำหนดค่าตายตัว ส่วน change ใช้เพิ่มหรือลดค่าจากค่าเดิมที่มีอยู่<br>
+    <input type="radio" name="u4pre12" value="0"> set ใช้ลบตัวแปร ส่วน change ใช้สร้างตัวแปรใหม่<br>
+    <input type="radio" name="u4pre12" value="0"> set ใช้กับตัวเลข ส่วน change ใช้กับตัวอักษรเท่านั้น<br>
+    <input type="radio" name="u4pre12" value="0"> ทั้งสองคำสั่งมีหน้าที่และการทำงานเหมือนกันทุกประการ<br>
+    <br>
+
+    <button onclick="pretest(4)">ส่งคำตอบ</button>
+    <p id="u4preScore" class="result"></p>
+    </div>
+
+    <!-- ================= เนื้อหาบทเรียน ================= -->
+    <div class="card" id="u4lesson" style="display:none;">
+    <h2>หน่วยที่ 4 ตัวแปร (Variables)</h2>
+    <h3>4.1 ความหมายของตัวแปร</h3>
+    <p>ตัวแปร (Variable) คือ พื้นที่ในหน่วยความจำของคอมพิวเตอร์ที่ถูกจองไว้สำหรับเก็บข้อมูล ค่าตัวเลข หรือข้อความ ซึ่งค่าเหล่านี้สามารถเปลี่ยนแปลง เพิ่มขึ้น ลดลง หรือถูกกำหนดใหม่ได้ตลอดเวลาในขณะที่โปรแกรมกำลังทำงาน เหมาะสำหรับการเก็บข้อมูลจำพวกคะแนน คะแนนชีวิต (HP) หรือเวลานับถอยหลัง</p>
+
+    <h3>4.2 การสร้างตัวแปรใน Scratch</h3>
+    <p>การสร้างตัวแปรในโปรแกรม Scratch สามารถทำได้โดยไปที่กลุ่มบล็อกสีส้มเข้ม <strong>Variables (ตัวแปร)</strong> แล้วคลิกที่ปุ่ม <strong>Make a Variable (สร้างตัวแปร)</strong> จากนั้นตั้งชื่อตัวแปร และเลือกระดับการใช้งานว่าต้องการให้ใช้ได้กับทุกตัวละคร (For all sprites) หรือใช้เฉพาะตัวละครนี้เท่านั้น (For this sprite only)</p>
+
+    <h3>4.3 การกำหนดค่าให้ตัวแปร</h3>
+    <p>เมื่อต้องการกำหนดค่าเริ่มต้นให้กับตัวแปร เช่น การตั้งค่าคะแนนเริ่มต้นเป็น 0 เมื่อเริ่มเกมใหม่ จะใช้บล็อกคำสั่ง <code>set [ชื่อตัวแปร v] to (0)</code> เพื่อกำหนดค่าเจาะจงลงไปในตัวแปรทันที นิยมวางไว้ใต้บล็อกเริ่มทำงาน (When Green Flag Clicked)</p>
+
+    <h3>4.4 การเปลี่ยนค่าของตัวแปร</h3>
+    <p>การปรับเปลี่ยนค่าของตัวแปรระหว่างที่โปรแกรมรันอยู่ เช่น เมื่อตัวละครเก็บไอเทมได้แล้วคะแนนเพิ่มขึ้น หรือโดนโจมตีแล้วเลือดลดลง จะใช้บล็อกคำสั่ง <code>change [ชื่อตัวแปร v] by (จำนวนที่ต้องการ)</code> ซึ่งจะช่วยเพิ่มหรือลดค่าจากค่าเดิมที่มีอยู่ เช่น <code>change [score v] by (1)</code> หรือ <code>change [HP v] by (-10)</code></p>
+
+    <h3>4.5 การแสดงค่าตัวแปรบนหน้าจอ</h3>
+    <p>ค่าที่เก็บไว้ในตัวสามารถนำมาแสดงผลให้ผู้เล่นมองเห็นบนหน้าจอเวที (Stage) ได้ โดยการติ๊กเครื่องหมายถูกที่หน้าชื่อตัวแปรในหมวด Variables หรือใช้บล็อกคำสั่ง <code>show variable [ชื่อตัวแปร v]</code> เพื่อแสดงผล และใช้บล็อก <code>hide variable [ชื่อตัวแปร v]</code> เมื่อต้องการซ่อนไม่ให้แสดงบนหน้าจอ</p>
+    </div>
+
+    <div class="card" id="u4lesson2" style="display:none;">
+    <h3>สื่อวิดีโอประกอบบทเรียน</h3>
+    <p>ศึกษาเพิ่มเติมเกี่ยวกับการใช้งานตัวแปร (Variables) ในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+    <br><br>
+    <button onclick="finishLesson(4)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+    </div>
+
+    <!-- ================= แบบทดสอบหลังเรียน ================= -->
+    <div class="card" id="u4posttest" style="display:none;">
+    <h3>แบบทดสอบหลังเรียน (หน่วยที่ 4 ตัวแปร)</h3>
+
+    <p>1. ข้อใดให้ความหมายของ "ตัวแปร (Variable)" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u4post1" value="1"> พื้นที่ในหน่วยความจำสำหรับเก็บข้อมูลที่สามารถเปลี่ยนแปลงค่าได้ตลอดการทำงาน<br>
+    <input type="radio" name="u4post1" value="0"> บล็อกคำสั่งสำหรับเปลี่ยนสีฉากหลังเวทีโดยอัตโนมัติ<br>
+    <input type="radio" name="u4post1" value="0"> เครื่องมือสำหรับบันทึกเสียงพูดของตัวละคร<br>
+    <input type="radio" name="u4post1" value="0"> ค่าคงที่ที่ไม่สามารถเปลี่ยนแปลงได้ตลอดการรันโปรแกรม<br>
+
+    <p>2. หากต้องการสร้างตัวแปรใหม่ขึ้นมาใช้งานในโปรแกรม Scratch ต้องไปที่หมวดหมู่บล็อกใด</p>
+    <input type="radio" name="u4post2" value="1"> Variables (ตัวแปร)<br>
+    <input type="radio" name="u4post2" value="0"> Operators (ตัวดำเนินการ)<br>
+    <input type="radio" name="u4post2" value="0"> Sensing (การรับรู้)<br>
+    <input type="radio" name="u4post2" value="0"> Events (เหตุการณ์)<br>
+
+    <p>3. เมื่อสร้างตัวแปรขึ้นมาใหม่ใน Scratch บล็อกคำสั่งที่เกี่ยวข้องกับตัวแปรจะมีลักษณะเป็นสีใด</p>
+    <input type="radio" name="u4post3" value="1"> สีส้มเข้ม / สีส้มแดง<br>
+    <input type="radio" name="u4post3" value="0"> สีฟ้าเข้ม<br>
+    <input type="radio" name="u4post3" value="0"> สีเขียวอ่อน<br>
+    <input type="radio" name="u4post3" value="0"> สีม่วง<br>
+
+    <p>4. บล็อกคำสั่งใดใช้สำหรับกำหนดค่าเริ่มต้นให้กับตัวแปร เช่น กำหนดให้ตัวแปร score มีค่าเท่ากับ 0</p>
+    <input type="radio" name="u4post4" value="1"> set [score v] to (0)<br>
+    <input type="radio" name="u4post4" value="0"> change [score v] by (1)<br>
+    <input type="radio" name="u4post4" value="0"> show variable [score v]<br>
+    <input type="radio" name="u4post4" value="0"> hide variable [score v]<br>
+
+    <p>5. หากต้องการเพิ่มค่าคะแนนทีละ 1 แต้มเมื่อตัวละครเก็บเหรียญได้ ควรใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u4post5" value="1"> change [score v] by (1)<br>
+    <input type="radio" name="u4post5" value="0"> set [score v] to (1)<br>
+    <input type="radio" name="u4post5" value="0"> add (1) to [score v]<br>
+    <input type="radio" name="u4post5" value="0"> join [score v] (1)<br>
+
+    <p>6. หากต้องการลดค่าพลังชีวิต (HP) ลงทีละ 10 เมื่อตัวละครถูกโจมตี ควรใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u4post6" value="1"> change [HP v] by (-10)<br>
+    <input type="radio" name="u4post6" value="0"> set [HP v] to (-10)<br>
+    <input type="radio" name="u4post6" value="0"> change [HP v] by (10)<br>
+    <input type="radio" name="u4post6" value="0"> set [HP v] to (10)<br>
+
+    <p>7. การแสดงค่าตัวแปรบนหน้าจอเวที (Stage) สามารถทำได้โดยวิธีใด</p>
+    <input type="radio" name="u4post7" value="1"> ทำเครื่องหมายถูก (Tick) ที่หน้าชื่อตัวแปรในหมวดหมู่ Variables หรือใช้บล็อก show variable<br>
+    <input type="radio" name="u4post7" value="0"> พิมพ์ชื่อตัวแปรลงในบล็อก Motion เท่านั้น<br>
+    <input type="radio" name="u4post7" value="0"> ต้องสร้างตัวละครใหม่ขึ้นมาเพื่อแสดงผลข้อความแทน<br>
+    <input type="radio" name="u4post7" value="0"> ตัวแปรจะแสดงบนหน้าจอโดยอัตโนมัติเสมอโดยไม่ต้องตั้งค่าใดๆ<br>
+
+    <p>8. ข้อใดคือประโยชน์หลักของการใช้ตัวแปรในการสร้างเกมด้วย Scratch</p>
+    <input type="radio" name="u4post8" value="1"> ช่วยในการเก็บบันทึกและติดตามข้อมูล เช่น คะแนน เวลา หรือพลังชีวิตของเกม<br>
+    <input type="radio" name="u4post8" value="0"> ช่วยให้โปรแกรมรันอินเทอร์เน็ตได้เร็วขึ้น<br>
+    <input type="radio" name="u4post8" value="0"> ช่วยลดขั้นตอนการวาดภาพตัวละคร<br>
+    <input type="radio" name="u4post8" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งควบคุมเงื่อนไข<br>
+
+    <p>9. หากต้องการซ่อนไม่ให้ตัวแปรแสดงอยู่บนหน้าจอเวที (Stage) ต้องใช้บล็อกคำสั่งใด</p>
+    <input type="radio" name="u4post9" value="1"> hide variable [variable name v]<br>
+    <input type="radio" name="u4post9" value="0"> show variable [variable name v]<br>
+    <input type="radio" name="u4post9" value="0"> set [variable name v] to (0)<br>
+    <input type="radio" name="u4post9" value="0"> stop all<br>
+
+    <p>10. ตัวเลือกใดในการสร้างตัวแปรที่ระบุว่าตัวแปรนี้ใช้งานได้สำหรับทุกตัวละครหรือเฉพาะตัวละครนี้เท่านั้น</p>
+    <input type="radio" name="u4post10" value="1"> For all sprites / For this sprite only<br>
+    <input type="radio" name="u4post10" value="0"> Public / Private<br>
+    <input type="radio" name="u4post10" value="0"> Global / Local function<br>
+    <input type="radio" name="u4post10" value="0"> Main / Sub sprite<br>
+
+    <p>11. หากเราต้องการนำค่าที่เก็บอยู่ในตัวแปรไปแสดงร่วมกับคำพูดของตัวละคร ควรนำบล็อกตัวแปรไปใส่ไว้ที่ใด</p>
+    <input type="radio" name="u4post11" value="1"> ช่องข้อความของบล็อกพูด (say ... for ... secs)<br>
+    <input type="radio" name="u4post11" value="0"> ช่องจำนวนก้าวของบล็อกเคลื่อนไหว (move ... steps)<br>
+    <input type="radio" name="u4post11" value="0"> ช่องสีของบล็อกรูปร่าง (change color effect)<br>
+    <input type="radio" name="u4post11" value="0"> ไม่สามารถนำตัวแปรไปใช้ร่วมกับบล็อกพูดได้<br>
+
+    <p>12. ข้อใดกล่าวถึงความแตกต่างระหว่างคำสั่ง `set` และ `change` ได้ถูกต้องที่สุด</p>
+    <input type="radio" name="u4post12" value="1"> set ใช้กำหนดค่าตายตัว ส่วน change ใช้เพิ่มหรือลดค่าจากค่าเดิมที่มีอยู่<br>
+    <input type="radio" name="u4post12" value="0"> set ใช้ลบตัวแปร ส่วน change ใช้สร้างตัวแปรใหม่<br>
+    <input type="radio" name="u4post12" value="0"> set ใช้กับตัวเลข ส่วน change ใช้กับตัวอักษรเท่านั้น<br>
+    <input type="radio" name="u4post12" value="0"> ทั้งสองคำสั่งมีหน้าที่และการทำงานเหมือนกันทุกประการ<br>
+    <br>
+
+    <button onclick="posttest(4)">ส่งคำตอบ</button>
+    <p id="u4postScore" class="result"></p>
+    </div>
+
+    <!-- ================= แบบประเมินความพึงพอใจ ================= -->
+    <div class="card" id="u4survey" style="display:none;">
+    <h3>แบบประเมินความพึงพอใจ</h3>
+    <section>
+    <h2>แบบประเมินความพึงพอใจของนักเรียน</h2>
+    <form>
+    <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+    <label><input type="radio" name="u4q1" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u4q1" value="4"> มาก</label><br>
+    <label><input type="radio" name="u4q1" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u4q1" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u4q1" value="1"> น้อยที่สุด</label>
+
+    <p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+    <label><input type="radio" name="u4q2" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u4q2" value="4"> มาก</label><br>
+    <label><input type="radio" name="u4q2" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u4q2" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u4q2" value="1"> น้อยที่สุด</label>
+
+    <p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+    <label><input type="radio" name="u4q3" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u4q3" value="4"> มาก</label><br>
+    <label><input type="radio" name="u4q3" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u4q3" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u4q3" value="1"> น้อยที่สุด</label>
+
+    <p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+    <label><input type="radio" name="u4q4" value="5"> มากที่สุด</label><br>
+    <label><input type="radio" name="u4q4" value="4"> มาก</label><br>
+    <label><input type="radio" name="u4q4" value="3"> ปานกลาง</label><br>
+    <label><input type="radio" name="u4q4" value="2"> น้อย</label><br>
+    <label><input type="radio" name="u4q4" value="1"> น้อยที่สุด</label>
+
+    <br><br>
+    <button type="button" onclick="finish(4)">ส่งคำตอบ</button>
+    <p id="u4finish"></p>
+    </form>
+    </section>
+    </div>
+
+
+</div>
+
+<div id="unit5-content" class="unit-section">
+<!-- ================= แบบทดสอบก่อนเรียน ================= -->
+<div class="card">
+<h3>แบบทดสอบก่อนเรียน (หน่วยที่ 5 เงื่อนไข)</h3>
+
+<p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
+<input type="radio" name="u5pre1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
+<input type="radio" name="u5pre1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายๆ รอบโดยอัตโนมัติ<br>
+<input type="radio" name="u5pre1" value="0"> เครื่องมือสำหรับสร้างตัวแปรเพื่อเก็บคะแนนในเกม<br>
+<input type="radio" name="u5pre1" value="0"> คำสั่งสำหรับหยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
+
+<p>2. ในโปรแกรม Scratch บล็อกคำสั่งควบคุมเงื่อนไข (Control) จะอยู่ในกลุ่มบล็อกสีใด</p>
+<input type="radio" name="u5pre2" value="1"> สีส้ม (Control)<br>
+<input type="radio" name="u5pre2" value="0"> สีฟ้าเข้ม (Motion)<br>
+<input type="radio" name="u5pre2" value="0"> สีเขียวอ่อน (Operators)<br>
+<input type="radio" name="u5pre2" value="0"> สีม่วง (Looks)<br>
+
+<p>3. ลักษณะของบล็อกเงื่อนไขแบบ `if` ใน Scratch มีรูปร่างอย่างไรเพื่อให้สามารถนำบล็อกเงื่อนไขย่อยไปใส่ข้างในได้</p>
+<input type="radio" name="u5pre3" value="1"> มีช่องว่างรูปหกเหลี่ยมสำหรับใส่เงื่อนไข และมีช่องว่างด้านในสำหรับใส่บล็อกคำสั่ง<br>
+<input type="radio" name="u5pre3" value="0"> เป็นบล็อกสี่เหลี่ยมผืนผ้าเรียบๆ ไม่มีช่องว่างด้านใน<br>
+<input type="radio" name="u5pre3" value="0"> เป็นบล็อกวงกลมมนสำหรับใส่ตัวเลขเท่านั้น<br>
+<input type="radio" name="u5pre3" value="0"> เป็นบล็อกปลายแหลมสำหรับส่งค่าข้อมูลออกไป<br>
+
+<p>4. หากต้องการตรวจสอบว่าถ้าเงื่อนไขเป็นจริงให้ทำคำสั่งด้านใน แต่ถ้าเป็นเท็จจะไม่ทำอะไรเลย ควรใช้บล็อกใด</p>
+<input type="radio" name="u5pre4" value="1"> `if <...> then` <br>
+<input type="radio" name="u5pre4" value="0"> `if <...> then ... else ...` <br>
+<input type="radio" name="u5pre4" value="0"> `repeat <...>` <br>
+<input type="radio" name="u5pre4" value="0"> `forever` <br>
+
+<p>5. บล็อกคำสั่ง `if-else` มีความแตกต่างจากบล็อก `if` ทั่วไปอย่างไร</p>
+<input type="radio" name="u5pre5" value="1"> มีทางเลือกสำรองให้ทำงานเมื่อเงื่อนไขเป็นเท็จ (False)<br>
+<input type="radio" name="u5pre5" value="0"> ใช้สำหรับวนซ้ำจำนวนรอบที่แน่นอนเท่านั้น<br>
+<input type="radio" name="u5pre5" value="0"> ไม่จำเป็นต้องใส่เงื่อนไขทางเข้า<br>
+<input type="radio" name="u5pre5" value="0"> ใช้สำหรับสร้างตัวแปรเสริมในระบบ<br>
+
+<p>6. บล็อกตัวดำเนินการเปรียบเทียบ (Operators) ที่ใช้ตรวจสอบว่าค่าสองค่าเท่ากันหรือไม่ มีลักษณะเครื่องหมายอย่างไรใน Scratch</p>
+<input type="radio" name="u5pre6" value="1"> [ ] = [ ] <br>
+<input type="radio" name="u5pre6" value="0"> [ ] < [ ] <br>
+<input type="radio" name="u5pre6" value="0"> [ ] > [ ] <br>
+<input type="radio" name="u5pre6" value="0"> [ ] + [ ] <br>
+
+<p>7. หากต้องการตรวจสอบว่าคะแนนมากกว่าหรือเท่ากับ 50 หรือไม่ ควรใช้บล็อกตัวดำเนินการใด</p>
+<input type="radio" name="u5pre7" value="1"> [ ] > [ ] (ร่วมกับการเปรียบเทียบ หรือใช้บล็อกตามเงื่อนไขเหมาะสม)<br>
+<input type="radio" name="u5pre7" value="0"> [ ] = [ ] <br>
+<input type="radio" name="u5pre7" value="0"> join [ ] [ ] <br>
+<input type="radio" name="u5pre7" value="0"> pick random (1) to (10)<br>
+
+<p>8. บล็อกรูปหกเหลี่ยมสีเขียวอ่อนที่มีเครื่องหมาย `and`, `or`, `not` จัดอยู่ในกลุ่มบล็อกใด</p>
+<input type="radio" name="u5pre8" value="1"> Operators (ตัวดำเนินการ)<br>
+<input type="radio" name="u5pre8" value="0"> Control (ควบคุม)<br>
+<input type="radio" name="u5pre8" value="0"> Sensing (การรับรู้)<br>
+<input type="radio" name="u5pre8" value="0"> Variables (ตัวแปร)<br>
+
+<p>9. หากต้องการตรวจสอบว่าตัวละครสัมผัสกับขอบฉาก (Edge) หรือไม่ ควรใช้บล็อกเงื่อนไขร่วมกับบล็อกใดจากหมวด Sensing</p>
+<input type="radio" name="u5pre9" value="1"> <touching [edge v]?> <br>
+<input type="radio" name="u5pre9" value="0"> <key [space v] pressed?> <br>
+<input type="radio" name="u5pre9" value="0"> <mouse down?> <br>
+<input type="radio" name="u5pre9" value="0"> (timer) <br>
+
+<p>10. การนำเงื่อนไขมาใช้ร่วมกับตัวแปร เช่น ตรวจสอบว่า `[score] = 10` แล้วให้แสดงข้อความชนะเกม มีประโยชน์อย่างไร</p>
+<input type="radio" name="u5pre10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยนการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
+<input type="radio" name="u5pre10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
+<input type="radio" name="u5pre10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
+<input type="radio" name="u5pre10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
+
+<p>11. ข้อใดกล่าวถึงการทำงานของบล็อก `if-else` ได้ถูกต้องที่สุดเมื่อเงื่อนไขเป็นเท็จ</p>
+<input type="radio" name="u5pre11" value="1"> จะเข้าไปทำชุดคำสั่งที่อยู่ภายในช่อง `else`<br>
+<input type="radio" name="u5pre11" value="0"> จะข้ามการทำงานทั้งหมดและปิดโปรแกรม<br>
+<input type="radio" name="u5pre11" value="0"> จะวนกลับไปตรวจเงื่อนไขใหม่ซ้ำทันทีอย่างไร้ขีดจำกัด<br>
+<input type="radio" name="u5pre11" value="0"> จะทำการลบตัวแปรทั้งหมดทิ้ง<br>
+
+<p>12. สถานการณ์ใดเหมาะสมที่สุดกับการเลือกใช้คำสั่งเงื่อนไขแบบ `if-else`</p>
+<input type="radio" name="u5pre12" value="1"> ตรวจสอบคำตอบว่าถูกต้องให้แสดงว่า "Correct" แต่ถ้าผิดให้แสดงว่า "Try again"<br>
+<input type="radio" name="u5pre12" value="0"> สั่งให้ตัวละครเดินหน้าไปข้างหน้า 10 ก้าว ทุกครั้งที่กดปุ่ม<br>
+<input type="radio" name="u5pre12" value="0"> ตั้งค่าคะแนนเริ่มต้นให้เป็น 0 ตอนเริ่มเกม<br>
+<input type="radio" name="u5pre12" value="0"> สร้างตัวละครแมวขึ้นมาบนหน้าจอเวที<br>
+<br>
+
+<button onclick="pretest(5)">ส่งคำตอบ</button>
+<p id="u5preScore" class="result"></p>
+</div>
+
+<!-- ================= เนื้อหาบทเรียน ================= -->
+<div class="card" id="u5lesson" style="display:none;">
+<h2>หน่วยที่ 5 เงื่อนไข (Conditions)</h2>
+
+<h3>5.1 ความหมายของคำสั่งเงื่อนไข</h3>
+<p>คำสั่งเงื่อนไข (Conditional Statement) คือ คำสั่งที่ใช้สำหรับตัดสินใจและควบคุมการทำงานของโปรแกรมให้เลือกกระทำเส้นทางใดเส้นทางหนึ่ง ตามผลลัพธ์ของการตรวจสอบเงื่อนไขว่าเป็นจริง (True) หรือเป็นเท็จ (False) เปรียบเสมือนการตัดสินใจในชีวิตประจำวัน เช่น "ถ้าฝนตก จะกางร่ม แต่ถ้าฝนไม่ตก จะไม่กางร่ม"</p>
+
+<h3>5.2 คำสั่ง If</h3>
+<p>คำสั่ง <code>if &lt;...&gt; then</code> เป็นคำสั่งเงื่อนไขพื้นฐาน ใช้สำหรับตรวจสอบเงื่อนไข หากผลลัพธ์การตรวจสอบเป็นจริง (True) โปรแกรมจะทำชุดคำสั่งที่อยู่ภายในบล็อก <code>if</code> นั้น แต่ถ้าผลลัพธ์เป็นเท็จ (False) โปรแกรมจะข้ามคำสั่งนั้นไปทำคำสั่งถัดไปโดยไม่มีการทำงานสำรอง</p>
+
+<h3>5.3 คำสั่ง If–Else</h3>
+<p>คำสั่ง <code>if &lt;...&gt; then ... else ...</code> เป็นคำสั่งเงื่อนไขทางเลือก เมื่อมีการตรวจสอบเงื่อนไขแล้ว หากเป็นจริงจะทำงานในส่วนของ <code>then</code> แต่หากเงื่อนไขเป็นเท็จ โปรแกรมจะหันไปทำงานในส่วนชุดคำสั่งที่อยู่ภายในช่อง <code>else</code> แทน ช่วยให้สามารถจัดการทางเลือกได้ครบทั้งสองกรณี</p>
+
+<h3>5.4 การใช้ตัวดำเนินการเปรียบเทียบ</h3>
+<p>การสร้างเงื่อนไขใน Scratch จำเป็นต้องอาศัยกลุ่มบล็อกสีเขียวอ่อน <strong>Operators (ตัวดำเนินการ)</strong> เข้ามาช่วยในการเปรียบเทียบข้อมูล เช่น เครื่องหมายมากกว่า (<code>&gt;</code>), น้อยกว่า (<code>&lt;</code>), หรือเท่ากับ (<code>=</code>) รวมถึงตัวดำเนินการทางตรรกะ เช่น <code>and</code>, <code>or</code> และ <code>not</code> เพื่อสร้างเงื่อนไขที่ซับซ้อนและแม่นยำยิ่งขึ้น</p>
+
+<h3>5.5 การใช้เงื่อนไขร่วมกับตัวแปร</h3>
+<p>การนำเงื่อนไขมาทำงานร่วมกับตัวแปร (Variables) เช่น การตรวจสอบค่าคะแนน <code>score</code> หรือพลังชีวิต <code>HP</code> เพื่อควบคุมเหตุการณ์สำคัญในเกม เช่น <em>"ถ้า HP น้อยกว่าหรือเท่ากับ 0 ให้แสดงข้อความ Game Over"</em> หรือ <em>"ถ้า score เท่ากับ 10 ให้เปลี่ยนฉากไปด่านถัดไป"</em> ซึ่งช่วยเพิ่มความสมจริงและสร้างกลไกการเล่นเกมใน Scratch ได้อย่างสมบูรณ์</p>
+</div>
+
+<div class="card" id="u5lesson2" style="display:none;">
+<h3>สื่อวิดีโอประกอบบทเรียน</h3>
+<p>ศึกษาเพิ่มเติมเกี่ยวกับการใช้งานเงื่อนไข (Conditions) ในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+<br><br>
+<button onclick="finishLesson(5)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+</div>
+
+<!-- ================= แบบทดสอบหลังเรียน ================= -->
+<div class="card" id="u5posttest" style="display:none;">
+<h3>แบบทดสอบหลังเรียน (หน่วยที่ 5 เงื่อนไข)</h3>
+
+<p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
+<input type="radio" name="u5post1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
+<input type="radio" name="u5post1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายๆ รอบโดยอัตโนมัติ<br>
+<input type="radio" name="u5post1" value="0"> เครื่องมือสำหรับสร้างตัวแปรเพื่อเก็บคะแนนในเกม<br>
+<input type="radio" name="u5post1" value="0"> คำสั่งสำหรับหยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
+
+<p>2. ในโปรแกรม Scratch บล็อกคำสั่งควบคุมเงื่อนไข (Control) จะอยู่ในกลุ่มบล็อกสีใด</p>
+<input type="radio" name="u5post2" value="1"> สีส้ม (Control)<br>
+<input type="radio" name="u5post2" value="0"> สีฟ้าเข้ม (Motion)<br>
+<input type="radio" name="u5post2" value="0"> สีเขียวอ่อน (Operators)<br>
+<input type="radio" name="u5post2" value="0"> สีม่วง (Looks)<br>
+
+<p>3. ลักษณะของบล็อกเงื่อนไขแบบ `if` ใน Scratch มีรูปร่างอย่างไรเพื่อให้สามารถนำบล็อกเงื่อนไขย่อยไปใส่ข้างในได้</p>
+<input type="radio" name="u5post3" value="1"> มีช่องว่างรูปหกเหลี่ยมสำหรับใส่เงื่อนไข และมีช่องว่างด้านในสำหรับใส่บล็อกคำสั่ง<br>
+<input type="radio" name="u5post3" value="0"> เป็นบล็อกสี่เหลี่ยมผืนผ้าเรียบๆ ไม่มีช่องว่างด้านใน<br>
+<input type="radio" name="u5post3" value="0"> เป็นบล็อกวงกลมมนสำหรับใส่ตัวเลขเท่านั้น<br>
+<input type="radio" name="u5post3" value="0"> เป็นบล็อกปลายแหลมสำหรับส่งค่าข้อมูลออกไป<br>
+
+<p>4. หากต้องการตรวจสอบว่าถ้าเงื่อนไขเป็นจริงให้ทำคำสั่งด้านใน แต่ถ้าเป็นเท็จจะไม่ทำอะไรเลย ควรใช้บล็อกใด</p>
+<input type="radio" name="u5post4" value="1"> `if <...> then` <br>
+<input type="radio" name="u5post4" value="0"> `if <...> then ... else ...` <br>
+<input type="radio" name="u5post4" value="0"> `repeat <...>` <br>
+<input type="radio" name="u5post4" value="0"> `forever` <br>
+
+<p>5. บล็อกคำสั่ง `if-else` มีความแตกต่างจากบล็อก `if` ทั่วไปอย่างไร</p>
+<input type="radio" name="u5post5" value="1"> มีทางเลือกสำรองให้ทำงานเมื่อเงื่อนไขเป็นเท็จ (False)<br>
+<input type="radio" name="u5post5" value="0"> ใช้สำหรับวนซ้ำจำนวนรอบที่แน่นอนเท่านั้น<br>
+<input type="radio" name="u5post5" value="0"> ไม่จำเป็นต้องใส่เงื่อนไขทางเข้า<br>
+<input type="radio" name="u5post5" value="0"> ใช้สำหรับสร้างตัวแปรเสริมในระบบ<br>
+
+<p>6. บล็อกตัวดำเนินการเปรียบเทียบ (Operators) ที่ใช้ตรวจสอบว่าค่าสองค่าเท่ากันหรือไม่ มีลักษณะเครื่องหมายอย่างไรใน Scratch</p>
+<input type="radio" name="u5post6" value="1"> [ ] = [ ] <br>
+<input type="radio" name="u5post6" value="0"> [ ] < [ ] <br>
+<input type="radio" name="u5post6" value="0"> [ ] > [ ] <br>
+<input type="radio" name="u5post6" value="0"> [ ] + [ ] <br>
+
+<p>7. หากต้องการตรวจสอบว่าคะแนนมากกว่าหรือเท่ากับ 50 หรือไม่ ควรใช้บล็อกตัวดำเนินการใด</p>
+<input type="radio" name="u5post7" value="1"> [ ] > [ ] (ร่วมกับการเปรียบเทียบ หรือใช้บล็อกตามเงื่อนไขเหมาะสม)<br>
+<input type="radio" name="u5post7" value="0"> [ ] = [ ] <br>
+<input type="radio" name="u5post7" value="0"> join [ ] [ ] <br>
+<input type="radio" name="u5post7" value="0"> pick random (1) to (10)<br>
+
+<p>8. บล็อกรูปหกเหลี่ยมสีเขียวอ่อนที่มีเครื่องหมาย `and`, `or`, `not` จัดอยู่ในกลุ่มบล็อกใด</p>
+<input type="radio" name="u5post8" value="1"> Operators (ตัวดำเนินการ)<br>
+<input type="radio" name="u5post8" value="0"> Control (ควบคุม)<br>
+<input type="radio" name="u5post8" value="0"> Sensing (การรับรู้)<br>
+<input type="radio" name="u5post8" value="0"> Variables (ตัวแปร)<br>
+
+<p>9. หากต้องการตรวจสอบว่าตัวละครสัมผัสกับขอบฉาก (Edge) หรือไม่ ควรใช้บล็อกเงื่อนไขร่วมกับบล็อกใดจากหมวด Sensing</p>
+<input type="radio" name="u5post9" value="1"> <touching [edge v]?> <br>
+<input type="radio" name="u5post9" value="0"> <key [space v] pressed?> <br>
+<input type="radio" name="u5post9" value="0"> <mouse down?> <br>
+<input type="radio" name="u5post9" value="0"> (timer) <br>
+
+<p>10. การนำเงื่อนไขมาใช้ร่วมกับตัวแปร เช่น ตรวจสอบว่า `[score] = 10` แล้วให้แสดงข้อความชนะเกม มีประโยชน์อย่างไร</p>
+<input type="radio" name="u5post10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยนการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
+<input type="radio" name="u5post10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
+<input type="radio" name="u5post10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
+<input type="radio" name="u5post10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
+
+<p>11. ข้อใดกล่าวถึงการทำงานของบล็อก `if-else` ได้ถูกต้องที่สุดเมื่อเงื่อนไขเป็นเท็จ</p>
+<input type="radio" name="u5post11" value="1"> จะเข้าไปทำชุดคำสั่งที่อยู่ภายในช่อง `else`<br>
+<input type="radio" name="u5post11" value="0"> จะข้ามการทำงานทั้งหมดและปิดโปรแกรม<br>
+<input type="radio" name="u5post11" value="0"> จะวนกลับไปตรวจเงื่อนไขใหม่ซ้ำทันทีอย่างไร้ขีดจำกัด<br>
+<input type="radio" name="u5post11" value="0"> จะทำการลบตัวแปรทั้งหมดทิ้ง<br>
+
+<p>12. สถานการณ์ใดเหมาะสมที่สุดกับการเลือกใช้คำสั่งเงื่อนไขแบบ `if-else`</p>
+<input type="radio" name="u5post12" value="1"> ตรวจสอบคำตอบว่าถูกต้องให้แสดงว่า "Correct" แต่ถ้าผิดให้แสดงว่า "Try again"<br>
+<input type="radio" name="u5post12" value="0"> สั่งให้ตัวละครเดินหน้าไปข้างหน้า 10 ก้าว ทุกครั้งที่กดปุ่ม<br>
+<input type="radio" name="u5post12" value="0"> ตั้งค่าคะแนนเริ่มต้นให้เป็น 0 ตอนเริ่มเกม<br>
+<input type="radio" name="u5post12" value="0"> สร้างตัวละครแมวขึ้นมาบนหน้าจอเวที<br>
+<br>
+
+<button onclick="posttest(5)">ส่งคำตอบ</button>
+<p id="u5postScore" class="result"></p>
+</div>
+
+<!-- ================= แบบประเมินความพึงพอใจ ================= -->
+<div class="card" id="u5survey" style="display:none;">
+<h3>แบบประเมินความพึงพอใจ</h3>
+<section>
+<h2>แบบประเมินความพึงพอใจของนักเรียน</h2>
+<form>
+<p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+<label><input type="radio" name="u5q1" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="u5q1" value="4"> มาก</label><br>
+<label><input type="radio" name="u5q1" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="u5q1" value="2"> น้อย</label><br>
+<label><input type="radio" name="u5q1" value="1"> น้อยที่สุด</label>
+
+<p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+<label><input type="radio" name="u5q2" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="u5q2" value="4"> มาก</label><br>
+<label><input type="radio" name="u5q2" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="u5q2" value="2"> น้อย</label><br>
+<label><input type="radio" name="u5q2" value="1"> น้อยที่สุด</label>
+
+<p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+<label><input type="radio" name="u5q3" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="u5q3" value="4"> มาก</label><br>
+<label><input type="radio" name="u5q3" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="u5q3" value="2"> น้อย</label><br>
+<label><input type="radio" name="u5q3" value="1"> น้อยที่สุด</label>
+
+<p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+<label><input type="radio" name="u5q4" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="u5q4" value="4"> มาก</label><br>
+<label><input type="radio" name="u5q4" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="u5q4" value="2"> น้อย</label><br>
+<label><input type="radio" name="u5q4" value="1"> น้อยที่สุด</label>
+
+<br><br>
+<button type="button" onclick="finish(5)">ส่งคำตอบ</button>
+<p id="u5finish"></p>
+</form>
+</section>
+</div>
+
+
+</div>
+
+
+</div>
+
+<script>
+let scores = {
+  1: {pre:0, post:0}, 2: {pre:0, post:0}, 3: {pre:0, post:0},
+  4: {pre:0, post:0}, 5: {pre:0, post:0}
+};
+
+function switchUnit(unitNumber, evt) {
+    document.querySelectorAll('.unit-section').forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('.unit-btn').forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById('unit' + unitNumber + '-content').classList.add('active');
+
+    let btns = document.querySelectorAll('#unitNav .unit-btn');
+    btns[unitNumber - 1].classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function pretest(n){
+    let score = 0;
+    for (let i = 1; i <= 12; i++) {
+        document.querySelectorAll(`input[name="u${n}pre${i}"]:checked`).forEach(e => score += parseInt(e.value));
+    }
+    scores[n].pre = score;
+    document.getElementById("u" + n + "preScore").innerHTML = "คะแนนก่อนเรียน = " + score + " / 12";
+    document.getElementById("u" + n + "lesson").style.display = "block";
+    document.getElementById("u" + n + "lesson2").style.display = "block";
+}
+
+function posttest(n){
+    let score = 0;
+    for (let i = 1; i <= 12; i++) {
+        document.querySelectorAll(`input[name="u${n}post${i}"]:checked`).forEach(e => score += parseInt(e.value));
+    }
+    scores[n].post = score;
+    document.getElementById("u" + n + "postScore").innerHTML = "คะแนนหลังเรียน = " + score + " / 12";
+    document.getElementById("u" + n + "survey").style.display = "block";
+}
+
+function finishLesson(n){
+    document.getElementById("u" + n + "posttest").style.display = "block";
+    window.scrollTo({
+        top: document.getElementById("u" + n + "posttest").offsetTop,
+        behavior: "smooth"
+    });
+}
+
+function finish(n){
+    let name = document.getElementById("name").value;
+    let number = document.getElementById("number").value;
+
+    let q1 = document.querySelector(`input[name="u${n}q1"]:checked`)?.value;
+    let q2 = document.querySelector(`input[name="u${n}q2"]:checked`)?.value;
+    let q3 = document.querySelector(`input[name="u${n}q3"]:checked`)?.value;
+    let q4 = document.querySelector(`input[name="u${n}q4"]:checked`)?.value;
+
+    let data = {
+        unit: String(n),
+        name: name,
+        number: number,
+        pretest: scores[n].pre,
+        posttest: scores[n].post,
+        q1: q1,
+        q2: q2,
+        q3: q3,
+        q4: q4
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbz9ilPCAch8TEVoun7l0pWlYSR-7WyUUUbMTBzO44gbhHnqCVpM5S8n-nKjH2_0LbYh/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    });
+
+    let nextBtn = (n < 5)
+        ? `<br><br><button type='button' style='background:#16a34a;' onclick='switchUnit(${n+1})'>ไปบทเรียนหน่วยที่ ${n+1} ➡️</button>`
+        : `<br><br><p>🎉 เรียนครบทั้ง 5 หน่วยแล้ว ขอบคุณที่ตั้งใจเรียนครับ/ค่ะ</p>`;
+
+    document.getElementById("u" + n + "finish").innerHTML =
+        "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + nextBtn;
+}
+</script>
+
+</body>
+</html>
+
 }
 
 header{
