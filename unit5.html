@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>บทเรียน Scratch หน่วยที่ 2</title>
+<title>บทเรียน Scratch หน่วยที่ 5</title>
 
 <style>
-
 body{
 font-family: Arial;
 background:#f1f5f9;
@@ -51,7 +50,6 @@ cursor:pointer;
 button:hover{
 background:#1e40af;
 }
-
 </style>
 </head>
 
@@ -59,176 +57,216 @@ background:#1e40af;
 
 <header>
 <h1>บทเรียนออนไลน์</h1>
-<p>เรื่อง การแก้ปัญหาด้วย Scratch สำหรับนักเรียน ม.2</p>
+<p>เรื่อง เงื่อนไข (Conditions) ในโปรแกรม Scratch สำหรับนักเรียน ม.2</p>
 </header>
 
 <div class="container">
 
 <div class="card">
-
 <h2>ข้อมูลผู้เรียน</h2>
-
 <label>ชื่อ-นามสกุล</label>
 <input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px">
-
 <br><br>
-
 <label>เลขที่</label>
 <input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px">
-
 </div>
 
-
-
+<!-- ================= แบบทดสอบก่อนเรียน ================= -->
 <div class="card">
+<h3>แบบทดสอบก่อนเรียน (หน่วยที่ 5 เงื่อนไข)</h3>
 
-<h3>แบบทดสอบก่อนเรียน</h3>
+<p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
+<input type="radio" name="pre1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
+<input type="radio" name="pre1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายๆ รอบโดยอัตโนมัติ<br>
+<input type="radio" name="pre1" value="0"> เครื่องมือสำหรับสร้างตัวแปรเพื่อเก็บคะแนนในเกม<br>
+<input type="radio" name="pre1" value="0"> คำสั่งสำหรับหยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
 
-<p>1. บล็อก Motion ใช้ทำอะไร</p>
+<p>2. ในโปรแกรม Scratch บล็อกคำสั่งควบคุมเงื่อนไข (Control) จะอยู่ในกลุ่มบล็อกสีใด</p>
+<input type="radio" name="pre2" value="1"> สีส้ม (Control)<br>
+<input type="radio" name="pre2" value="0"> สีฟ้าเข้ม (Motion)<br>
+<input type="radio" name="pre2" value="0"> สีเขียวอ่อน (Operators)<br>
+<input type="radio" name="pre2" value="0"> สีม่วง (Looks)<br>
 
-<input type="radio" name="pre1" value="1"> ควบคุมการเคลื่อนที่<br>
-<input type="radio" name="pre1" value="0"> ควบคุมเสียง<br>
-<input type="radio" name="pre1" value="0"> ควบคุมตัวแปร<br>
-<input type="radio" name="pre1" value="0"> ควบคุมเงื่อนไข<br>
+<p>3. ลักษณะของบล็อกเงื่อนไขแบบ `if` ใน Scratch มีรูปร่างอย่างไรเพื่อให้สามารถนำบล็อกเงื่อนไขย่อยไปใส่ข้างในได้</p>
+<input type="radio" name="pre3" value="1"> มีช่องว่างรูปหกเหลี่ยมสำหรับใส่เงื่อนไข และมีช่องว่างด้านในสำหรับใส่บล็อกคำสั่ง<br>
+<input type="radio" name="pre3" value="0"> เป็นบล็อกสี่เหลี่ยมผืนผ้าเรียบๆ ไม่มีช่องว่างด้านใน<br>
+<input type="radio" name="pre3" value="0"> เป็นบล็อกวงกลมมนสำหรับใส่ตัวเลขเท่านั้น<br>
+<input type="radio" name="pre3" value="0"> เป็นบล็อกปลายแหลมสำหรับส่งค่าข้อมูลออกไป<br>
 
+<p>4. หากต้องการตรวจสอบว่าถ้าเงื่อนไขเป็นจริงให้ทำคำสั่งด้านใน แต่ถ้าเป็นเท็จจะไม่ทำอะไรเลย ควรใช้บล็อกใด</p>
+<input type="radio" name="pre4" value="1"> `if <...> then` <br>
+<input type="radio" name="pre4" value="0"> `if <...> then ... else ...` <br>
+<input type="radio" name="pre4" value="0"> `repeat <...>` <br>
+<input type="radio" name="pre4" value="0"> `forever` <br>
 
-<p>2. บล็อก Looks ใช้ทำอะไร</p>
+<p>5. บล็อกคำสั่ง `if-else` มีความแตกต่างจากบล็อก `if` ทั่วไปอย่างไร</p>
+<input type="radio" name="pre5" value="1"> มีทางเลือกสำรองให้ทำงานเมื่อเงื่อนไขเป็นเท็จ (False)<br>
+<input type="radio" name="pre5" value="0"> ใช้สำหรับวนซ้ำจำนวนรอบที่แน่นอนเท่านั้น<br>
+<input type="radio" name="pre5" value="0"> ไม่จำเป็นต้องใส่เงื่อนไขทางเข้า<br>
+<input type="radio" name="pre5" value="0"> ใช้สำหรับสร้างตัวแปรเสริมในระบบ<br>
 
-<input type="radio" name="pre2" value="1"> เปลี่ยนการแสดงผลของตัวละคร<br>
-<input type="radio" name="pre2" value="0"> ควบคุมการเคลื่อนที่<br>
-<input type="radio" name="pre2" value="0"> ควบคุมเสียง<br>
-<input type="radio" name="pre2" value="0"> สร้างตัวแปร<br>
+<p>6. บล็อกตัวดำเนินการเปรียบเทียบ (Operators) ที่ใช้ตรวจสอบว่าค่าสองค่าเท่ากันหรือไม่ มีลักษณะเครื่องหมายอย่างไรใน Scratch</p>
+<input type="radio" name="pre6" value="1"> [ ] = [ ] <br>
+<input type="radio" name="pre6" value="0"> [ ] < [ ] <br>
+<input type="radio" name="pre6" value="0"> [ ] > [ ] <br>
+<input type="radio" name="pre6" value="0"> [ ] + [ ] <br>
 
+<p>7. หากต้องการตรวจสอบว่าคะแนนมากกว่าหรือเท่ากับ 50 หรือไม่ ควรใช้บล็อกตัวดำเนินการใด</p>
+<input type="radio" name="pre7" value="1"> [ ] > [ ] (ร่วมกับการเปรียบเทียบ หรือใช้บล็อกตามเงื่อนไขเหมาะสม)<br>
+<input type="radio" name="pre7" value="0"> [ ] = [ ] <br>
+<input type="radio" name="pre7" value="0"> join [ ] [ ] <br>
+<input type="radio" name="pre7" value="0"> pick random (1) to (10)<br>
+
+<p>8. บล็อกรูปหกเหลี่ยมสีเขียวอ่อนที่มีเครื่องหมาย `and`, `or`, `not` จัดอยู่ในกลุ่มบล็อกใด</p>
+<input type="radio" name="pre8" value="1"> Operators (ตัวดำเนินการ)<br>
+<input type="radio" name="pre8" value="0"> Control (ควบคุม)<br>
+<input type="radio" name="pre8" value="0"> Sensing (การรับรู้)<br>
+<input type="radio" name="pre8" value="0"> Variables (ตัวแปร)<br>
+
+<p>9. หากต้องการตรวจสอบว่าตัวละครสัมผัสกับขอบฉาก (Edge) หรือไม่ ควรใช้บล็อกเงื่อนไขร่วมกับบล็อกใดจากหมวด Sensing</p>
+<input type="radio" name="pre9" value="1"> <touching [edge v]?> <br>
+<input type="radio" name="pre9" value="0"> <key [space v] pressed?> <br>
+<input type="radio" name="pre9" value="0"> <mouse down?> <br>
+<input type="radio" name="pre9" value="0"> (timer) <br>
+
+<p>10. การนำเงื่อนไขมาใช้ร่วมกับตัวแปร เช่น ตรวจสอบว่า `[score] = 10` แล้วให้แสดงข้อความชนะเกม มีประโยชน์อย่างไร</p>
+<input type="radio" name="pre10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยน ísการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
+<input type="radio" name="pre10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
+<input type="radio" name="pre10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
+<input type="radio" name="pre10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
+
+<p>11. ข้อใดกล่าวถึงการทำงานของบล็อก `if-else` ได้ถูกต้องที่สุดเมื่อเงื่อนไขเป็นเท็จ</p>
+<input type="radio" name="pre11" value="1"> จะเข้าไปทำชุดคำสั่งที่อยู่ภายในช่อง `else`<br>
+<input type="radio" name="pre11" value="0"> จะข้ามการทำงานทั้งหมดและปิดโปรแกรม<br>
+<input type="radio" name="pre11" value="0"> จะวนกลับไปตรวจเงื่อนไขใหม่ซ้ำทันทีอย่างไร้ขีดจำกัด<br>
+<input type="radio" name="pre11" value="0"> จะทำการลบตัวแปรทั้งหมดทิ้ง<br>
+
+<p>12. สถานการณ์ใดเหมาะสมที่สุดกับการเลือกใช้คำสั่งเงื่อนไขแบบ `if-else`</p>
+<input type="radio" name="pre12" value="1"> ตรวจสอบคำตอบว่าถูกต้องให้แสดงว่า "Correct" แต่ถ้าผิดให้แสดงว่า "Try again"<br>
+<input type="radio" name="pre12" value="0"> สั่งให้ตัวละครเดินหน้าไปข้างหน้า 10 ก้าว ทุกครั้งที่กดปุ่ม<br>
+<input type="radio" name="pre12" value="0"> ตั้งค่าคะแนนเริ่มต้นให้เป็น 0 ตอนเริ่มเกม<br>
+<input type="radio" name="pre12" value="0"> สร้างตัวละครแมวขึ้นมาบนหน้าจอเวที<br>
 <br>
 
 <button onclick="pretest()">ส่งคำตอบ</button>
-
 <p id="preScore" class="result"></p>
-
 </div>
 
+<!-- ================= เนื้อหาบทเรียน ================= -->
 <div class="card" id="lesson" style="display:none;">
-<h2>หน่วยที่ 2 บล็อกคำสั่งพื้นฐาน</h2>
+<h2>หน่วยที่ 5 เงื่อนไข (Conditions)</h2>
 
-<h3>2.1 บล็อก Motion</h3>
-<p>
-บล็อก Motion ใช้ควบคุมการเคลื่อนที่ของตัวละคร เช่น
-การเดิน การหมุน และการเคลื่อนที่ไปยังตำแหน่งต่าง ๆ
-</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Scratch_Motion.png"
-width="300">
+<h3>5.1 ความหมายของคำสั่งเงื่อนไข</h3>
+<p>คำสั่งเงื่อนไข (Conditional Statement) คือ คำสั่งที่ใช้สำหรับตัดสินใจและควบคุมการทำงานของโปรแกรมให้เลือกกระทำเส้นทางใดเส้นทางหนึ่ง ตามผลลัพธ์ของการตรวจสอบเงื่อนไขว่าเป็นจริง (True) หรือเป็นเท็จ (False) เปรียบเสมือนการตัดสินใจในชีวิตประจำวัน เช่น "ถ้าฝนตก จะกางร่ม แต่ถ้าฝนไม่ตก จะไม่กางร่ม"</p>
 
-<ul>
-<li>move 10 steps</li>
-<li>turn 15 degrees</li>
-<li>go to x: y:</li>
-</ul>
-<h3>2.2 บล็อก Looks</h3>
-<p>
-บล็อก Looks ใช้ควบคุมการแสดงผลของตัวละคร เช่น
-การเปลี่ยนชุด การพูด หรือการแสดงข้อความ
-</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Scratch_Looks.png"
-width="300">
+<h3>5.2 คำสั่ง If</h3>
+<p>คำสั่ง <code>if &lt;...&gt; then</code> เป็นคำสั่งเงื่อนไขพื้นฐาน ใช้สำหรับตรวจสอบเงื่อนไข หากผลลัพธ์การตรวจสอบเป็นจริง (True) โปรแกรมจะทำชุดคำสั่งที่อยู่ภายในบล็อก <code>if</code> นั้น แต่ถ้าผลลัพธ์เป็นเท็จ (False) โปรแกรมจะข้ามคำสั่งนั้นไปทำคำสั่งถัดไปโดยไม่มีการทำงานสำรอง</p>
 
-<ul>
-<li>say Hello</li>
-<li>switch costume</li>
-<li>show / hide</li>
-</ul>
-<h3>2.3 บล็อก Sound</h3>
-<p>
-บล็อก Sound ใช้สำหรับควบคุมเสียง เช่น
-การเล่นเสียงดนตรี หรือเสียงเอฟเฟกต์
-</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Scratch_Sound.png"
-width="300">
-<h3>2.4 บล็อก Events</h3>
-<p>
-บล็อก Events ใช้กำหนดเหตุการณ์เริ่มต้นของโปรแกรม
-เช่น เมื่อคลิกธงเขียว หรือเมื่อกดปุ่มบนคีย์บอร์ด
-</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Scratch_Events.png"
-width="300">
-<hr>
+<h3>5.3 คำสั่ง If–Else</h3>
+<p>คำสั่ง <code>if &lt;...&gt; then ... else ...</code> เป็นคำสั่งเงื่อนไขทางเลือก เมื่อมีการตรวจสอบเงื่อนไขแล้ว หากเป็นจริงจะทำงานในส่วนของ <code>then</code> แต่หากเงื่อนไขเป็นเท็จ โปรแกรมจะหันไปทำงานในส่วนชุดคำสั่งที่อยู่ภายในช่อง <code>else</code> แทน ช่วยให้สามารถจัดการทางเลือกได้ครบทั้งสองกรณี</p>
 
-<h2>ตัวอย่างโค้ด Scratch</h2>
+<h3>5.4 การใช้ตัวดำเนินการเปรียบเทียบ</h3>
+<p>การสร้างเงื่อนไขใน Scratch จำเป็นต้องอาศัยกลุ่มบล็อกสีเขียวอ่อน <strong>Operators (ตัวดำเนินการ)</strong> เข้ามาช่วยในการเปรียบเทียบข้อมูล เช่น เครื่องหมายมากกว่า (<code>&gt;</code>), น้อยกว่า (<code>&lt;</code>), หรือเท่ากับ (<code>=</code>) รวมถึงตัวดำเนินการทางตรรกะ เช่น <code>and</code>, <code>or</code> และ <code>not</code> เพื่อสร้างเงื่อนไขที่ซับซ้อนและแม่นยำยิ่งขึ้น</p>
 
-<p>
-ตัวอย่างโปรแกรม: เมื่อกดธงเขียว ตัวละครจะเดินและพูด
-</p>
-
-<pre style="background:#f3f4f6;padding:15px;border-radius:8px">
-when green flag clicked
-move 10 steps
-say "Hello"
-</pre>
-<h3>กิจกรรมฝึกปฏิบัติ</h3>
-
-<p>
-ให้นักเรียนสร้างโปรแกรม Scratch ตามเงื่อนไขต่อไปนี้
-</p>
-
-<ul>
-<li>เมื่อกดธงเขียว</li>
-<li>ตัวละครเดิน 10 ก้าว</li>
-<li>พูดคำว่า Hello</li>
-</ul>
+<h3>5.5 การใช้เงื่อนไขร่วมกับตัวแปร</h3>
+<p>การนำเงื่อนไขมาทำงานร่วมกับตัวแปร (Variables) เช่น การตรวจสอบค่าคะแนน <code>score</code> หรือพลังชีวิต <code>HP</code> เพื่อควบคุมเหตุการณ์สำคัญในเกม เช่น <em>"ถ้า HP น้อยกว่าหรือเท่ากับ 0 ให้แสดงข้อความ Game Over"</em> หรือ <em>"ถ้า score เท่ากับ 10 ให้เปลี่ยนฉากไปด่านถัดไป"</em> ซึ่งช่วยเพิ่มความสมจริงและสร้างกลไกการเล่นเกมใน Scratch ได้อย่างสมบูรณ์</p>
 </div>
+
 <div class="card" id="lesson2" style="display:none;">
-<h3>บทเรียน Scratch</h3>
-
-<p>
-Scratch คือโปรแกรมสำหรับการเรียนรู้การเขียนโปรแกรม
-โดยใช้บล็อกคำสั่งในการสร้างเกม แอนิเมชัน และสื่อต่างๆ
-เหมาะสำหรับผู้เริ่มต้น
-</p>
-
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/jXJ6r3XzqGk"
-frameborder="0"
-allowfullscreen>
-</iframe>
+<h3>สื่อวิดีโอประกอบบทเรียน</h3>
+<p>ศึกษาเพิ่มเติมเกี่ยวกับการใช้งานเงื่อนไข (Conditions) ในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
 <br><br>
 <button onclick="finishLesson()">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
 </div>
 
-
+<!-- ================= แบบทดสอบหลังเรียน ================= -->
 <div class="card" id="posttest" style="display:none;">
-<h3>แบบทดสอบหลังเรียน</h3>
+<h3>แบบทดสอบหลังเรียน (หน่วยที่ 5 เงื่อนไข)</h3>
 
-<p>1. บล็อก Motion ใช้ทำอะไร</p>
+<p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
+<input type="radio" name="post1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
+<input type="radio" name="post1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายๆ รอบโดยอัตโนมัติ<br>
+<input type="radio" name="post1" value="0"> เครื่องมือสำหรับสร้างตัวแปรเพื่อเก็บคะแนนในเกม<br>
+<input type="radio" name="post1" value="0"> คำสั่งสำหรับหยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
 
-<input type="radio" name="post1" value="1"> ควบคุมการเคลื่อนที่<br>
-<input type="radio" name="post1" value="0"> ควบคุมเสียง<br>
-<input type="radio" name="post1" value="0"> ควบคุมตัวแปร<br>
-<input type="radio" name="post1" value="0"> ควบคุมเงื่อนไข<br>
+<p>2. ในโปรแกรม Scratch บล็อกคำสั่งควบคุมเงื่อนไข (Control) จะอยู่ในกลุ่มบล็อกสีใด</p>
+<input type="radio" name="post2" value="1"> สีส้ม (Control)<br>
+<input type="radio" name="post2" value="0"> สีฟ้าเข้ม (Motion)<br>
+<input type="radio" name="post2" value="0"> สีเขียวอ่อน (Operators)<br>
+<input type="radio" name="post2" value="0"> สีม่วง (Looks)<br>
 
+<p>3. ลักษณะของบล็อกเงื่อนไขแบบ `if` ใน Scratch มีรูปร่างอย่างไรเพื่อให้สามารถนำบล็อกเงื่อนไขย่อยไปใส่ข้างในได้</p>
+<input type="radio" name="post3" value="1"> มีช่องว่างรูปหกเหลี่ยมสำหรับใส่เงื่อนไข และมีช่องว่างด้านในสำหรับใส่บล็อกคำสั่ง<br>
+<input type="radio" name="post3" value="0"> เป็นบล็อกสี่เหลี่ยมผืนผ้าเรียบๆ ไม่มีช่องว่างด้านใน<br>
+<input type="radio" name="post3" value="0"> เป็นบล็อกวงกลมมนสำหรับใส่ตัวเลขเท่านั้น<br>
+<input type="radio" name="post3" value="0"> เป็นบล็อกปลายแหลมสำหรับส่งค่าข้อมูลออกไป<br>
 
-<p>2. บล็อก Looks ใช้ทำอะไร</p>
+<p>4. หากต้องการตรวจสอบว่าถ้าเงื่อนไขเป็นจริงให้ทำคำสั่งด้านใน แต่ถ้าเป็นเท็จจะไม่ทำอะไรเลย ควรใช้บล็อกใด</p>
+<input type="radio" name="post4" value="1"> `if <...> then` <br>
+<input type="radio" name="post4" value="0"> `if <...> then ... else ...` <br>
+<input type="radio" name="post4" value="0"> `repeat <...>` <br>
+<input type="radio" name="post4" value="0"> `forever` <br>
 
-<input type="radio" name="post2" value="1"> เปลี่ยนการแสดงผลของตัวละคร<br>
-<input type="radio" name="post2" value="0"> ควบคุมการเคลื่อนที่<br>
-<input type="radio" name="post2" value="0"> ควบคุมเสียง<br>
-<input type="radio" name="post2" value="0"> สร้างตัวแปร<br>
+<p>5. บล็อกคำสั่ง `if-else` มีความแตกต่างจากบล็อก `if` ทั่วไปอย่างไร</p>
+<input type="radio" name="post5" value="1"> มีทางเลือกสำรองให้ทำงานเมื่อเงื่อนไขเป็นเท็จ (False)<br>
+<input type="radio" name="post5" value="0"> ใช้สำหรับวนซ้ำจำนวนรอบที่แน่นอนเท่านั้น<br>
+<input type="radio" name="post5" value="0"> ไม่จำเป็นต้องใส่เงื่อนไขทางเข้า<br>
+<input type="radio" name="post5" value="0"> ใช้สำหรับสร้างตัวแปรเสริมในระบบ<br>
 
+<p>6. บล็อกตัวดำเนินการเปรียบเทียบ (Operators) ที่ใช้ตรวจสอบว่าค่าสองค่าเท่ากันหรือไม่ มีลักษณะเครื่องหมายอย่างไรใน Scratch</p>
+<input type="radio" name="post6" value="1"> [ ] = [ ] <br>
+<input type="radio" name="post6" value="0"> [ ] < [ ] <br>
+<input type="radio" name="post6" value="0"> [ ] > [ ] <br>
+<input type="radio" name="post6" value="0"> [ ] + [ ] <br>
+
+<p>7. หากต้องการตรวจสอบว่าคะแนนมากกว่าหรือเท่ากับ 50 หรือไม่ ควรใช้บล็อกตัวดำเนินการใด</p>
+<input type="radio" name="post7" value="1"> [ ] > [ ] (ร่วมกับการเปรียบเทียบ หรือใช้บล็อกตามเงื่อนไขเหมาะสม)<br>
+<input type="radio" name="post7" value="0"> [ ] = [ ] <br>
+<input type="radio" name="post7" value="0"> join [ ] [ ] <br>
+<input type="radio" name="post7" value="0"> pick random (1) to (10)<br>
+
+<p>8. บล็อกรูปหกเหลี่ยมสีเขียวอ่อนที่มีเครื่องหมาย `and`, `or`, `not` จัดอยู่ในกลุ่มบล็อกใด</p>
+<input type="radio" name="post8" value="1"> Operators (ตัวดำเนินการ)<br>
+<input type="radio" name="post8" value="0"> Control (ควบคุม)<br>
+<input type="radio" name="post8" value="0"> Sensing (การรับรู้)<br>
+<input type="radio" name="post8" value="0"> Variables (ตัวแปร)<br>
+
+<p>9. หากต้องการตรวจสอบว่าตัวละครสัมผัสกับขอบฉาก (Edge) หรือไม่ ควรใช้บล็อกเงื่อนไขร่วมกับบล็อกใดจากหมวด Sensing</p>
+<input type="radio" name="post9" value="1"> <touching [edge v]?> <br>
+<input type="radio" name="post9" value="0"> <key [space v] pressed?> <br>
+<input type="radio" name="post9" value="0"> <mouse down?> <br>
+<input type="radio" name="post9" value="0"> (timer) <br>
+
+<p>10. การนำเงื่อนไขมาใช้ร่วมกับตัวแปร เช่น ตรวจสอบว่า `[score] = 10` แล้วให้แสดงข้อความชนะเกม มีประโยชน์อย่างไร</p>
+<input type="radio" name="post10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยนการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
+<input type="radio" name="post10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
+<input type="radio" name="post10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
+<input type="radio" name="post10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
+
+<p>11. ข้อใดกล่าวถึงการทำงานของบล็อก `if-else` ได้ถูกต้องที่สุดเมื่อเงื่อนไขเป็นเท็จ</p>
+<input type="radio" name="post11" value="1"> จะเข้าไปทำชุดคำสั่งที่อยู่ภายในช่อง `else`<br>
+<input type="radio" name="post11" value="0"> จะข้ามการทำงานทั้งหมดและปิดโปรแกรม<br>
+<input type="radio" name="post11" value="0"> จะวนกลับไปตรวจเงื่อนไขใหม่ซ้ำทันทีอย่างไร้ขีดจำกัด<br>
+<input type="radio" name="post11" value="0"> จะทำการลบตัวแปรทั้งหมดทิ้ง<br>
+
+<p>12. สถานการณ์ใดเหมาะสมที่สุดกับการเลือกใช้คำสั่งเงื่อนไขแบบ `if-else`</p>
+<input type="radio" name="post12" value="1"> ตรวจสอบคำตอบว่าถูกต้องให้แสดงว่า "Correct" แต่ถ้าผิดให้แสดงว่า "Try again"<br>
+<input type="radio" name="post12" value="0"> สั่งให้ตัวละครเดินหน้าไปข้างหน้า 10 ก้าว ทุกครั้งที่กดปุ่ม<br>
+<input type="radio" name="post12" value="0"> ตั้งค่าคะแนนเริ่มต้นให้เป็น 0 ตอนเริ่มเกม<br>
+<input type="radio" name="post12" value="0"> สร้างตัวละครแมวขึ้นมาบนหน้าจอเวที<br>
 <br>
 
 <button onclick="posttest()">ส่งคำตอบ</button>
-
 <p id="postScore" class="result"></p>
-
 </div>
 
-
+<!-- ================= แบบประเมินความพึงพอใจ ================= -->
 <div class="card" id="survey" style="display:none;">
 <h3>แบบประเมินความพึงพอใจ</h3>
-
 <section>
 <h2>แบบประเมินความพึงพอใจของนักเรียน</h2>
-
 <form>
-
 <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
 <label><input type="radio" name="q1" value="5"> มากที่สุด</label><br>
 <label><input type="radio" name="q1" value="4"> มาก</label><br>
@@ -257,116 +295,77 @@ allowfullscreen>
 <label><input type="radio" name="q4" value="2"> น้อย</label><br>
 <label><input type="radio" name="q4" value="1"> น้อยที่สุด</label>
 
-
-<br>
-
+<br><br>
 <button type="button" onclick="finish()">ส่งคำตอบ</button>
 <p id="finish"></p>
-
+</form>
+</section>
 </div>
 
 </div>
 
 <script>
-  
 let preScoreValue = 0
 let postScoreValue = 0
-  
+
 function pretest(){
-
-let score=0
-
-document.querySelectorAll('input[name="pre1"]:checked').forEach(e=>score+=parseInt(e.value))
-document.querySelectorAll('input[name="pre2"]:checked').forEach(e=>score+=parseInt(e.value))
-preScoreValue = score
-document.getElementById("preScore").innerHTML="คะแนนก่อนเรียน = "+score+" / 2"
-document.getElementById("lesson").style.display="block"
-document.getElementById("lesson2").style.display="block"
+    let score = 0
+    for (let i = 1; i <= 12; i++) {
+        document.querySelectorAll(`input[name="pre${i}"]:checked`).forEach(e => score += parseInt(e.value))
+    }
+    preScoreValue = score
+    document.getElementById("preScore").innerHTML = "คะแนนก่อนเรียน = " + score + " / 12"
+    document.getElementById("lesson").style.display = "block"
+    document.getElementById("lesson2").style.display = "block"
 }
 
 function posttest(){
-
-let score=0
-
-document.querySelectorAll('input[name="post1"]:checked').forEach(e=>score+=parseInt(e.value))
-document.querySelectorAll('input[name="post2"]:checked').forEach(e=>score+=parseInt(e.value))
-postScoreValue = score
-document.getElementById("postScore").innerHTML="คะแนนหลังเรียน = "+score+" / 2"
-document.getElementById("survey").style.display="block"
-
+    let score = 0
+    for (let i = 1; i <= 12; i++) {
+        document.querySelectorAll(`input[name="post${i}"]:checked`).forEach(e => score += parseInt(e.value))
+    }
+    postScoreValue = score
+    document.getElementById("postScore").innerHTML = "คะแนนหลังเรียน = " + score + " / 12"
+    document.getElementById("survey").style.display = "block"
 }
+
 function finishLesson(){
-
-document.getElementById("posttest").style.display="block"
-
-window.scrollTo({
-top: document.getElementById("posttest").offsetTop,
-behavior: "smooth"
-})
-
+    document.getElementById("posttest").style.display = "block"
+    window.scrollTo({
+        top: document.getElementById("posttest").offsetTop,
+        behavior: "smooth"
+    })
 }
 
-  
 function finish(){
+    let name = document.getElementById("name").value
+    let number = document.getElementById("number").value
 
-let name=document.getElementById("name").value
-let number=document.getElementById("number").value
-if(name=="" || number==""){
-alert("กรุณากรอกชื่อและเลขที่")
-return
+    let q1 = document.querySelector('input[name="q1"]:checked')?.value
+    let q2 = document.querySelector('input[name="q2"]:checked')?.value
+    let q3 = document.querySelector('input[name="q3"]:checked')?.value
+    let q4 = document.querySelector('input[name="q4"]:checked')?.value
+
+    let data = {
+        unit: "5",
+        name: name,
+        number: number,
+        pretest: preScoreValue,
+        posttest: postScoreValue,
+        q1: q1,
+        q2: q2,
+        q3: q3,
+        q4: q4
+    }
+    fetch("https://script.google.com/macros/s/AKfycbz9ilPCAch8TEVoun7l0pWlYSR-7WyUUUbMTBzO44gbhHnqCVpM5S8n-nKjH2_0LbYh/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    document.getElementById("finish").innerHTML = 
+        "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + 
+        "<br><br><a href='unit6.html'><button type='button' style='background:#16a34a;'>ไปบทเรียนหน่วยที่ 6 ➡️</button></a>";
 }
-let q1=document.querySelector('input[name="q1"]:checked')?.value
-let q2=document.querySelector('input[name="q2"]:checked')?.value
-let q3=document.querySelector('input[name="q3"]:checked')?.value
-let q4=document.querySelector('input[name="q4"]:checked')?.value
-
-let data={
-unit:"2",
-name:name,
-number:number,
-pretest:preScoreValue,
-posttest:postScoreValue,
-q1:q1,
-q2:q2,
-q3:q3,
-q4:q4
-}
-
-fetch("https://script.google.com/macros/s/AKfycbwvC6WqA_RhDkIor3NI5v7HWJ-N7-S9Wz6wZsoWRS-WDQJEl1ZnGsY4AJ1_wamUyU7S/exec",{
-method:"POST",
-body:JSON.stringify(data)
-})
-
-document.getElementById("finish").innerHTML=
-"บันทึกข้อมูลเรียบร้อย ขอบคุณ "+name
-
-}
-
 </script>
-<script>
-
-
-
-function sendData(){
-
-  const data = {
-    name: document.getElementById("name")?.value || "",
-    number: document.getElementById("number")?.value || "",
-    pretest: localStorage.getItem("pretestScore"),
-    posttest: localStorage.getItem("posttestScore"),
-    satisfaction: localStorage.getItem("satisfactionScore")
-  };
-
- fetch("https://script.google.com/macros/s/AKfycbwvC6WqA_RhDkIor3NI5v7HWJ-N7-S9Wz6wZsoWRS-WDQJEl1ZnGsY4AJ1_wamUyU7S/exec",{
-method:"POST",
-body:JSON.stringify(data)
-})
-  .then(res=>alert("บันทึกข้อมูลเรียบร้อย"))
-  .catch(err=>alert("เกิดข้อผิดพลาด"))
-
-}
-
-</script> 
 
 </body>
 </html>
