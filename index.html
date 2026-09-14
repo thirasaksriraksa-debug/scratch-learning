@@ -20,6 +20,37 @@ padding:20px;
 text-align:center;
 }
 
+/* สไตล์สำหรับแถบปุ่มเลือกหน่วย */
+.unit-nav{
+background:#1e40af;
+padding:10px;
+text-align:center;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.unit-btn{
+background:#3b82f6;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:5px;
+cursor:pointer;
+font-size:14px;
+text-decoration:none;
+}
+
+.unit-btn:hover{
+background:#60a5fa;
+}
+
+.unit-btn.active{
+background:#10b981;
+font-weight:bold;
+}
+
 .container{
 max-width:900px;
 margin:auto;
@@ -57,8 +88,16 @@ background:#1e40af;
 
 <header>
 <h1>บทเรียนออนไลน์</h1>
-<p>เรื่อง การแก้ปัญหาด้วย Scratch สำหรับนักเรียน ม.2</p>
+<p>เรื่อง รู้จัก Scratch  ในโปรแกรม Scratch สำหรับนักเรียน ม.2</p>
 </header>
+
+<!-- แถบเมนูปุ่มเลือกหน่วยการเรียน -->
+<div class="unit-nav">
+<a href="unit2.html" class="unit-btn">หน่วยที่ 2 การเคลื่อนไหว</a>
+<a href="unit3.html" class="unit-btn active">หน่วยที่ 3 การควบคุม</a>
+<a href="unit4.html" class="unit-btn">หน่วยที่ 4 ตัวแปร</a>
+<a href="unit5.html" class="unit-btn">หน่วยที่ 5 เงื่อนไข</a>
+</div>
 
 <div class="container">
 
