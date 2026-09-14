@@ -373,7 +373,10 @@ function finish(){
         method: "POST",
         body: JSON.stringify(data)
     })
-
+fetch("https://script.google.com/macros/s/AKfycbxCaceG4_BmAr2cBTeO3XpJSeWXzDdIHYGT-93KD_ERyXNI9sn9uQX28CBfyX9__Yom/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
     document.getElementById("finish").innerHTML = 
         "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + 
         "<br><br><a href='unit2.html'><button type='button' style='background:#16a34a;'>ไปบทเรียนหน่วยที่ 2 ➡️</button></a>";
