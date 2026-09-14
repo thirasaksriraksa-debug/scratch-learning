@@ -1,1 +1,370 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>บทเรียน Scratch หน่วยที่ 3</title>
+
+<style>
+body{
+font-family: Arial;
+background:#f1f5f9;
+margin:0;
+}
+
+header{
+background:#2563eb;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-bottom:20px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+color:#1e3a8a;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1e40af;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>บทเรียนออนไลน์</h1>
+<p>เรื่อง การควบคุมการทำงานด้วย Scratch สำหรับนักเรียน ม.2</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>ข้อมูลผู้เรียน</h2>
+<label>ชื่อ-นามสกุล</label>
+<input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px">
+<br><br>
+<label>เลขที่</label>
+<input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px">
+</div>
+
+<!-- ================= แบบทดสอบก่อนเรียน ================= -->
+<div class="card">
+<h3>แบบทดสอบก่อนเรียน (หน่วยที่ 3 การควบคุม)</h3>
+
+<p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
+<input type="radio" name="pre1" value="1"> ใช้สำหรับควบคุมลำดับการทำงาน เงื่อนไข และการทำซ้ำของโปรแกรม<br>
+<input type="radio" name="pre1" value="0"> ใช้สำหรับเปลี่ยนสีชุดตัวละครและฉากหลัง<br>
+<input type="radio" name="pre1" value="0"> ใช้สำหรับคำนวณทางคณิตศาสตร์และตัวเลข<br>
+<input type="radio" name="pre1" value="0"> ใช้สำหรับบันทึกเสียงและดนตรีประกอบ<br>
+
+<p>2. บล็อกคำสั่งเริ่มต้นการทำงานเมื่อคลิกธงเขียว (When Green Flag Clicked) อยู่ในหมวดหมู่ใด</p>
+<input type="radio" name="pre2" value="1"> Events (เหตุการณ์)<br>
+<input type="radio" name="pre2" value="0"> Control (ควบคุม)<br>
+<input type="radio" name="pre2" value="0"> Motion (การเคลื่อนไหว)<br>
+<input type="radio" name="pre2" value="0"> Looks (รูปร่าง)<br>
+
+<p>3. หากต้องการให้ชุดคำสั่งภายในลูปทำงานซ้ำไปเรื่อยๆ ไม่มีที่สิ้นสุด ต้องใช้บล็อกใด</p>
+<input type="radio" name="pre3" value="1"> forever<br>
+<input type="radio" name="pre3" value="0"> repeat ( )<br>
+<input type="radio" name="pre3" value="0"> wait ( ) secs<br>
+<input type="radio" name="pre3" value="0"> stop all<br>
+
+<p>4. หากต้องการให้ตัวละครทำซ้ำตามจำนวนครั้งที่กำหนด เช่น ทำซ้ำ 10 ครั้ง ควรใช้บล็อกใด</p>
+<input type="radio" name="pre4" value="1"> repeat (10)<br>
+<input type="radio" name="pre4" value="0"> forever<br>
+<input type="radio" name="pre4" value="0"> wait (10) secs<br>
+<input type="radio" name="pre4" value="0"> stop (all)<br>
+
+<p>5. บล็อกคำสั่ง "wait ( ) secs" มีหน้าที่หลักตามข้อใด</p>
+<input type="radio" name="pre5" value="1"> หน่วงเวลาหรือหยุดรอการทำงานชั่วคราวก่อนไปคำสั่งถัดไป<br>
+<input type="radio" name="pre5" value="0"> สั่งให้โปรแกรมเริ่มทำงานใหม่ทันที<br>
+<input type="radio" name="pre5" value="0"> สั่งหยุดการทำงานของสคริปต์ทั้งหมดทันที<br>
+<input type="radio" name="pre5" value="0"> ตรวจจับเวลาที่ใช้ไปในการรันโปรแกรม<br>
+
+<p>6. ข้อใดคือประโยชน์ของการใช้บล็อกการหน่วงเวลา (Wait)</p>
+<input type="radio" name="pre6" value="1"> ช่วยให้การแสดงผลแอนิเมชันหรือเหตุการณ์มีความต่อเนื่องและไม่เร็วเกินไป<br>
+<input type="radio" name="pre6" value="0"> ช่วยเพิ่มความเร็วในการประมวลผลของโค้ดให้สูงขึ้น<br>
+<input type="radio" name="pre6" value="0"> ช่วยลดขนาดไฟล์ของโปรเจกต์ Scratch<br>
+<input type="radio" name="pre6" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งการเคลื่อนไหว<br>
+
+<p>7. หากต้องการหยุดการทำงานของสคริปต์เฉพาะตัวละครนี้หรือหยุดทั้งหมด ต้องใช้กลุ่มคำสั่งใด</p>
+<input type="radio" name="pre7" value="1"> stop (all / this script)<br>
+<input type="radio" name="pre7" value="0"> wait ( ) secs<br>
+<input type="radio" name="pre7" value="0"> repeat until<br>
+<input type="radio" name="pre7" value="0"> green flag clicked<br>
+
+<p>8. การใช้บล็อกทำซ้ำ (Loop) มีข้อดีอย่างไรในการเขียนโปรแกรม</p>
+<input type="radio" name="pre8" value="1"> ลดความซ้ำซ้อนในการเขียนบล็อกคำสั่ง และทำให้โค้ดสั้นกระชับขึ้น<br>
+<input type="radio" name="pre8" value="0"> ทำให้โปรแกรมสามารถรันได้โดยไม่ต้องใช้คอมพิวเตอร์<br>
+<input type="radio" name="pre8" value="0"> ช่วยแปลงโค้ดเป็นภาษา Python โดยอัตโนมัติ<br>
+<input type="radio" name="pre8" value="0"> ป้องกันไม่ให้โปรแกรมเกิดข้อผิดพลาดทางคณิตศาสตร์<br>
+
+<p>9. หากต้องการให้ตัวละครเดินไปข้างหน้า 10 ก้าว สลับกับการหยุดรอ 1 วินาที วนซ้ำแบบนี้ไปเรื่อยๆ ควรเลือกใช้บล็อกใดร่วมกัน</p>
+<input type="radio" name="pre9" value="1"> forever, move steps, และ wait secs<br>
+<input type="radio" name="pre9" value="0"> stop all และ go to x y<br>
+<input type="radio" name="pre9" value="0"> turn degrees และ say for secs<br>
+<input type="radio" name="pre9" value="0"> point in direction และ set size<br>
+
+<p>10. บล็อกคำสั่งในกลุ่ม Control ส่วนใหญ่จะมีลักษณะเด่นทางกายภาพอย่างไร</p>
+<input type="radio" name="pre10" value="1"> มีลักษณะเป็นช่องว่าง (C-shape) สำหรับนำบล็อกอื่นมาใส่ไว้ข้างใน<br>
+<input type="radio" name="pre10" value="0"> มีลักษณะเป็นวงกลมสำหรับใส่ค่าตัวเลข<br>
+<input type="radio" name="pre10" value="0"> มีขอบด้านบนโค้งมนและไม่มีช่องต่อ<br>
+<input type="radio" name="pre10" value="0"> มีสีชมพูเข้มและมีปุ่มกดในตัว<br>
+
+<p>11. ข้อใดกล่าวถึงความสัมพันธ์ของคำสั่งเริ่มต้น (When Green Flag Clicked) และคำสั่งควบคุม (Control) ได้ถูกต้องที่สุด</p>
+<input type="radio" name="pre11" value="1"> ใช้เป็นจุดเริ่มต้นในการสั่งให้ชุดคำสั่งควบคุมและการวนซ้ำเริ่มทำงานพร้อมกัน<br>
+<input type="radio" name="pre11" value="0"> ใช้สำหรับปิดโปรแกรม Scratch เมื่อกดธงเขียว<br>
+<input type="radio" name="pre11" value="0"> ใช้สำหรับเปลี่ยนภาษาของโปรแกรม<br>
+<input type="radio" name="pre11" value="0"> ไม่มีความเกี่ยวข้องกันในการเขียนโปรแกรม<br>
+
+<p>12. หากต้องการหยุดสคริปต์การทำงานเฉพาะชุดคำสั่งที่กำลังทำงานอยู่ ควรเลือกตัวเลือกใดในบล็อก Stop</p>
+<input type="radio" name="pre12" value="1"> this script<br>
+<input type="radio" name="pre12" value="0"> all<br>
+<input type="radio" name="pre12" value="0"> green flag<br>
+<input type="radio" name="pre12" value="0"> repeat<br>
+<br>
+
+<button onclick="pretest()">ส่งคำตอบ</button>
+<p id="preScore" class="result"></p>
+</div>
+
+<!-- ================= เนื้อหาบทเรียน ================= -->
+<div class="card" id="lesson" style="display:none;">
+<h2>หน่วยที่ 3 การควบคุม</h2>
+<h3>3.1 ความหมายของคำสั่งควบคุมการทำงาน</h3>
+<p>กลุ่มคำสั่งควบคุม (Control Blocks) เป็นบล็อกคำสั่งที่มีสีส้ม ใช้สำหรับควบคุมลำดับการทำงานของโปรแกรม การสร้างเงื่อนไขทางเลือก การทำซ้ำ (Loop) รวมถึงการจัดการเวลาและการหยุดการทำงาน เพื่อให้โปรแกรมเป็นไปตามตรรกะที่ต้องการ</p>
+
+<h3>3.2 คำสั่งเริ่มต้นการทำงาน (When Green Flag Clicked)</h3>
+<p>เป็นคำสั่งเหตุการณ์ (Events - สีน้ำตาลอ่อน/ส้มอมเหลือง) ที่ทำหน้าที่เป็นจุดเริ่มต้นหลักของโปรแกรม เมื่อผู้ใช้คลิกที่สัญลักษณ์ธงเขียวที่มุมบนของเวที ชุดคำสั่งที่ต่ออยู่ด้านล่างจะเริ่มทำงานทันที</p>
+
+<h3>3.3 คำสั่งการทำซ้ำ (Loop)</h3>
+<p>ใช้สำหรับสั่งให้บล็อกคำสั่งภายในทำงานซ้ำๆ กันหลายครั้ง ช่วยลดความซ้ำซ้อนในการต่อบล็อก คำสั่งที่นิยมใช้ ได้แก่ <code>repeat ( )</code> สำหรับทำซ้ำตามจำนวนครั้งที่กำหนด และ <code>forever</code> สำหรับทำซ้ำไม่รู้จบ</p>
+
+<h3>3.4 คำสั่งการหน่วงเวลา (Wait)</h3>
+<p>ใช้คำสั่ง <code>wait ( ) secs</code> เพื่อหน่วงเวลาหรือหยุดรอการทำงานตามระยะเวลาที่เป็นวินาทีที่กำหนด ช่วยให้การแสดงผลแอนิเมชันหรือขั้นตอนการทำงานมีความราบรื่นและดูเป็นธรรมชาติมากขึ้น</p>
+
+<h3>3.5 การใช้คำสั่งหยุดการทำงาน (Stop)</h3>
+<p>ใช้บล็อก <code>stop ( )</code> เพื่อยุติการทำงานของโปรแกรม สามารถเลือกรูปแบบการหยุดได้ เช่น หยุดสคริปต์ทั้งหมด (all) หรือหยุดเฉพาะสคริปต์นี้ (this script) เพื่อควบคุมการจบการทำงานของตัวละครหรือเกมได้อย่างแม่นยำ</p>
+</div>
+
+<div class="card" id="lesson2" style="display:none;">
+<h3>สื่อวิดีโอประกอบบทเรียน</h3>
+<p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมการทำงานในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+<br><br>
+<button onclick="finishLesson()">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+</div>
+
+<!-- ================= แบบทดสอบหลังเรียน ================= -->
+<div class="card" id="posttest" style="display:none;">
+<h3>แบบทดสอบหลังเรียน (หน่วยที่ 3 การควบคุม)</h3>
+
+<p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
+<input type="radio" name="post1" value="1"> ใช้สำหรับควบคุมลำดับการทำงาน เงื่อนไข และการทำซ้ำของโปรแกรม<br>
+<input type="radio" name="post1" value="0"> ใช้สำหรับเปลี่ยนสีชุดตัวละครและฉากหลัง<br>
+<input type="radio" name="post1" value="0"> ใช้สำหรับคำนวณทางคณิตศาสตร์และตัวเลข<br>
+<input type="radio" name="post1" value="0"> ใช้สำหรับบันทึกเสียงและดนตรีประกอบ<br>
+
+<p>2. บล็อกคำสั่งเริ่มต้นการทำงานเมื่อคลิกธงเขียว (When Green Flag Clicked) อยู่ในหมวดหมู่ใด</p>
+<input type="radio" name="post2" value="1"> Events (เหตุการณ์)<br>
+<input type="radio" name="post2" value="0"> Control (ควบคุม)<br>
+<input type="radio" name="post2" value="0"> Motion (การเคลื่อนไหว)<br>
+<input type="radio" name="post2" value="0"> Looks (รูปร่าง)<br>
+
+<p>3. หากต้องการให้ชุดคำสั่งภายในลูปทำงานซ้ำไปเรื่อยๆ ไม่มีที่สิ้นสุด ต้องใช้บล็อกใด</p>
+<input type="radio" name="post3" value="1"> forever<br>
+<input type="radio" name="post3" value="0"> repeat ( )<br>
+<input type="radio" name="post3" value="0"> wait ( ) secs<br>
+<input type="radio" name="post3" value="0"> stop all<br>
+
+<p>4. หากต้องการให้ตัวละครทำซ้ำตามจำนวนครั้งที่กำหนด เช่น ทำซ้ำ 10 ครั้ง ควรใช้บล็อกใด</p>
+<input type="radio" name="post4" value="1"> repeat (10)<br>
+<input type="radio" name="post4" value="0"> forever<br>
+<input type="radio" name="post4" value="0"> wait (10) secs<br>
+<input type="radio" name="post4" value="0"> stop (all)<br>
+
+<p>5. บล็อกคำสั่ง "wait ( ) secs" มีหน้าที่หลักตามข้อใด</p>
+<input type="radio" name="post5" value="1"> หน่วงเวลาหรือหยุดรอการทำงานชั่วคราวก่อนไปคำสั่งถัดไป<br>
+<input type="radio" name="post5" value="0"> สั่งให้โปรแกรมเริ่มทำงานใหม่ทันที<br>
+<input type="radio" name="post5" value="0"> สั่งหยุดการทำงานของสคริปต์ทั้งหมดทันที<br>
+<input type="radio" name="post5" value="0"> ตรวจจับเวลาที่ใช้ไปในการรันโปรแกรม<br>
+
+<p>6. ข้อใดคือประโยชน์ของการใช้บล็อกการหน่วงเวลา (Wait)</p>
+<input type="radio" name="post6" value="1"> ช่วยให้การแสดงผลแอนิเมชันหรือเหตุการณ์มีความต่อเนื่องและไม่เร็วเกินไป<br>
+<input type="radio" name="post6" value="0"> ช่วยเพิ่มความเร็วในการประมวลผลของโค้ดให้สูงขึ้น<br>
+<input type="radio" name="post6" value="0"> ช่วยลดขนาดไฟล์ของโปรเจกต์ Scratch<br>
+<input type="radio" name="post6" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งการเคลื่อนไหว<br>
+
+<p>7. หากต้องการหยุดการทำงานของสคริปต์เฉพาะตัวละครนี้หรือหยุดทั้งหมด ต้องใช้กลุ่มคำสั่งใด</p>
+<input type="radio" name="post7" value="1"> stop (all / this script)<br>
+<input type="radio" name="post7" value="0"> wait ( ) secs<br>
+<input type="radio" name="post7" value="0"> repeat until<br>
+<input type="radio" name="post7" value="0"> green flag clicked<br>
+
+<p>8. การใช้บล็อกทำซ้ำ (Loop) มีข้อดีอย่างไรในการเขียนโปรแกรม</p>
+<input type="radio" name="post8" value="1"> ลดความซ้ำซ้อนในการเขียนบล็อกคำสั่ง และทำให้โค้ดสั้นกระชับขึ้น<br>
+<input type="radio" name="post8" value="0"> ทำให้โปรแกรมสามารถรันได้โดยไม่ต้องใช้คอมพิวเตอร์<br>
+<input type="radio" name="post8" value="0"> ช่วยแปลงโค้ดเป็นภาษา Python โดยอัตโนมัติ<br>
+<input type="radio" name="post8" value="0"> ป้องกันไม่ให้โปรแกรมเกิดข้อผิดพลาดทางคณิตศาสตร์<br>
+
+<p>9. หากต้องการให้ตัวละครเดินไปข้างหน้า 10 ก้าว สลับกับการหยุดรอ 1 วินาที วนซ้ำแบบนี้ไปเรื่อยๆ ควรเลือกใช้บล็อกใดร่วมกัน</p>
+<input type="radio" name="post9" value="1"> forever, move steps, และ wait secs<br>
+<input type="radio" name="post9" value="0"> stop all และ go to x y<br>
+<input type="radio" name="post9" value="0"> turn degrees และ say for secs<br>
+<input type="radio" name="post9" value="0"> point in direction และ set size<br>
+
+<p>10. บล็อกคำสั่งในกลุ่ม Control ส่วนใหญ่จะมีลักษณะเด่นทางกายภาพอย่างไร</p>
+<input type="radio" name="post10" value="1"> มีลักษณะเป็นช่องว่าง (C-shape) สำหรับนำบล็อกอื่นมาใส่ไว้ข้างใน<br>
+<input type="radio" name="post10" value="0"> มีลักษณะเป็นวงกลมสำหรับใส่ค่าตัวเลข<br>
+<input type="radio" name="post10" value="0"> มีขอบด้านบนโค้งมนและไม่มีช่องต่อ<br>
+<input type="radio" name="post10" value="0"> มีสีชมพูเข้มและมีปุ่มกดในตัว<br>
+
+<p>11. ข้อใดกล่าวถึงความสัมพันธ์ของคำสั่งเริ่มต้น (When Green Flag Clicked) และคำสั่งควบคุม (Control) ได้ถูกต้องที่สุด</p>
+<input type="radio" name="post11" value="1"> ใช้เป็นจุดเริ่มต้นในการสั่งให้ชุดคำสั่งควบคุมและการวนซ้ำเริ่มทำงานพร้อมกัน<br>
+<input type="radio" name="post11" value="0"> ใช้สำหรับปิดโปรแกรม Scratch เมื่อกดธงเขียว<br>
+<input type="radio" name="post11" value="0"> ใช้สำหรับเปลี่ยนภาษาของโปรแกรม<br>
+<input type="radio" name="post11" value="0"> ไม่มีความเกี่ยวข้องกันในการเขียนโปรแกรม<br>
+
+<p>12. หากต้องการหยุดสคริปต์การทำงานเฉพาะชุดคำสั่งที่กำลังทำงานอยู่ ควรเลือกตัวเลือกใดในบล็อก Stop</p>
+<input type="radio" name="post12" value="1"> this script<br>
+<input type="radio" name="post12" value="0"> all<br>
+<input type="radio" name="post12" value="0"> green flag<br>
+<input type="radio" name="post12" value="0"> repeat<br>
+<br>
+
+<button onclick="posttest()">ส่งคำตอบ</button>
+<p id="postScore" class="result"></p>
+</div>
+
+<!-- ================= แบบประเมินความพึงพอใจ ================= -->
+<div class="card" id="survey" style="display:none;">
+<h3>แบบประเมินความพึงพอใจ</h3>
+<section>
+<h2>แบบประเมินความพึงพอใจของนักเรียน</h2>
+<form>
+<p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+<label><input type="radio" name="q1" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q1" value="4"> มาก</label><br>
+<label><input type="radio" name="q1" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q1" value="2"> น้อย</label><br>
+<label><input type="radio" name="q1" value="1"> น้อยที่สุด</label>
+
+<p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+<label><input type="radio" name="q2" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q2" value="4"> มาก</label><br>
+<label><input type="radio" name="q2" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q2" value="2"> น้อย</label><br>
+<label><input type="radio" name="q2" value="1"> น้อยที่สุด</label>
+
+<p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+<label><input type="radio" name="q3" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q3" value="4"> มาก</label><br>
+<label><input type="radio" name="q3" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q3" value="2"> น้อย</label><br>
+<label><input type="radio" name="q3" value="1"> น้อยที่สุด</label>
+
+<p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+<label><input type="radio" name="q4" value="5"> มากที่สุด</label><br>
+<label><input type="radio" name="q4" value="4"> มาก</label><br>
+<label><input type="radio" name="q4" value="3"> ปานกลาง</label><br>
+<label><input type="radio" name="q4" value="2"> น้อย</label><br>
+<label><input type="radio" name="q4" value="1"> น้อยที่สุด</label>
+
+<br><br>
+<button type="button" onclick="finish()">ส่งคำตอบ</button>
+<p id="finish"></p>
+</form>
+</section>
+</div>
+
+</div>
+
+<script>
+let preScoreValue = 0
+let postScoreValue = 0
+
+function pretest(){
+    let score = 0
+    for (let i = 1; i <= 12; i++) {
+        document.querySelectorAll(`input[name="pre${i}"]:checked`).forEach(e => score += parseInt(e.value))
+    }
+    preScoreValue = score
+    document.getElementById("preScore").innerHTML = "คะแนนก่อนเรียน = " + score + " / 12"
+    document.getElementById("lesson").style.display = "block"
+    document.getElementById("lesson2").style.display = "block"
+}
+
+function posttest(){
+    let score = 0
+    for (let i = 1; i <= 12; i++) {
+        document.querySelectorAll(`input[name="post${i}"]:checked`).forEach(e => score += parseInt(e.value))
+    }
+    postScoreValue = score
+    document.getElementById("postScore").innerHTML = "คะแนนหลังเรียน = " + score + " / 12"
+    document.getElementById("survey").style.display = "block"
+}
+
+function finishLesson(){
+    document.getElementById("posttest").style.display = "block"
+    window.scrollTo({
+        top: document.getElementById("posttest").offsetTop,
+        behavior: "smooth"
+    })
+}
+
+function finish(){
+    let name = document.getElementById("name").value
+    let number = document.getElementById("number").value
+
+    let q1 = document.querySelector('input[name="q1"]:checked')?.value
+    let q2 = document.querySelector('input[name="q2"]:checked')?.value
+    let q3 = document.querySelector('input[name="q3"]:checked')?.value
+    let q4 = document.querySelector('input[name="q4"]:checked')?.value
+
+    let data = {
+        unit: "3",
+        name: name,
+        number: number,
+        pretest: preScoreValue,
+        posttest: postScoreValue,
+        q1: q1,
+        q2: q2,
+        q3: q3,
+        q4: q4
+    }
+    fetch("https://script.google.com/macros/s/AKfycbz9ilPCAch8TEVoun7l0pWlYSR-7WyUUUbMTBzO44gbhHnqCVpM5S8n-nKjH2_0LbYh/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    document.getElementById("finish").innerHTML = 
+        "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + 
+        "<br><br><a href='unit4.html'><button type='button' style='background:#16a34a;'>ไปบทเรียนหน่วยที่ 4 ➡️</button></a>";
+}
+</script>
+
+</body>
+</html>
