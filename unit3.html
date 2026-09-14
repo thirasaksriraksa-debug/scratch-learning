@@ -3,128 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>บทเรียน Scratch หน่วยที่ 3</title>
-
 <style>
 body{
-font-family: Arial;
-background:#f1f5f9;
-margin:0;
+  font-family: Arial, sans-serif;
+  background:#f1f5f9;
+  margin:0;
 }
-
 header{
-background:#2563eb;
-color:white;
-padding:20px;
-text-align:center;
+  background:#2563eb;
+  color:white;
+  padding:20px;
+  text-align:center;
 }
-
-/* สไตล์สำหรับแถบปุ่มเลือกหน่วย */
 .unit-nav{
-background:#1e40af;
-padding:10px;
-text-align:center;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
+  background:#1e40af;
+  padding:10px;
+  text-align:center;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
-
 .unit-btn{
-background:#3b82f6;
-color:white;
-border:none;
-padding:8px 15px;
-border-radius:5px;
-cursor:pointer;
-font-size:14px;
-text-decoration:none;
+  background:#3b82f6;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:14px;
+  text-decoration:none;
 }
-
 .unit-btn:hover{
-background:#60a5fa;
+  background:#60a5fa;
 }
-
 .unit-btn.active{
-background:#10b981;
-font-weight:bold;
+  background:#10b981;
+  font-weight:bold;
 }
-
 .container{
-max-width:900px;
-margin:auto;
-padding:20px;
+  max-width:900px;
+  margin:auto;
+  padding:20px;
 }
-
 .card{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
-
 h2{
-color:#1e3a8a;
+  color:#1e3a8a;
 }
-
 button{
-background:#2563eb;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-cursor:pointer;
+  background:#2563eb;
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:6px;
+  cursor:pointer;
 }
-
 button:hover{
-background:#1e40af;
-}
-
-/* ซ่อน/แสดง เนื้อหาแต่ละหน่วย */
-.unit-section {
-display: none;
-}
-.unit-section.active {
-display: block;
+  background:#1e40af;
 }
 </style>
 </head>
-
 <body>
 
 <header>
-<h1>บทเรียนออนไลน์</h1>
-<p>เรื่อง การควบคุมการทำงานด้วย Scratch สำหรับนักเรียน ม.2</p>
+  <h1>บทเรียนออนไลน์</h1>
+  <p>เรื่อง การควบคุมการทำงาน (Control) สำหรับนักเรียน ม.2</p>
 </header>
 
-<!-- แถบเมนูปุ่มเลือกหน่วยการเรียน -->
+<!-- แถบเมนูด้านบนเชื่อมโยงไปแต่ละไฟล์ -->
 <div class="unit-nav">
-<button class="unit-btn" onclick="switchUnit(1)">หน่วยที่ 1 รู้จัก Scratch</button>
-<button class="unit-btn" onclick="switchUnit(2)">หน่วยที่ 2 การเคลื่อนไหว</button>
-<button class="unit-btn active" onclick="switchUnit(3)">หน่วยที่ 3 การควบคุม</button>
-<button class="unit-btn" onclick="switchUnit(4)">หน่วยที่ 4 ตัวแปร</button>
-<button class="unit-btn" onclick="switchUnit(5)">หน่วยที่ 5 เงื่อนไข</button>
+  <a href="index.html" class="unit-btn">หน่วยที่ 1 รู้จัก Scratch</a>
+  <a href="unit2.html" class="unit-btn">หน่วยที่ 2 การเคลื่อนไหว</a>
+  <a href="unit3.html" class="unit-btn active">หน่วยที่ 3 การควบคุม</a>
+  <a href="unit4.html" class="unit-btn">หน่วยที่ 4 ตัวแปร</a>
+  <a href="unit5.html" class="unit-btn">หน่วยที่ 5 เงื่อนไข</a>
 </div>
 
 <div class="container">
 
-<div class="card">
-<h2>ข้อมูลผู้เรียน</h2>
-<label>ชื่อ-นามสกุล</label>
-<input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px;box-sizing:border-box;">
-<br><br>
-<label>เลขที่</label>
-<input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px;box-sizing:border-box;">
-</div>
+  <div class="card">
+    <h2>ข้อมูลผู้เรียน</h2>
+    <label>ชื่อ-นามสกุล</label>
+    <input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px;box-sizing:border-box;">
+    <br><br>
+    <label>เลขที่</label>
+    <input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px;box-sizing:border-box;">
+  </div>
 
-<!-- ========================================== -->
-<!-- หน่วยที่ 3 -->
-<!-- ========================================== -->
-<div id="unit3-content" class="unit-section active">
-    <!-- ================= แบบทดสอบก่อนเรียน ================= -->
-    <div class="card">
+  <!-- แบบทดสอบก่อนเรียน หน่วยที่ 3 -->
+  <div class="card">
     <h3>แบบทดสอบก่อนเรียน (หน่วยที่ 3 การควบคุม)</h3>
 
     <p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
@@ -199,14 +173,13 @@ display: block;
     <input type="radio" name="pre12" value="0"> green flag<br>
     <input type="radio" name="pre12" value="0"> repeat<br>
     <br>
-
     <button onclick="pretest()">ส่งคำตอบ</button>
-    <p id="preScore" class="result"></p>
-    </div>
+    <p id="preScore"></p>
+  </div>
 
-    <!-- ================= เนื้อหาบทเรียน ================= -->
-    <div class="card" id="lesson" style="display:none;">
-    <h2>หน่วยที่ 3 การควบคุม</h2>
+  <!-- เนื้อหาบทเรียน หน่วยที่ 3 -->
+  <div class="card" id="lesson" style="display:none;">
+    <h2>หน่วยที่ 3 การควบคุม (Control)</h2>
     <h3>3.1 ความหมายของคำสั่งควบคุมการทำงาน</h3>
     <p>กลุ่มคำสั่งควบคุม (Control Blocks) เป็นบล็อกคำสั่งที่มีสีส้ม ใช้สำหรับควบคุมลำดับการทำงานของโปรแกรม การสร้างเงื่อนไขทางเลือก การทำซ้ำ (Loop) รวมถึงการจัดการเวลาและการหยุดการทำงาน เพื่อให้โปรแกรมเป็นไปตามตรรกะที่ต้องการ</p>
 
@@ -221,18 +194,18 @@ display: block;
 
     <h3>3.5 การใช้คำสั่งหยุดการทำงาน (Stop)</h3>
     <p>ใช้บล็อก <code>stop ( )</code> เพื่อยุติการทำงานของโปรแกรม สามารถเลือกรูปแบบการหยุดได้ เช่น หยุดสคริปต์ทั้งหมด (all) หรือหยุดเฉพาะสคริปต์นี้ (this script) เพื่อควบคุมการจบการทำงานของตัวละครหรือเกมได้อย่างแม่นยำ</p>
-    </div>
+  </div>
 
-    <div class="card" id="lesson2" style="display:none;">
+  <div class="card" id="lesson2" style="display:none;">
     <h3>สื่อวิดีโอประกอบบทเรียน</h3>
     <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมการทำงานในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
     <br><br>
     <button onclick="finishLesson()">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
-    </div>
+  </div>
 
-    <!-- ================= แบบทดสอบหลังเรียน ================= -->
-    <div class="card" id="posttest" style="display:none;">
+  <!-- แบบทดสอบหลังเรียน หน่วยที่ 3 -->
+  <div class="card" id="posttest" style="display:none;">
     <h3>แบบทดสอบหลังเรียน (หน่วยที่ 3 การควบคุม)</h3>
 
     <p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
@@ -307,17 +280,13 @@ display: block;
     <input type="radio" name="post12" value="0"> green flag<br>
     <input type="radio" name="post12" value="0"> repeat<br>
     <br>
-
     <button onclick="posttest()">ส่งคำตอบ</button>
-    <p id="postScore" class="result"></p>
-    </div>
+    <p id="postScore"></p>
+  </div>
 
-    <!-- ================= แบบประเมินความพึงพอใจ ================= -->
-    <div class="card" id="survey" style="display:none;">
-    <h3>แบบประเมินความพึงพอใจ</h3>
-    <section>
-    <h2>แบบประเมินความพึงพอใจของนักเรียน</h2>
-    <form>
+  <!-- แบบประเมินความพึงพอใจ หน่วยที่ 3 -->
+  <div class="card" id="survey" style="display:none;">
+    <h3>แบบประเมินความพึงพอใจ (หน่วยที่ 3)</h3>
     <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
     <label><input type="radio" name="q1" value="5"> มากที่สุด</label><br>
     <label><input type="radio" name="q1" value="4"> มาก</label><br>
@@ -345,89 +314,54 @@ display: block;
     <label><input type="radio" name="q4" value="3"> ปานกลาง</label><br>
     <label><input type="radio" name="q4" value="2"> น้อย</label><br>
     <label><input type="radio" name="q4" value="1"> น้อยที่สุด</label>
-
     <br><br>
     <button type="button" onclick="finish()">ส่งคำตอบ</button>
     <p id="finish"></p>
-    </form>
-    </section>
-    </div>
-</div>
-<!-- ========================================== -->
-<!-- จบหน่วยที่ 3 -->
-<!-- ========================================== -->
-
-<!-- โครงสร้างสำหรับหน่วยอื่นๆ (สามารถเติมเนื้อหาของหน่วย 1, 2, 4, 5 ไว้ตรงนี้ได้ถ้าต้องการรวมไฟล์เดียว) -->
-<div id="unit1-content" class="unit-section">
-    <div class="card"><h2>หน่วยที่ 1 รู้จัก Scratch</h2><p>เนื้อหาหน่วยที่ 1...</p></div>
-</div>
-<div id="unit2-content" class="unit-section">
-    <div class="card"><h2>หน่วยที่ 2 การเคลื่อนไหว</h2><p>เนื้อหาหน่วยที่ 2...</p></div>
-</div>
-<div id="unit4-content" class="unit-section">
-    <div class="card"><h2>หน่วยที่ 4 ตัวแปร</h2><p>เนื้อหาหน่วยที่ 4...</p></div>
-</div>
-<div id="unit5-content" class="unit-section">
-    <div class="card"><h2>หน่วยที่ 5 เงื่อนไข</h2><p>เนื้อหาหน่วยที่ 5...</p></div>
-</div>
+  </div>
 
 </div>
 
 <script>
-let preScoreValue = 0
-let postScoreValue = 0
-
-// ฟังก์ชันสลับหน้าหน่วยการเรียน
-function switchUnit(unitNumber) {
-    let sections = document.querySelectorAll('.unit-section');
-    sections.forEach(sec => sec.classList.remove('active'));
-
-    let buttons = document.querySelectorAll('.unit-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-
-    document.getElementById('unit' + unitNumber + '-content').classList.add('active');
-    event.currentTarget.classList.add('active');
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+let preScoreValue = 0;
+let postScoreValue = 0;
 
 function pretest(){
-    let score = 0
+    let score = 0;
     for (let i = 1; i <= 12; i++) {
-        document.querySelectorAll(`input[name="pre${i}"]:checked`).forEach(e => score += parseInt(e.value))
+        document.querySelectorAll(`input[name="pre${i}"]:checked`).forEach(e => score += parseInt(e.value));
     }
-    preScoreValue = score
-    document.getElementById("preScore").innerHTML = "คะแนนก่อนเรียน = " + score + " / 12"
-    document.getElementById("lesson").style.display = "block"
-    document.getElementById("lesson2").style.display = "block"
+    preScoreValue = score;
+    document.getElementById("preScore").innerHTML = "คะแนนก่อนเรียน = " + score + " / 12";
+    document.getElementById("lesson").style.display = "block";
+    document.getElementById("lesson2").style.display = "block";
 }
 
 function posttest(){
-    let score = 0
+    let score = 0;
     for (let i = 1; i <= 12; i++) {
-        document.querySelectorAll(`input[name="post${i}"]:checked`).forEach(e => score += parseInt(e.value))
+        document.querySelectorAll(`input[name="post${i}"]:checked`).forEach(e => score += parseInt(e.value));
     }
-    postScoreValue = score
-    document.getElementById("postScore").innerHTML = "คะแนนหลังเรียน = " + score + " / 12"
-    document.getElementById("survey").style.display = "block"
+    postScoreValue = score;
+    document.getElementById("postScore").innerHTML = "คะแนนหลังเรียน = " + score + " / 12";
+    document.getElementById("survey").style.display = "block";
 }
 
 function finishLesson(){
-    document.getElementById("posttest").style.display = "block"
+    document.getElementById("posttest").style.display = "block";
     window.scrollTo({
         top: document.getElementById("posttest").offsetTop,
         behavior: "smooth"
-    })
+    });
 }
 
 function finish(){
-    let name = document.getElementById("name").value
-    let number = document.getElementById("number").value
+    let name = document.getElementById("name").value;
+    let number = document.getElementById("number").value;
 
-    let q1 = document.querySelector('input[name="q1"]:checked')?.value
-    let q2 = document.querySelector('input[name="q2"]:checked')?.value
-    let q3 = document.querySelector('input[name="q3"]:checked')?.value
-    let q4 = document.querySelector('input[name="q4"]:checked')?.value
+    let q1 = document.querySelector('input[name="q1"]:checked')?.value;
+    let q2 = document.querySelector('input[name="q2"]:checked')?.value;
+    let q3 = document.querySelector('input[name="q3"]:checked')?.value;
+    let q4 = document.querySelector('input[name="q4"]:checked')?.value;
 
     let data = {
         unit: "3",
@@ -439,14 +373,16 @@ function finish(){
         q2: q2,
         q3: q3,
         q4: q4
-    }
+    };
+
     fetch("https://script.google.com/macros/s/AKfycbz9ilPCAch8TEVoun7l0pWlYSR-7WyUUUbMTBzO44gbhHnqCVpM5S8n-nKjH2_0LbYh/exec", {
         method: "POST",
         body: JSON.stringify(data)
-    })
+    });
+
     document.getElementById("finish").innerHTML = 
         "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + 
-        "<br><br><button type='button' style='background:#16a34a;' onclick='switchUnit(4)'>ไปบทเรียนหน่วยที่ 4 ➡️</button>";
+        "<br><br><a href='unit4.html'><button type='button' style='background:#16a34a;'>ไปบทเรียนหน่วยที่ 4 ➡️</button></a>";
 }
 </script>
 
