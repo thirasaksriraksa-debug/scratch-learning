@@ -3,72 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>บทเรียน Scratch หน่วยที่ 1</title>
-    
-<style>
-body{
-font-family: Arial;
-background:#f1f5f9;
-margin:0;<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>บทเรียน Scratch (หน่วยที่ 1-5)</title>
 
 <style>
 body{
-font-family: Arial;
-background:#f1f5f9;
-margin:0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
 }
 
 header{
-background:#2563eb;
-color:white;
-padding:20px;
-text-align:center;
+    background: #2563eb;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
 .unit-nav{
-background:#1e40af;
-padding:10px;
-text-align:center;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-position:sticky;
-top:0;
-z-index:10;
+    background: #1e40af;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .unit-btn{
-background:#3b82f6;
-color:white;
-border:none;
-padding:8px 15px;
-border-radius:5px;
-cursor:pointer;
-font-size:14px;
-text-decoration:none;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
 }
 
 .unit-btn:hover{
-background:#60a5fa;
+    background: #60a5fa;
 }
 
 .unit-btn.active{
-background:#10b981;
-font-weight:bold;
+    background: #10b981;
+    font-weight: bold;
 }
 
 .container{
-max-width:900px;
-margin:auto;
-padding:20px;
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
+
+.card{
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    color: #1e3a8a;
+}
+
+button{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #1e40af;
+}
+
+.unit-section {
+    display: none;
+}
+
+.unit-section.active {
+    display: block;
+}
+</style>
+</head>
 
 .card{
 background:white;
