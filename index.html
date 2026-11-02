@@ -1121,203 +1121,205 @@
 </div>
 
 
-<div id="unit6-content" class="unit-section">
+<!-- เรื่องที่ 6 (การใช้คำสั่งหยุดการทำงาน) -->
+    <div id="unit6-content" class="unit-section">
+        <!-- แบบทดสอบก่อนเรียน เรื่องที่ 6 -->
         <div class="card">
             <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน)</h3>
-        
-        <p>1. บล็อกคำสั่งเกี่ยวกับการหยุดการทำงาน (Stop) ในโปรแกรม Scratch จัดอยู่ในกลุ่มบล็อกหมวดหมู่และสีใด</p>
-        <input type="radio" name="u6pre1" value="1"> สีส้ม (Control - ควบคุม)<br>
-        <input type="radio" name="u6pre1" value="0"> สีฟ้าเข้ม (Motion - การเคลื่อนไหว)<br>
-        <input type="radio" name="u6pre1" value="0"> สีม่วง (Looks - รูปร่าง)<br>
-        <input type="radio" name="u6pre1" value="0"> สีเหลือง (Events - เหตุการณ์)<br>
+            
+            <p>1. บล็อกคำสั่งเกี่ยวกับการหยุดการทำงาน (Stop) ในโปรแกรม Scratch จัดอยู่ในกลุ่มบล็อกหมวดหมู่และสีใด</p>
+            <input type="radio" name="u6pre1" value="1"> สีส้ม (Control - ควบคุม)<br>
+            <input type="radio" name="u6pre1" value="0"> สีฟ้าเข้ม (Motion - การเคลื่อนไหว)<br>
+            <input type="radio" name="u6pre1" value="0"> สีม่วง (Looks - รูปร่าง)<br>
+            <input type="radio" name="u6pre1" value="0"> สีเหลือง (Events - เหตุการณ์)<br>
 
-        <p>2. หากต้องการหยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์ทันที ควรเลือกใช้ตัวเลือกใดในบล็อก stop</p>
-        <input type="radio" name="u6pre2" value="1"> all (ทั้งหมด)<br>
-        <input type="radio" name="u6pre2" value="0"> this script (สคริปต์นี้)<br>
-        <input type="radio" name="u6pre2" value="0"> other scripts in sprite (สคริปต์อื่นๆ ในตัวละคร)<br>
-        <input type="radio" name="u6pre2" value="0"> wait (หน่วงเวลา)<br>
+            <p>2. หากต้องการหยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์ทันที ควรเลือกใช้ตัวเลือกใดในบล็อก stop</p>
+            <input type="radio" name="u6pre2" value="1"> all (ทั้งหมด)<br>
+            <input type="radio" name="u6pre2" value="0"> this script (สคริปต์นี้)<br>
+            <input type="radio" name="u6pre2" value="0"> other scripts in sprite (สคริปต์อื่นๆ ในตัวละคร)<br>
+            <input type="radio" name="u6pre2" value="0"> wait (หน่วงเวลา)<br>
 
-        <p>3. บล็อกคำสั่ง `stop [this script v]` มีหน้าที่หลักตามข้อใด</p>
-        <input type="radio" name="u6pre3" value="1"> หยุดการทำงานเฉพาะชุดคำสั่ง (สคริปต์) ที่กำลังทำงานอยู่นั้น<br>
-        <input type="radio" name="u6pre3" value="0"> หยุดการทำงานของโปรแกรมทั้งหมด<br>
-        <input type="radio" name="u6pre3" value="0"> ลบทิ้งตัวละครทั้งหมดบนเวที<br>
-        <input type="radio" name="u6pre3" value="0"> รีเซ็ตค่าตัวแปรทั้งหมดเป็น 0<br>
+            <p>3. บล็อกคำสั่ง <code>stop [this script v]</code> มีหน้าที่หลักตามข้อใด</p>
+            <input type="radio" name="u6pre3" value="1"> หยุดการทำงานเฉพาะชุดคำสั่ง (สคริปต์) ที่กำลังทำงานอยู่นั้น<br>
+            <input type="radio" name="u6pre3" value="0"> หยุดการทำงานของโปรแกรมทั้งหมด<br>
+            <input type="radio" name="u6pre3" value="0"> ลบทิ้งตัวละครทั้งหมดบนเวที<br>
+            <input type="radio" name="u6pre3" value="0"> รีเซ็ตค่าตัวแปรทั้งหมดเป็น 0<br>
 
-        <p>4. ตัวเลือก `other scripts in sprite` ในบล็อก stop มีหน้าที่ทำอะไร</p>
-        <input type="radio" name="u6pre4" value="1"> หยุดสคริปต์อื่นๆ ทั้งหมดในตัวละครตัวนี้ ยกเว้นสคริปต์ที่กำลังสั่งงานอยู่<br>
-        <input type="radio" name="u6pre4" value="0"> หยุดการทำงานของทุกตัวละครในเกม<br>
-        <input type="radio" name="u6pre4" value="0"> เริ่มต้นเกมใหม่ทันที<br>
-        <input type="radio" name="u6pre4" value="0"> ลบตัวละครทิ้งจากเวที<br>
+            <p>4. ตัวเลือก <code>other scripts in sprite</code> ในบล็อก stop มีหน้าที่ทำอะไร</p>
+            <input type="radio" name="u6pre4" value="1"> หยุดสคริปต์อื่นๆ ทั้งหมดในตัวละครตัวนี้ ยกเว้นสคริปต์ที่กำลังสั่งงานอยู่<br>
+            <input type="radio" name="u6pre4" value="0"> หยุดการทำงานของทุกตัวละครในเกม<br>
+            <input type="radio" name="u6pre4" value="0"> เริ่มต้นเกมใหม่ทันที<br>
+            <input type="radio" name="u6pre4" value="0"> ลบตัวละครทิ้งจากเวที<br>
 
-        <p>5. ในการสร้างเกม เมื่อตัวละครผู้เล่นชนกับอุปสรรคจนพลังชีวิตหมด (HP = 0) เราควรใช้บล็อก stop ร่วมกับคำสั่งใดเพื่อให้เกมหยุดทำงาน</p>
-        <input type="radio" name="u6pre5" value="1"> คำสั่งเงื่อนไข (If) และ stop [all]<br>
-        <input type="radio" name="u6pre5" value="0"> บล็อกการเคลื่อนไหว (Motion)<br>
-        <input type="radio" name="u6pre5" value="0"> บล็อกเปลี่ยนชุดตัวละคร (Next Costume)<br>
-        <input type="radio" name="u6pre5" value="0"> บล็อกเพิ่มเสียง (Play Sound)<br>
+            <p>5. ในการสร้างเกม เมื่อตัวละครผู้เล่นชนกับอุปสรรคจนพลังชีวิตหมด (HP = 0) เราควรใช้บล็อก stop ร่วมกับคำสั่งใดเพื่อให้เกมหยุดทำงาน</p>
+            <input type="radio" name="u6pre5" value="1"> คำสั่งเงื่อนไข (If) และ stop [all]<br>
+            <input type="radio" name="u6pre5" value="0"> บล็อกการเคลื่อนไหว (Motion)<br>
+            <input type="radio" name="u6pre5" value="0"> บล็อกเปลี่ยนชุดตัวละคร (Next Costume)<br>
+            <input type="radio" name="u6pre5" value="0"> บล็อกเพิ่มเสียง (Play Sound)<br>
 
-        <p>6. ปุ่มสีแดง (Stop Sign) ที่อยู่บริเวณมุมบนขวาของเวที (Stage) ในโปรแกรม Scratch มีผลลัพธ์การทำงานเทียบเท่ากับบล็อกใด</p>
-        <input type="radio" name="u6pre6" value="1"> stop [all]<br>
-        <input type="radio" name="u6pre6" value="0"> stop [this script]<br>
-        <input type="radio" name="u6pre6" value="0"> forever<br>
-        <input type="radio" name="u6pre6" value="0"> wait [1] secs<br>
+            <p>6. ปุ่มสีแดง (Stop Sign) ที่อยู่บริเวณมุมบนขวาของเวที (Stage) ในโปรแกรม Scratch มีผลลัพธ์การทำงานเทียบเท่ากับบล็อกใด</p>
+            <input type="radio" name="u6pre6" value="1"> stop [all]<br>
+            <input type="radio" name="u6pre6" value="0"> stop [this script]<br>
+            <input type="radio" name="u6pre6" value="0"> forever<br>
+            <input type="radio" name="u6pre6" value="0"> wait [1] secs<br>
 
-        <p>7. หากมีสคริปต์หลายชุดทำงานอยู่ในตัวละครเดียวกัน แต่เราต้องการหยุดการทำงานเพียงแค่สคริปต์เดียวโดยไม่ให้กระทบสคริปต์อื่น ควรเลือกใช้คำสั่งใด</p>
-        <input type="radio" name="u6pre7" value="1"> stop [this script]<br>
-        <input type="radio" name="u6pre7" value="0"> stop [all]<br>
-        <input type="radio" name="u6pre7" value="0"> delete [all]<br>
-        <input type="radio" name="u6pre7" value="0"> hide<br>
+            <p>7. หากมีสคริปต์หลายชุดทำงานอยู่ในตัวละครเดียวกัน แต่เราต้องการหยุดการทำงานเพียงแค่สคริปต์เดียวโดยไม่ให้กระทบสคริปต์อื่น ควรเลือกใช้คำสั่งใด</p>
+            <input type="radio" name="u6pre7" value="1"> stop [this script]<br>
+            <input type="radio" name="u6pre7" value="0"> stop [all]<br>
+            <input type="radio" name="u6pre7" value="0"> delete [all]<br>
+            <input type="radio" name="u6pre7" value="0"> hide<br>
 
-        <p>8. ข้อใดคือประโยชน์ของการใช้คำสั่งหยุดการทำงาน (Stop) ในการพัฒนาเกมด้วย Scratch</p>
-        <input type="radio" name="u6pre8" value="1"> ช่วยควบคุมจุดสิ้นสุดของเกม เช่น จบเกมเมื่อหมดเวลาหรือแพ้<br>
-        <input type="radio" name="u6pre8" value="0"> ช่วยให้ตัวละครวิ่งเร็วขึ้น<br>
-        <input type="radio" name="u6pre8" value="0"> ช่วยเพิ่มขนาดของหน้าจอเวที<br>
-        <input type="radio" name="u6pre8" value="0"> ช่วยบันทึกไฟล์งานลงคอมพิวเตอร์อัตโนมัติ<br>
+            <p>8. ข้อใดคือประโยชน์ของการใช้คำสั่งหยุดการทำงาน (Stop) ในการพัฒนาเกมด้วย Scratch</p>
+            <input type="radio" name="u6pre8" value="1"> ช่วยควบคุมจุดสิ้นสุดของเกม เช่น จบเกมเมื่อหมดเวลาหรือแพ้<br>
+            <input type="radio" name="u6pre8" value="0"> ช่วยให้ตัวละครวิ่งเร็วขึ้น<br>
+            <input type="radio" name="u6pre8" value="0"> ช่วยเพิ่มขนาดของหน้าจอเวที<br>
+            <input type="radio" name="u6pre8" value="0"> ช่วยบันทึกไฟล์งานลงคอมพิวเตอร์อัตโนมัติ<br>
 
-        <p>9. บล็อก stop มีลักษณะทางกายภาพอย่างไรในโปรแกรม Scratch</p>
-        <input type="radio" name="u6pre9" value="1"> เป็นบล็อกคำสั่งปลายเปิด (ไม่มีเขี้ยวต่อด้านล่างสุด)<br>
-        <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปวงกลมสำหรับใส่ตัวเลข<br>
-        <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปทรง C-shape สำหรับครอบคำสั่งอื่น<br>
-        <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปหกเหลี่ยมสำหรับใส่เงื่อนไข<br>
+            <p>9. บล็อก stop มีลักษณะทางกายภาพอย่างไรในโปรแกรม Scratch</p>
+            <input type="radio" name="u6pre9" value="1"> เป็นบล็อกคำสั่งปลายเปิด (ไม่มีเขี้ยวต่อด้านล่างสุด)<br>
+            <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปวงกลมสำหรับใส่ตัวเลข<br>
+            <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปทรง C-shape สำหรับครอบคำสั่งอื่น<br>
+            <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปหกเหลี่ยมสำหรับใส่เงื่อนไข<br>
 
-        <p>10. หากต้องการให้ตัวละครแสดงข้อความ "Game Over" แล้วหยุดการทำงานทั้งหมดของโปรแกรม ควรจัดลำดับบล็อกอย่างไร</p>
-        <input type="radio" name="u6pre10" value="1"> แสดงข้อความ -> หน่วงเวลาเล็กน้อย (ถ้ามี) -> ใช้บล็อก stop [all]<br>
-        <input type="radio" name="u6pre10" value="0"> ใช้บล็อก stop [all] ก่อน แล้วค่อยแสดงข้อความ<br>
-        <input type="radio" name="u6pre10" value="0"> ใช้บล็อกเคลื่อนไหวแทนการหยุดโปรแกรม<br>
-        <input type="radio" name="u6pre10" value="0"> วนซ้ำคำสั่ง stop ไปเรื่อยๆ ด้วย forever<br>
+            <p>10. หากต้องการให้ตัวละครแสดงข้อความ "Game Over" แล้วหยุดการทำงานทั้งหมดของโปรแกรม ควรจัดลำดับบล็อกอย่างไร</p>
+            <input type="radio" name="u6pre10" value="1"> แสดงข้อความ -> หน่วงเวลาเล็กน้อย (ถ้ามี) -> ใช้บล็อก stop [all]<br>
+            <input type="radio" name="u6pre10" value="0"> ใช้บล็อก stop [all] ก่อน แล้วค่อยแสดงข้อความ<br>
+            <input type="radio" name="u6pre10" value="0"> ใช้บล็อกเคลื่อนไหวแทนการหยุดโปรแกรม<br>
+            <input type="radio" name="u6pre10" value="0"> วนซ้ำคำสั่ง stop ไปเรื่อยๆ ด้วย forever<br>
 
-        <br>
-        <button onclick="pretest(6)">ส่งคำตอบ</button>
-        <p id="u6preScore" class="result"></p>
-    </div>
+            <br>
+            <button onclick="pretest(6)">ส่งคำตอบ</button>
+            <p id="u6preScore" class="result"></p>
+        </div>
 
-    <!-- เนื้อหาบทเรียน เรื่องที่ 6 -->
-    <div class="card" id="u6lesson" style="display:none;">
-        <h2>เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน</h2>
-        <h3>6.1 ความสำคัญของการหยุดการทำงาน</h3>
-        <p>ในการเขียนโปรแกรมหรือสร้างเกมด้วย Scratch เมื่อถึงเงื่อนไขที่สิ้นสุดเกม (เช่น เกมโอเวอร์ หรือชนะเกม) จำเป็นต้องมีคำสั่งเพื่อยุติการทำงานของสคริปต์หรือโปรแกรม เพื่อไม่ให้ตัวละครขยับเขยื้อนหรือทำงานซ้ำซ้อนต่อ</p>
-        <h3>6.2 บล็อกคำสั่ง Stop</h3>
-        <p>บล็อก <code>stop ()</code> เป็นคำสั่งในกลุ่ม <strong>Control (ควบคุม - สีส้ม)</strong> ซึ่งมีตัวเลือกการทำงานหลักๆ ดังนี้:</p>
-        <ul>
-            <li><strong>all:</strong> หยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์</li>
-            <li><strong>this script:</strong> หยุดการทำงานเฉพาะบล็อกชุดคำสั่งที่กำลังทำงานอยู่ ณ จุดนั้น</li>
-            <li><strong>other scripts in sprite:</strong> หยุดสคริปต์อื่นๆ ทั้งหมดในตัวละครตัวนี้ ยกเว้นสคริปต์ที่กำลังสั่งงานอยู่</li>
-        </ul>
-    </div>
+        <!-- เนื้อหาบทเรียน เรื่องที่ 6 -->
+        <div class="card" id="u6lesson" style="display:none;">
+            <h2>เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน</h2>
+            <h3>6.1 ความสำคัญของการหยุดการทำงาน</h3>
+            <p>ในการเขียนโปรแกรมหรือสร้างเกมด้วย Scratch เมื่อถึงเงื่อนไขที่สิ้นสุดเกม (เช่น เกมโอเวอร์ หรือชนะเกม) จำเป็นต้องมีคำสั่งเพื่อยุติการทำงานของสคริปต์หรือโปรแกรม เพื่อไม่ให้ตัวละครขยับเขยื้อนหรือทำงานซ้ำซ้อนต่อ</p>
+            <h3>6.2 บล็อกคำสั่ง Stop</h3>
+            <p>บล็อก <code>stop ()</code> เป็นคำสั่งในกลุ่ม <strong>Control (ควบคุม - สีส้ม)</strong> ซึ่งมีตัวเลือกการทำงานหลักๆ ดังนี้:</p>
+            <ul>
+                <li><strong>all:</strong> หยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์</li>
+                <li><strong>this script:</strong> หยุดการทำงานเฉพาะบล็อกชุดคำสั่งที่กำลังทำงานอยู่ ณ จุดนั้น</li>
+                <li><strong>other scripts in sprite:</strong> หยุดสคริปต์อื่นๆ ทั้งหมดในตัวละครตัวนี้ ยกเว้นสคริปต์ที่กำลังสั่งงานอยู่</li>
+            </ul>
+        </div>
 
-    <div class="card" id="u6lesson2" style="display:none;">
-        <h3>สื่อวิดีโอประกอบบทเรียน</h3>
-        <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมและการหยุดการทำงานในโปรแกรม Scratch</p>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
-        <br><br>
-        <button onclick="finishLesson(6)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
-    </div>
+        <div class="card" id="u6lesson2" style="display:none;">
+            <h3>สื่อวิดีโอประกอบบทเรียน</h3>
+            <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมและการหยุดการทำงานในโปรแกรม Scratch</p>
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+            <br><br>
+            <button onclick="finishLesson(6)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+        </div>
 
-    <!-- แบบทดสอบหลังเรียน เรื่องที่ 6 (ใช้ชุดคำถามเดียวกันกับก่อนเรียน) -->
-    <div class="card" id="u6posttest" style="display:none;">
-        <h3>แบบทดสอบหลังเรียน (เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน)</h3>
-        
-        <p>1. บล็อกคำสั่งเกี่ยวกับการหยุดการทำงาน (Stop) ในโปรแกรม Scratch จัดอยู่ในกลุ่มบล็อกหมวดหมู่และสีใด</p>
-        <input type="radio" name="u6post1" value="1"> สีส้ม (Control - ควบคุม)<br>
-        <input type="radio" name="u6post1" value="0"> สีฟ้าเข้ม (Motion - การเคลื่อนไหว)<br>
-        <input type="radio" name="u6post1" value="0"> สีม่วง (Looks - รูปร่าง)<br>
-        <input type="radio" name="u6post1" value="0"> สีเหลือง (Events - เหตุการณ์)<br>
+        <!-- แบบทดสอบหลังเรียน เรื่องที่ 6 -->
+        <div class="card" id="u6posttest" style="display:none;">
+            <h3>แบบทดสอบหลังเรียน (เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน)</h3>
+            
+            <p>1. บล็อกคำสั่งเกี่ยวกับการหยุดการทำงาน (Stop) ในโปรแกรม Scratch จัดอยู่ในกลุ่มบล็อกหมวดหมู่และสีใด</p>
+            <input type="radio" name="u6post1" value="1"> สีส้ม (Control - ควบคุม)<br>
+            <input type="radio" name="u6post1" value="0"> สีฟ้าเข้ม (Motion - การเคลื่อนไหว)<br>
+            <input type="radio" name="u6post1" value="0"> สีม่วง (Looks - รูปร่าง)<br>
+            <input type="radio" name="u6post1" value="0"> สีเหลือง (Events - เหตุการณ์)<br>
 
-        <p>2. หากต้องการหยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์ทันที ควรเลือกใช้ตัวเลือกใดในบล็อก stop</p>
-        <input type="radio" name="u6post2" value="1"> all (ทั้งหมด)<br>
-        <input type="radio" name="u6post2" value="0"> this script (สคริปต์นี้)<br>
-        <input type="radio" name="u6post2" value="0"> other scripts in sprite (สคริปต์อื่นๆ ในตัวละคร)<br>
-        <input type="radio" name="u6post2" value="0"> wait (หน่วงเวลา)<br>
+            <p>2. หากต้องการหยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์ทันที ควรเลือกใช้ตัวเลือกใดในบล็อก stop</p>
+            <input type="radio" name="u6post2" value="1"> all (ทั้งหมด)<br>
+            <input type="radio" name="u6post2" value="0"> this script (สคริปต์นี้)<br>
+            <input type="radio" name="u6post2" value="0"> other scripts in sprite (สคริปต์อื่นๆ ในตัวละคร)<br>
+            <input type="radio" name="u6post2" value="0"> wait (หน่วงเวลา)<br>
 
-        <p>3. บล็อกคำสั่ง `stop [this script v]` มีหน้าที่หลักตามข้อใด</p>
-        <input type="radio" name="u6post3" value="1"> หยุดการทำงานเฉพาะชุดคำสั่ง (สคริปต์) ที่กำลังทำงานอยู่นั้น<br>
-        <input type="radio" name="u6post3" value="0"> หยุดการทำงานของโปรแกรมทั้งหมด<br>
-        <input type="radio" name="u6post3" value="0"> ลบทิ้งตัวละครทั้งหมดบนเวที<br>
-        <input type="radio" name="u6post3" value="0"> รีเซ็ตค่าตัวแปรทั้งหมดเป็น 0<br>
+            <p>3. บล็อกคำสั่ง <code>stop [this script v]</code> มีหน้าที่หลักตามข้อใด</p>
+            <input type="radio" name="u6post3" value="1"> หยุดการทำงานเฉพาะชุดคำสั่ง (สคริปต์) ที่กำลังทำงานอยู่นั้น<br>
+            <input type="radio" name="u6post3" value="0"> หยุดการทำงานของโปรแกรมทั้งหมด<br>
+            <input type="radio" name="u6post3" value="0"> ลบทิ้งตัวละครทั้งหมดบนเวที<br>
+            <input type="radio" name="u6post3" value="0"> รีเซ็ตค่าตัวแปรทั้งหมดเป็น 0<br>
 
-        <p>4. ตัวเลือก `other scripts in sprite` ในบล็อก stop มีหน้าที่ทำอะไร</p>
-        <input type="radio" name="u6post4" value="1"> หยุดสคริปต์อื่นๆ ทั้งหมดในตัวละครตัวนี้ ยกเว้นสคริปต์ที่กำลังสั่งงานอยู่<br>
-        <input type="radio" name="u6post4" value="0"> หยุดการทำงานของทุกตัวละครในเกม<br>
-        <input type="radio" name="u6post4" value="0"> เริ่มต้นเกมใหม่ทันที<br>
-        <input type="radio" name="u6post4" value="0"> ลบตัวละครทิ้งจากเวที<br>
+            <p>4. ตัวเลือก <code>other scripts in sprite</code> ในบล็อก stop มีหน้าที่ทำอะไร</p>
+            <input type="radio" name="u6post4" value="1"> หยุดสคริปต์อื่นๆ ทั้งหมดในตัวละครตัวนี้ ยกเว้นสคริปต์ที่กำลังสั่งงานอยู่<br>
+            <input type="radio" name="u6post4" value="0"> หยุดการทำงานของทุกตัวละครในเกม<br>
+            <input type="radio" name="u6post4" value="0"> เริ่มต้นเกมใหม่ทันที<br>
+            <input type="radio" name="u6post4" value="0"> ลบตัวละครทิ้งจากเวที<br>
 
-        <p>5. ในการสร้างเกม เมื่อตัวละครผู้เล่นชนกับอุปสรรคจนพลังชีวิตหมด (HP = 0) เราควรใช้บล็อก stop ร่วมกับคำสั่งใดเพื่อให้เกมหยุดทำงาน</p>
-        <input type="radio" name="u6post5" value="1"> คำสั่งเงื่อนไข (If) และ stop [all]<br>
-        <input type="radio" name="u6post5" value="0"> บล็อกการเคลื่อนไหว (Motion)<br>
-        <input type="radio" name="u6post5" value="0"> บล็อกเปลี่ยนชุดตัวละคร (Next Costume)<br>
-        <input type="radio" name="u6post5" value="0"> บล็อกเพิ่มเสียง (Play Sound)<br>
+            <p>5. ในการสร้างเกม เมื่อตัวละครผู้เล่นชนกับอุปสรรคจนพลังชีวิตหมด (HP = 0) เราควรใช้บล็อก stop ร่วมกับคำสั่งใดเพื่อให้เกมหยุดทำงาน</p>
+            <input type="radio" name="u6post5" value="1"> คำสั่งเงื่อนไข (If) และ stop [all]<br>
+            <input type="radio" name="u6post5" value="0"> บล็อกการเคลื่อนไหว (Motion)<br>
+            <input type="radio" name="u6post5" value="0"> บล็อกเปลี่ยนชุดตัวละคร (Next Costume)<br>
+            <input type="radio" name="u6post5" value="0"> บล็อกเพิ่มเสียง (Play Sound)<br>
 
-        <p>6. ปุ่มสีแดง (Stop Sign) ที่อยู่บริเวณมุมบนขวาของเวที (Stage) ในโปรแกรม Scratch มีผลลัพธ์การทำงานเทียบเท่ากับบล็อกใด</p>
-        <input type="radio" name="u6post6" value="1"> stop [all]<br>
-        <input type="radio" name="u6post6" value="0"> stop [this script]<br>
-        <input type="radio" name="u6post6" value="0"> forever<br>
-        <input type="radio" name="u6post6" value="0"> wait [1] secs<br>
+            <p>6. ปุ่มสีแดง (Stop Sign) ที่อยู่บริเวณมุมบนขวาของเวที (Stage) ในโปรแกรม Scratch มีผลลัพธ์การทำงานเทียบเท่ากับบล็อกใด</p>
+            <input type="radio" name="u6post6" value="1"> stop [all]<br>
+            <input type="radio" name="u6post6" value="0"> stop [this script]<br>
+            <input type="radio" name="u6post6" value="0"> forever<br>
+            <input type="radio" name="u6post6" value="0"> wait [1] secs<br>
 
-        <p>7. หากมีสคริปต์หลายชุดทำงานอยู่ในตัวละครเดียวกัน แต่เราต้องการหยุดการทำงานเพียงแค่สคริปต์เดียวโดยไม่ให้กระทบสคริปต์อื่น ควรเลือกใช้คำสั่งใด</p>
-        <input type="radio" name="u6post7" value="1"> stop [this script]<br>
-        <input type="radio" name="u6post7" value="0"> stop [all]<br>
-        <input type="radio" name="u6post7" value="0"> delete [all]<br>
-        <input type="radio" name="u6post7" value="0"> hide<br>
+            <p>7. หากมีสคริปต์หลายชุดทำงานอยู่ในตัวละครเดียวกัน แต่เราต้องการหยุดการทำงานเพียงแค่สคริปต์เดียวโดยไม่ให้กระทบสคริปต์อื่น ควรเลือกใช้คำสั่งใด</p>
+            <input type="radio" name="u6post7" value="1"> stop [this script]<br>
+            <input type="radio" name="u6post7" value="0"> stop [all]<br>
+            <input type="radio" name="u6post7" value="0"> delete [all]<br>
+            <input type="radio" name="u6post7" value="0"> hide<br>
 
-        <p>8. ข้อใดคือประโยชน์ของการใช้คำสั่งหยุดการทำงาน (Stop) ในการพัฒนาเกมด้วย Scratch</p>
-        <input type="radio" name="u6post8" value="1"> ช่วยควบคุมจุดสิ้นสุดของเกม เช่น จบเกมเมื่อหมดเวลาหรือแพ้<br>
-        <input type="radio" name="u6post8" value="0"> ช่วยให้ตัวละครวิ่งเร็วขึ้น<br>
-        <input type="radio" name="u6post8" value="0"> ช่วยเพิ่มขนาดของหน้าจอเวที<br>
-        <input type="radio" name="u6post8" value="0"> ช่วยบันทึกไฟล์งานลงคอมพิวเตอร์อัตโนมัติ<br>
+            <p>8. ข้อใดคือประโยชน์ของการใช้คำสั่งหยุดการทำงาน (Stop) ในการพัฒนาเกมด้วย Scratch</p>
+            <input type="radio" name="u6post8" value="1"> ช่วยควบคุมจุดสิ้นสุดของเกม เช่น จบเกมเมื่อหมดเวลาหรือแพ้<br>
+            <input type="radio" name="u6post8" value="0"> ช่วยให้ตัวละครวิ่งเร็วขึ้น<br>
+            <input type="radio" name="u6post8" value="0"> ช่วยเพิ่มขนาดของหน้าจอเวที<br>
+            <input type="radio" name="u6post8" value="0"> ช่วยบันทึกไฟล์งานลงคอมพิวเตอร์อัตโนมัติ<br>
 
-        <p>9. บล็อก stop มีลักษณะทางกายภาพอย่างไรในโปรแกรม Scratch</p>
-        <input type="radio" name="u6post9" value="1"> เป็นบล็อกคำสั่งปลายเปิด (ไม่มีเขี้ยวต่อด้านล่างสุด)<br>
-        <input type="radio" name="u6post9" value="0"> เป็นบล็อกรูปวงกลมสำหรับใส่ตัวเลข<br>
-        <input type="radio" name="u6post9" value="0"> เป็นบล็อกรูปทรง C-shape สำหรับครอบคำสั่งอื่น<br>
-        <input type="radio" name="u6post9" value="0"> เป็นบล็อกรูปหกเหลี่ยมสำหรับใส่เงื่อนไข<br>
+            <p>9. บล็อก stop มีลักษณะทางกายภาพอย่างไรในโปรแกรม Scratch</p>
+            <input type="radio" name="u6post9" value="1"> เป็นบล็อกคำสั่งปลายเปิด (ไม่มีเขี้ยวต่อด้านล่างสุด)<br>
+            <input type="radio" name="u6post9" value="0"> เป็นบล็อกรูปวงกลมสำหรับใส่ตัวเลข<br>
+            <input type="radio" name="u6post9" value="0"> เป็นบล็อกรูปทรง C-shape สำหรับครอบคำสั่งอื่น<br>
+            <input type="radio" name="u6post9" value="0"> เป็นบล็อกรูปหกเหลี่ยมสำหรับใส่เงื่อนไข<br>
 
-        <p>10. หากต้องการให้ตัวละครแสดงข้อความ "Game Over" แล้วหยุดการทำงานทั้งหมดของโปรแกรม ควรจัดลำดับบล็อกอย่างไร</p>
-        <input type="radio" name="u6post10" value="1"> แสดงข้อความ -> หน่วงเวลาเล็กน้อย (ถ้ามี) -> ใช้บล็อก stop [all]<br>
-        <input type="radio" name="u6post10" value="0"> ใช้บล็อก stop [all] ก่อน แล้วค่อยแสดงข้อความ<br>
-        <input type="radio" name="u6post10" value="0"> ใช้บล็อกเคลื่อนไหวแทนการหยุดโปรแกรม<br>
-        <input type="radio" name="u6post10" value="0"> วนซ้ำคำสั่ง stop ไปเรื่อยๆ ด้วย forever<br>
+            <p>10. หากต้องการให้ตัวละครแสดงข้อความ "Game Over" แล้วหยุดการทำงานทั้งหมดของโปรแกรม ควรจัดลำดับบล็อกอย่างไร</p>
+            <input type="radio" name="u6post10" value="1"> แสดงข้อความ -> หน่วงเวลาเล็กน้อย (ถ้ามี) -> ใช้บล็อก stop [all]<br>
+            <input type="radio" name="u6post10" value="0"> ใช้บล็อก stop [all] ก่อน แล้วค่อยแสดงข้อความ<br>
+            <input type="radio" name="u6post10" value="0"> ใช้บล็อกเคลื่อนไหวแทนการหยุดโปรแกรม<br>
+            <input type="radio" name="u6post10" value="0"> วนซ้ำคำสั่ง stop ไปเรื่อยๆ ด้วย forever<br>
 
-        <br>
-        <button onclick="posttest(6)">ส่งคำตอบ</button>
-        <p id="u6postScore" class="result"></p>
-    </div>
+            <br>
+            <button onclick="posttest(6)">ส่งคำตอบ</button>
+            <p id="u6postScore" class="result"></p>
+        </div>
 
-    <!-- แบบประเมินความพึงพอใจ เรื่องที่ 6 -->
-    <div class="card" id="u6survey" style="display:none;">
-        <h3>แบบประเมินความพึงพอใจ (เรื่องที่ 6)</h3>
-        <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
-        <label><input type="radio" name="u6q1" value="5"> มากที่สุด</label><br>
-        <label><input type="radio" name="u6q1" value="4"> มาก</label><br>
-        <label><input type="radio" name="u6q1" value="3"> ปานกลาง</label><br>
-        <label><input type="radio" name="u6q1" value="2"> น้อย</label><br>
-        <label><input type="radio" name="u6q1" value="1"> น้อยที่สุด</label>
+        <!-- แบบประเมินความพึงพอใจ เรื่องที่ 6 -->
+        <div class="card" id="u6survey" style="display:none;">
+            <h3>แบบประเมินความพึงพอใจ (เรื่องที่ 6)</h3>
+            <p>1. เนื้อหาบทเรียนเข้าใจง่าย</p>
+            <label><input type="radio" name="u6q1" value="5"> มากที่สุด</label><br>
+            <label><input type="radio" name="u6q1" value="4"> มาก</label><br>
+            <label><input type="radio" name="u6q1" value="3"> ปานกลาง</label><br>
+            <label><input type="radio" name="u6q1" value="2"> น้อย</label><br>
+            <label><input type="radio" name="u6q1" value="1"> น้อยที่สุด</label>
 
-        <p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
-        <label><input type="radio" name="u6q2" value="5"> มากที่สุด</label><br>
-        <label><input type="radio" name="u6q2" value="4"> มาก</label><br>
-        <label><input type="radio" name="u6q2" value="3"> ปานกลาง</label><br>
-        <label><input type="radio" name="u6q2" value="2"> น้อย</label><br>
-        <label><input type="radio" name="u6q2" value="1"> น้อยที่สุด</label>
+            <p>2. สื่อการเรียนรู้มีความน่าสนใจ</p>
+            <label><input type="radio" name="u6q2" value="5"> มากที่สุด</label><br>
+            <label><input type="radio" name="u6q2" value="4"> มาก</label><br>
+            <label><input type="radio" name="u6q2" value="3"> ปานกลาง</label><br>
+            <label><input type="radio" name="u6q2" value="2"> น้อย</label><br>
+            <label><input type="radio" name="u6q2" value="1"> น้อยที่สุด</label>
 
-        <p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
-        <label><input type="radio" name="u6q3" value="5"> มากที่สุด</label><br>
-        <label><input type="radio" name="u6q3" value="4"> มาก</label><br>
-        <label><input type="radio" name="u6q3" value="3"> ปานกลาง</label><br>
-        <label><input type="radio" name="u6q3" value="2"> น้อย</label><br>
-        <label><input type="radio" name="u6q3" value="1"> น้อยที่สุด</label>
+            <p>3. กิจกรรมการเรียนรู้ช่วยให้เข้าใจ Scratch มากขึ้น</p>
+            <label><input type="radio" name="u6q3" value="5"> มากที่สุด</label><br>
+            <label><input type="radio" name="u6q3" value="4"> มาก</label><br>
+            <label><input type="radio" name="u6q3" value="3"> ปานกลาง</label><br>
+            <label><input type="radio" name="u6q3" value="2"> น้อย</label><br>
+            <label><input type="radio" name="u6q3" value="1"> น้อยที่สุด</label>
 
-        <p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
-        <label><input type="radio" name="u6q4" value="5"> มากที่สุด</label><br>
-        <label><input type="radio" name="u6q4" value="4"> มาก</label><br>
-        <label><input type="radio" name="u6q4" value="3"> ปานกลาง</label><br>
-        <label><input type="radio" name="u6q4" value="2"> น้อย</label><br>
-        <label><input type="radio" name="u6q4" value="1"> น้อยที่สุด</label>
+            <p>4. การจัดการเรียนรู้ด้วยบทเรียนออนไลน์มีความเหมาะสม</p>
+            <label><input type="radio" name="u6q4" value="5"> มากที่สุด</label><br>
+            <label><input type="radio" name="u6q4" value="4"> มาก</label><br>
+            <label><input type="radio" name="u6q4" value="3"> ปานกลาง</label><br>
+            <label><input type="radio" name="u6q4" value="2"> น้อย</label><br>
+            <label><input type="radio" name="u6q4" value="1"> น้อยที่สุด</label>
 
-        <br><br>
-        <button type="button" onclick="finish(6)">ส่งคำตอบ</button>
-        <p id="u6finish"></p>
-    </div>
-</div>  
-</div>
+            <br><br>
+            <button type="button" onclick="finish(6)">ส่งคำตอบ</button>
+            <p id="u6finish"></p>
+        </div>
+    </div>  
+
   
 <script>
 let scores = {
