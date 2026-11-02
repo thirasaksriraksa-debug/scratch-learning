@@ -4,94 +4,81 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>บทเรียน Scratch (เรื่องที่ 1-6)</title>
-
 <style>
-body{
-font-family: Arial;
-background:#f1f5f9;
-margin:0;
-}
-
-header{
-background:#2563eb;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-.unit-nav{
-background:#1e40af;
-padding:10px;
-text-align:center;
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-position:sticky;
-top:0;
-z-index:10;
-}
-
-.unit-btn{
-background:#3b82f6;
-color:white;
-border:none;
-padding:8px 15px;
-border-radius:5px;
-cursor:pointer;
-font-size:14px;
-text-decoration:none;
-}
-
-.unit-btn:hover{
-background:#60a5fa;
-}
-
-.unit-btn.active{
-background:#10b981;
-font-weight:bold;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:20px;
-}
-
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-h2{
-color:#1e3a8a;
-}
-
-button{
-background:#2563eb;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-cursor:pointer;
-}
-
-button:hover{
-background:#1e40af;
-}
-
-.unit-section {
-display: none;
-}
-.unit-section.active {
-display: block;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background: #f1f5f9;
+        margin: 0;
+    }
+    header {
+        background: #2563eb;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    .unit-nav {
+        background: #1e40af;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    .unit-btn {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    .unit-btn:hover {
+        background: #60a5fa;
+    }
+    .unit-btn.active {
+        background: #10b981;
+        font-weight: bold;
+    }
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #1e3a8a;
+    }
+    button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #1e40af;
+    }
+    .unit-section {
+        display: none;
+    }
+    .unit-section.active {
+        display: block;
+    }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -100,30 +87,28 @@ display: block;
 </header>
 
 <div class="unit-nav" id="unitNav">
-<button class="unit-btn active" onclick="switchUnit(1)">เรื่องที่ 1 ความหมายของโปรแกรม Scratch</button>
-<button class="unit-btn" onclick="switchUnit(2)">เรื่องที่ 2 ส่วนประกอบของหน้าต่างโปรแกรม Scratch</button>
-<button class="unit-btn" onclick="switchUnit(3)">เรื่องที่ 3 ประเภทของบล็อกคำสั่ง</button>
-<button class="unit-btn" onclick="switchUnit(4)">เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage)</button>
-<button class="unit-btn" onclick="switchUnit(5)">เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน</button>
-<button class="unit-btn" onclick="switchUnit(6)">เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน </button>    
+    <button class="unit-btn active" onclick="switchUnit(1)">เรื่องที่ 1 ความหมายของโปรแกรม Scratch</button>
+    <button class="unit-btn" onclick="switchUnit(2)">เรื่องที่ 2 ส่วนประกอบหน้าต่าง</button>
+    <button class="unit-btn" onclick="switchUnit(3)">เรื่องที่ 3 ประเภทบล็อกคำสั่ง</button>
+    <button class="unit-btn" onclick="switchUnit(4)">เรื่องที่ 4 การสร้างตัวละครและฉาก</button>
+    <button class="unit-btn" onclick="switchUnit(5)">เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน</button>
+    <button class="unit-btn" onclick="switchUnit(6)">เรื่องที่ 6 คำสั่งหยุดการทำงาน</button>
 </div>
 
 <div class="container">
-
-<div class="card">
-<h2>ข้อมูลผู้เรียน</h2>
-<label>ชื่อ-นามสกุล</label>
-<input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px;box-sizing:border-box;">
-<br><br>
-<label>เลขที่</label>
-<input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px;box-sizing:border-box;">
-</div>
-
-<div id="unit1-content" class="unit-section active">
-    <!-- ================= แบบทดสอบก่อนเรียน ================= -->
     <div class="card">
-    <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 1 ความหมายของโปรแกรม Scratch)</h3>
+        <h2>ข้อมูลผู้เรียน</h2>
+        <label>ชื่อ-นามสกุล</label>
+        <input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px;box-sizing:border-box;">
+        <br><br>
+        <label>เลขที่</label>
+        <input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px;box-sizing:border-box;">
+    </div>
 
+<!-- เรื่องที่ 1 -->
+    <div id="unit1-content" class="unit-section active">
+        <div class="card">
+            <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 1 ความหมายของโปรแกรม Scratch)</h3>
     <p>1. ข้อใดคือความหมายของโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
     <input type="radio" name="u1pre1" value="1"> ภาษาโปรแกรมในรูปแบบบล็อกคำสั่ง (Block-based Programming) สำหรับสร้างงานกราฟิก เกม และนิทาน<br>
     <input type="radio" name="u1pre1" value="0"> โปรแกรมสำหรับพิมพ์เอกสารและรายงานส่งครู<br>
@@ -183,10 +168,7 @@ display: block;
     <input type="radio" name="u1pre10" value="0"> ทำให้คอมพิวเตอร์ประมวลผลเร็วกว่าภาษาซี<br>
     <input type="radio" name="u1pre10" value="0"> สามารถใช้งานทดแทนอินเทอร์เน็ตได้ทั้งหมด<br>
     <input type="radio" name="u1pre10" value="0"> ไม่จำเป็นต้องใช้ความคิดสร้างสรรค์<br>
-
-   
     <br>
-
     <button onclick="pretest(1)">ส่งคำตอบ</button>
     <p id="u1preScore" class="result"></p>
     </div>
@@ -284,10 +266,7 @@ display: block;
     <input type="radio" name="u1post10" value="0"> ทำให้คอมพิวเตอร์ประมวลผลเร็วกว่าภาษาซี<br>
     <input type="radio" name="u1post10" value="0"> สามารถใช้งานทดแทนอินเทอร์เน็ตได้ทั้งหมด<br>
     <input type="radio" name="u1post10" value="0"> ไม่จำเป็นต้องใช้ความคิดสร้างสรรค์<br>
-
-    
     <br>
-
     <button onclick="posttest(1)">ส่งคำตอบ</button>
     <p id="u1postScore" class="result"></p>
     </div>
@@ -335,9 +314,8 @@ display: block;
 
 </div>
 
-<div id="unit2-content" class="unit-section">
-  <!-- แบบทดสอบก่อนเรียน -->
-  <div class="card">
+<div id="unit2-content" class="unit-section active">
+        <div class="card">
     <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 2 ส่วนประกอบของหน้าต่างโปรแกรม Scratch)</h3>
     <p>1. กลุ่มบล็อกคำสั่งเกี่ยวกับการเคลื่อนไหว (Motion) ในโปรแกรม Scratch มีสีอะไร</p>
     <input type="radio" name="u2pre1" value="1"> สีฟ้าเข้ม<br>
@@ -398,11 +376,9 @@ display: block;
     <input type="radio" name="u2pre10" value="0"> 0 องศา<br>
     <input type="radio" name="u2pre10" value="0"> 180 องศา<br>
     <input type="radio" name="u2pre10" value="0"> -90 องศา<br>
-
-    
     <br>
     <button onclick="pretest(2)">ส่งคำตอบ</button>
-    <p id="u2preScore"></p>
+    <p id="u2preScore" class="result"></p>
   </div>
 
   <!-- เนื้อหาบทเรียน -->
@@ -489,11 +465,9 @@ display: block;
     <input type="radio" name="u2post10" value="0"> 0 องศา<br>
     <input type="radio" name="u2post10" value="0"> 180 องศา<br>
     <input type="radio" name="u2post10" value="0"> -90 องศา<br>
-
-    
     <br>
     <button onclick="posttest(2)">ส่งคำตอบ</button>
-    <p id="u2postScore"></p>
+   <p id="u2postScore" class="result"></p>
   </div>
 
   <!-- แบบประเมินความพึงพอใจ -->
@@ -530,15 +504,12 @@ display: block;
     <button type="button" onclick="finish(2)">ส่งคำตอบ</button>
     <p id="u2finish"></p>
   </div>
-
-
 </div>
 
-<div id="unit3-content" class="unit-section">
+<div id="unit3-content" class="unit-section active">
   <!-- แบบทดสอบก่อนเรียน หน่วยที่ 3 -->
   <div class="card">
     <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 3 ประเภทของบล็อกคำสั่ง)</h3>
-
     <p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
     <input type="radio" name="u3pre1" value="1"> ใช้สำหรับควบคุมลำดับการทำงาน เงื่อนไข และการทำซ้ำของโปรแกรม<br>
     <input type="radio" name="u3pre1" value="0"> ใช้สำหรับเปลี่ยนสีชุดตัวละครและฉากหลัง<br>
@@ -598,11 +569,9 @@ display: block;
     <input type="radio" name="u3pre10" value="0"> มีลักษณะเป็นวงกลมสำหรับใส่ค่าตัวเลข<br>
     <input type="radio" name="u3pre10" value="0"> มีขอบด้านบนโค้งมนและไม่มีช่องต่อ<br>
     <input type="radio" name="u3pre10" value="0"> มีสีชมพูเข้มและมีปุ่มกดในตัว<br>
-
-   
     <br>
     <button onclick="pretest(3)">ส่งคำตอบ</button>
-    <p id="u3preScore"></p>
+    <p id="u3preScore" class="result"></p>
   </div>
 
   <!-- เนื้อหาบทเรียน หน่วยที่ 3 -->
@@ -695,11 +664,9 @@ display: block;
     <input type="radio" name="u3post10" value="0"> มีลักษณะเป็นวงกลมสำหรับใส่ค่าตัวเลข<br>
     <input type="radio" name="u3post10" value="0"> มีขอบด้านบนโค้งมนและไม่มีช่องต่อ<br>
     <input type="radio" name="u3post10" value="0"> มีสีชมพูเข้มและมีปุ่มกดในตัว<br>
-
-    
     <br>
     <button onclick="posttest(3)">ส่งคำตอบ</button>
-    <p id="u3postScore"></p>
+   <p id="u3postScore" class="result"></p>
   </div>
 
   <!-- แบบประเมินความพึงพอใจ หน่วยที่ 3 -->
@@ -736,14 +703,11 @@ display: block;
     <button type="button" onclick="finish(3)">ส่งคำตอบ</button>
     <p id="u3finish"></p>
   </div>
-
-
 </div>
 
-<div id="unit4-content" class="unit-section">
-    <!-- ================= แบบทดสอบก่อนเรียน ================= -->
-    <div class="card">
-    <h3>แบบทดสอบก่อนเรียน (หน่วยที่ 4 ตัวแปร)</h3>
+<div id="unit4-content" class="unit-section active">
+        <div class="card">
+    <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage))</h3>
 
     <p>1. ข้อใดให้ความหมายของ "ตัวแปร (Variable)" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
     <input type="radio" name="u4pre1" value="1"> พื้นที่ในหน่วยความจำสำหรับเก็บข้อมูลที่สามารถเปลี่ยนแปลงค่าได้ตลอดการทำงาน<br>
@@ -804,8 +768,6 @@ display: block;
     <input type="radio" name="u4pre10" value="0"> Public / Private<br>
     <input type="radio" name="u4pre10" value="0"> Global / Local function<br>
     <input type="radio" name="u4pre10" value="0"> Main / Sub sprite<br>
-
-    
     <br>
 
     <button onclick="pretest(4)">ส่งคำตอบ</button>
@@ -814,7 +776,7 @@ display: block;
 
     <!-- ================= เนื้อหาบทเรียน ================= -->
     <div class="card" id="u4lesson" style="display:none;">
-    <h2>หน่วยที่ 4 ตัวแปร (Variables)</h2>
+    <h2>เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage)</h2>
     <h3>4.1 ความหมายของตัวแปร</h3>
     <p>ตัวแปร (Variable) คือ พื้นที่ในหน่วยความจำของคอมพิวเตอร์ที่ถูกจองไว้สำหรับเก็บข้อมูล ค่าตัวเลข หรือข้อความ ซึ่งค่าเหล่านี้สามารถเปลี่ยนแปลง เพิ่มขึ้น ลดลง หรือถูกกำหนดใหม่ได้ตลอดเวลาในขณะที่โปรแกรมกำลังทำงาน เหมาะสำหรับการเก็บข้อมูลจำพวกคะแนน คะแนนชีวิต (HP) หรือเวลานับถอยหลัง</p>
 
@@ -841,7 +803,7 @@ display: block;
 
     <!-- ================= แบบทดสอบหลังเรียน ================= -->
     <div class="card" id="u4posttest" style="display:none;">
-    <h3>แบบทดสอบหลังเรียน (หน่วยที่ 4 ตัวแปร)</h3>
+    <h3>แบบทดสอบหลังเรียน (หน่วยที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage))</h3>
 
     <p>1. ข้อใดให้ความหมายของ "ตัวแปร (Variable)" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
     <input type="radio" name="u4post1" value="1"> พื้นที่ในหน่วยความจำสำหรับเก็บข้อมูลที่สามารถเปลี่ยนแปลงค่าได้ตลอดการทำงาน<br>
@@ -902,8 +864,6 @@ display: block;
     <input type="radio" name="u4post10" value="0"> Public / Private<br>
     <input type="radio" name="u4post10" value="0"> Global / Local function<br>
     <input type="radio" name="u4post10" value="0"> Main / Sub sprite<br>
-
-    
     <br>
 
     <button onclick="posttest(4)">ส่งคำตอบ</button>
@@ -950,14 +910,11 @@ display: block;
     </form>
     </section>
     </div>
-
-
 </div>
 
-<div id="unit5-content" class="unit-section">
-<!-- ================= แบบทดสอบก่อนเรียน ================= -->
-<div class="card">
-<h3>แบบทดสอบก่อนเรียน (หน่วยที่ 5 เงื่อนไข)</h3>
+<div id="unit5-content" class="unit-section active">
+        <div class="card">
+<h3>แบบทดสอบก่อนเรียน (เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน )</h3>
 
 <p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
 <input type="radio" name="u5pre1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
@@ -1028,7 +985,7 @@ display: block;
 
 <!-- ================= เนื้อหาบทเรียน ================= -->
 <div class="card" id="u5lesson" style="display:none;">
-<h2>หน่วยที่ 5 เงื่อนไข (Conditions)</h2>
+<h2>เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน </h2>
 
 <h3>5.1 ความหมายของคำสั่งเงื่อนไข</h3>
 <p>คำสั่งเงื่อนไข (Conditional Statement) คือ คำสั่งที่ใช้สำหรับตัดสินใจและควบคุมการทำงานของโปรแกรมให้เลือกกระทำเส้นทางใดเส้นทางหนึ่ง ตามผลลัพธ์ของการตรวจสอบเงื่อนไขว่าเป็นจริง (True) หรือเป็นเท็จ (False) เปรียบเสมือนการตัดสินใจในชีวิตประจำวัน เช่น "ถ้าฝนตก จะกางร่ม แต่ถ้าฝนไม่ตก จะไม่กางร่ม"</p>
@@ -1056,7 +1013,7 @@ display: block;
 
 <!-- ================= แบบทดสอบหลังเรียน ================= -->
 <div class="card" id="u5posttest" style="display:none;">
-<h3>แบบทดสอบหลังเรียน (หน่วยที่ 5 เงื่อนไข)</h3>
+<h3>แบบทดสอบหลังเรียน (หน่วยที่ 5 คำสั่งเริ่มต้นการทำงาน )</h3>
 
 <p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
 <input type="radio" name="u5post1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
@@ -1117,11 +1074,7 @@ display: block;
 <input type="radio" name="u5post10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
 <input type="radio" name="u5post10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
 <input type="radio" name="u5post10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
-
-
-<br>
-
-    
+<br>  
 <button onclick="posttest(5)">ส่งคำตอบ</button>
 <p id="u5postScore" class="result"></p>
 </div>
@@ -1169,9 +1122,8 @@ display: block;
 
 
 <div id="unit6-content" class="unit-section">
-    <!-- แบบทดสอบก่อนเรียน เรื่องที่ 6 -->
-    <div class="card">
-        <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน)</h3>
+        <div class="card">
+            <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน)</h3>
         
         <p>1. บล็อกคำสั่งเกี่ยวกับการหยุดการทำงาน (Stop) ในโปรแกรม Scratch จัดอยู่ในกลุ่มบล็อกหมวดหมู่และสีใด</p>
         <input type="radio" name="u6pre1" value="1"> สีส้ม (Control - ควบคุม)<br>
@@ -1364,14 +1316,9 @@ display: block;
         <button type="button" onclick="finish(6)">ส่งคำตอบ</button>
         <p id="u6finish"></p>
     </div>
+</div>  
 </div>
-    
-</div>
-
-
-
-</div>
-    
+  
 <script>
 let scores = {
     1: {pre:0, post:0}, 
@@ -1404,8 +1351,10 @@ function pretest(n) {
     }
     scores[n].pre = score;
     document.getElementById("u" + n + "preScore").innerHTML = "คะแนนก่อนเรียน = " + score + " / 10";
-    document.getElementById("u" + n + "lesson").style.display = "block";
-    document.getElementById("u" + n + "lesson2").style.display = "block";
+    let lesson = document.getElementById("u" + n + "lesson");
+    let lesson2 = document.getElementById("u" + n + "lesson2");
+    if(lesson) lesson.style.display = "block";
+    if(lesson2) lesson2.style.display = "block";
 }
 
 function posttest(n) {
@@ -1415,15 +1364,19 @@ function posttest(n) {
     }
     scores[n].post = score;
     document.getElementById("u" + n + "postScore").innerHTML = "คะแนนหลังเรียน = " + score + " / 10";
-    document.getElementById("u" + n + "survey").style.display = "block";
+    let survey = document.getElementById("u" + n + "survey");
+    if(survey) survey.style.display = "block";
 }
 
 function finishLesson(n) {
-    document.getElementById("u" + n + "posttest").style.display = "block";
-    window.scrollTo({
-        top: document.getElementById("u" + n + "posttest").offsetTop,
-        behavior: "smooth"
-    });
+    let posttestCard = document.getElementById("u" + n + "posttest");
+    if(posttestCard) {
+        posttestCard.style.display = "block";
+        window.scrollTo({
+            top: posttestCard.offsetTop,
+            behavior: "smooth"
+        });
+    }
 }
 
 function finish(n) {
@@ -1433,9 +1386,6 @@ function finish(n) {
     let number = numberElem ? numberElem.value : "";
     
     let q1 = document.querySelector('input[name="u' + n + 'q1"]:checked')?.value;
-    let q2 = document.querySelector('input[name="u' + n + 'q2"]:checked')?.value;
-    let q3 = document.querySelector('input[name="u' + n + 'q3"]:checked')?.value;
-    let q4 = document.querySelector('input[name="u' + n + 'q4"]:checked')?.value;
 
     let data = {
         unit: String(n),
@@ -1443,7 +1393,7 @@ function finish(n) {
         number: number,
         pretest: scores[n] ? scores[n].pre : 0,
         posttest: scores[n] ? scores[n].post : 0,
-        q1: q1, q2: q2, q3: q3, q4: q4
+        q1: q1
     };
 
     fetch("https://script.google.com/macros/s/AKfycbz1EZolD0bokrEcEutHh78Ph5d1yvvAEq-Cuda6ycjVNAvYmkUXVk_HsUHRM3xbmWpx/exec", {
@@ -1455,5 +1405,12 @@ function finish(n) {
         ? '<br><br><button type="button" style="background:#16a34a;" onclick="switchUnit(' + (n + 1) + ')">ไปบทเรียนหน่วยที่ ' + (n + 1) + '</button>' 
         : '<br><br><p>เรียนครบทั้ง 6 เรื่องแล้ว ขอบคุณที่ตั้งใจเรียนครับ/ค่ะ</p>';
 
-    document.getElementById("u" + n + "finish").innerHTML = "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + nextBtn;
+    let finishElem = document.getElementById("u" + n + "finish");
+    if(finishElem) {
+        finishElem.innerHTML = "บันทึกข้อมูลเรียบร้อย ขอบคุณ " + name + nextBtn;
+    }
 }
+</script>
+
+</body>
+</html>
