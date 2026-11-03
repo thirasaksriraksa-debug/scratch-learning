@@ -4,80 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>บทเรียน Scratch (เรื่องที่ 1-6)</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f1f5f9;
-        margin: 0;
-    }
-    header {
-        background: #2563eb;
-        color: white;
-        padding: 20px;
-        text-align: center;
-    }
-    .unit-nav {
-        background: #1e40af;
-        padding: 10px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-        position: sticky;
-        top: 0;
-        z-index: 10;
-    }
-    .unit-btn {
-        background: #3b82f6;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-        text-decoration: none;
-    }
-    .unit-btn:hover {
-        background: #60a5fa;
-    }
-    .unit-btn.active {
-        background: #10b981;
-        font-weight: bold;
-    }
-    .container {
-        max-width: 900px;
-        margin: auto;
-        padding: 20px;
-    }
-    .card {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-        color: #1e3a8a;
-    }
-    button {
-        background: #2563eb;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 6px;
-        cursor: pointer;
-    }
-    button:hover {
-        background: #1e40af;
-    }
-    .unit-section {
-        display: none;
-    }
-    .unit-section.active {
-        display: block;
-    }
-</style>
+<link rel="stylesheet" href="scratch.css">
 </head>
 <body>
 
@@ -313,7 +240,7 @@
     </div>
 </div>
 
-<div id="unit2-content" class="unit-section active">
+<div id="unit2-content" class="unit-section">
         <div class="card">
     <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 2 ส่วนประกอบของหน้าต่างโปรแกรม Scratch)</h3>
         <p>1. พื้นที่ที่ใช้แสดงผลการทำงานของโปรแกรม เช่น ตัวละครเคลื่อนไหวหรือพูดโต้ตอบ เรียกว่าอะไร</p>
@@ -525,7 +452,7 @@
   </div>
 </div>
 
-<div id="unit3-content" class="unit-section active">
+<div id="unit3-content" class="unit-section">
   <!-- แบบทดสอบก่อนเรียน หน่วยที่ 3 -->
   <div class="card">
     <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 3 ประเภทของบล็อกคำสั่ง)</h3>
@@ -724,7 +651,7 @@
   </div>
 </div>
 
-<div id="unit4-content" class="unit-section active">
+<div id="unit4-content" class="unit-section">
         <div class="card">
     <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage))</h3>
     <p>1. ข้อใดให้ความหมายของ "ตัวละคร (Sprite)" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
@@ -942,7 +869,7 @@
     </div>
 </div>
 
-<div id="unit5-content" class="unit-section active">
+<div id="unit5-content" class="unit-section">
     <div class="card">
         <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน )</h3>
 
@@ -1446,6 +1373,6 @@ function finish(n) {
     }
 }
 </script>
-
+<script src="scratch.js"></script>
 </body>
 </html>
