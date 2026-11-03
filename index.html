@@ -615,7 +615,7 @@
   <div class="card" id="u3lesson2" style="display:none;">
     <h3>สื่อวิดีโอประกอบบทเรียน</h3>
     <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมการทำงานในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+    <iframe width="100%" height="315" src="https://drive.google.com/file/d/106OaKeZKA3GroDymr2g3XmhPMA4vbR1I/preview" frameborder="0" allowfullscreen></iframe>
     <br><br>
     <button onclick="finishLesson(3)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
   </div>
@@ -946,92 +946,101 @@
     <div class="card">
         <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน )</h3>
 
-        <p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
-        <input type="radio" name="u5pre1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
-        <input type="radio" name="u5pre1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายๆ รอบโดยอัตโนมัติ<br>
-        <input type="radio" name="u5pre1" value="0"> เครื่องมือสำหรับสร้างตัวแปรเพื่อเก็บคะแนนในเกม<br>
-        <input type="radio" name="u5pre1" value="0"> คำสั่งสำหรับหยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
-        <p>2. ในโปรแกรม Scratch บล็อกคำสั่งควบคุมเงื่อนไข (Control) จะอยู่ในกลุ่มบล็อกสีใด</p>
-        <input type="radio" name="u5pre2" value="1"> สีส้ม (Control)<br>
-        <input type="radio" name="u5pre2" value="0"> สีฟ้าเข้ม (Motion)<br>
-        <input type="radio" name="u5pre2" value="0"> สีเขียวอ่อน (Operators)<br>
-        <input type="radio" name="u5pre2" value="0"> สีม่วง (Looks)<br>
+        <p>1. ข้อใดให้ความหมายของ "คำสั่งเริ่มต้นการทำงาน" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
+        <input type="radio" name="u5pre1" value="1"> บล็อกที่กำหนดว่าชุดคำสั่งจะเริ่มทำงานเมื่อเกิดเหตุการณ์ใดเหตุการณ์หนึ่ง<br>
+        <input type="radio" name="u5pre1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายรอบ<br>
+        <input type="radio" name="u5pre1" value="0"> บล็อกสำหรับสร้างตัวแปรเก็บคะแนน<br>
+        <input type="radio" name="u5pre1" value="0"> บล็อกสำหรับหยุดการทำงานของโปรแกรมทั้งหมด<br>
 
-        <p>3. ลักษณะของบล็อกเงื่อนไขแบบ `if` ใน Scratch มีรูปร่างอย่างไรเพื่อให้สามารถนำบล็อกเงื่อนไขย่อยไปใส่ข้างในได้</p>
-        <input type="radio" name="u5pre3" value="1"> มีช่องว่างรูปหกเหลี่ยมสำหรับใส่เงื่อนไข และมีช่องว่างด้านในสำหรับใส่บล็อกคำสั่ง<br>
-        <input type="radio" name="u5pre3" value="0"> เป็นบล็อกสี่เหลี่ยมผืนผ้าเรียบๆ ไม่มีช่องว่างด้านใน<br>
-        <input type="radio" name="u5pre3" value="0"> เป็นบล็อกวงกลมมนสำหรับใส่ตัวเลขเท่านั้น<br>
-        <input type="radio" name="u5pre3" value="0"> เป็นบล็อกปลายแหลมสำหรับส่งค่าข้อมูลออกไป<br>
+        <p>2. บล็อกคำสั่งเริ่มต้นการทำงานใน Scratch อยู่ในหมวดบล็อกใด</p>
+        <input type="radio" name="u5pre2" value="1"> Events (เหตุการณ์)<br>
+        <input type="radio" name="u5pre2" value="0"> Motion (การเคลื่อนไหว)<br>
+        <input type="radio" name="u5pre2" value="0"> Operators (ตัวดำเนินการ)<br>
+        <input type="radio" name="u5pre2" value="0"> Variables (ตัวแปร)<br>
 
-        <p>4. หากต้องการตรวจสอบว่าถ้าเงื่อนไขเป็นจริงให้ทำคำสั่งด้านใน แต่ถ้าเป็นเท็จจะไม่ทำอะไรเลย ควรใช้บล็อกใด</p>
-        <input type="radio" name="u5pre4" value="1"> `if <...> then` <br>
-        <input type="radio" name="u5pre4" value="0"> `if <...> then ... else ...` <br>
-        <input type="radio" name="u5pre4" value="0"> `repeat <...>` <br>
-        <input type="radio" name="u5pre4" value="0"> `forever` <br>
+        <p>3. บล็อกคำสั่งเริ่มต้นการทำงานมีรูปร่างลักษณะอย่างไร</p>
+        <input type="radio" name="u5pre3" value="1"> ส่วนบนโค้งมน (หมวก) ใช้วางเป็นบล็อกแรกของชุดคำสั่ง ไม่สามารถต่อจากบล็อกอื่นด้านบนได้<br>
+        <input type="radio" name="u5pre3" value="0"> รูปหกเหลี่ยม ใช้ใส่ในช่องเงื่อนไข<br>
+        <input type="radio" name="u5pre3" value="0"> รูปวงกลมมน ใช้ใส่ตัวเลข<br>
+        <input type="radio" name="u5pre3" value="0"> สี่เหลี่ยมเรียบ ต่อได้ทั้งด้านบนและด้านล่าง<br>
 
-        <p>5. บล็อกคำสั่ง `if-else` มีความแตกต่างจากบล็อก `if` ทั่วไปอย่างไร</p>
-        <input type="radio" name="u5pre5" value="1"> มีทางเลือกสำรองให้ทำงานเมื่อเงื่อนไขเป็นเท็จ (False)<br>
-        <input type="radio" name="u5pre5" value="0"> ใช้สำหรับวนซ้ำจำนวนรอบที่แน่นอนเท่านั้น<br>
-        <input type="radio" name="u5pre5" value="0"> ไม่จำเป็นต้องใส่เงื่อนไขทางเข้า<br>
-        <input type="radio" name="u5pre5" value="0"> ใช้สำหรับสร้างตัวแปรเสริมในระบบ<br>
+        <p>4. หากต้องการให้โปรแกรมเริ่มทำงานเมื่อคลิกที่ปุ่มธงสีเขียว ต้องใช้บล็อกใด</p>
+        <input type="radio" name="u5pre4" value="1"> when green flag clicked<br>
+        <input type="radio" name="u5pre4" value="0"> when this sprite clicked<br>
+        <input type="radio" name="u5pre4" value="0"> when [space v] key pressed<br>
+        <input type="radio" name="u5pre4" value="0"> when I receive [message1 v]<br>
 
-        <p>6. บล็อกตัวดำเนินการเปรียบเทียบ (Operators) ที่ใช้ตรวจสอบว่าค่าสองค่าเท่ากันหรือไม่ มีลักษณะเครื่องหมายอย่างไรใน Scratch</p>
-        <input type="radio" name="u5pre6" value="1"> [ ] = [ ] <br>
-        <input type="radio" name="u5pre6" value="0"> [ ] < [ ] <br>
-        <input type="radio" name="u5pre6" value="0"> [ ] > [ ] <br>
-        <input type="radio" name="u5pre6" value="0"> [ ] + [ ] <br>
+        <p>5. หากต้องการให้ชุดคำสั่งทำงานเมื่อผู้เล่นคลิกที่ตัวละคร ต้องใช้บล็อกใด</p>
+        <input type="radio" name="u5pre5" value="1"> when this sprite clicked<br>
+        <input type="radio" name="u5pre5" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5pre5" value="0"> when backdrop switches to [backdrop1 v]<br>
+        <input type="radio" name="u5pre5" value="0"> when I receive [message1 v]<br>
 
-        <p>7. หากต้องการตรวจสอบว่าคะแนนมากกว่าหรือเท่ากับ 50 หรือไม่ ควรใช้บล็อกตัวดำเนินการใด</p>
-        <input type="radio" name="u5pre7" value="1"> [ ] > [ ] (ร่วมกับการเปรียบเทียบ หรือใช้บล็อกตามเงื่อนไขเหมาะสม)<br>
-        <input type="radio" name="u5pre7" value="0"> [ ] = [ ] <br>
-        <input type="radio" name="u5pre7" value="0"> join [ ] [ ] <br>
-        <input type="radio" name="u5pre7" value="0"> pick random (1) to (10)<br>
+        <p>6. หากต้องการให้ตัวละครเริ่มเคลื่อนที่เมื่อกดปุ่มลูกศรขวาบนแป้นพิมพ์ ต้องใช้บล็อกใด</p>
+        <input type="radio" name="u5pre6" value="1"> when [right arrow v] key pressed<br>
+        <input type="radio" name="u5pre6" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5pre6" value="0"> when this sprite clicked<br>
+        <input type="radio" name="u5pre6" value="0"> broadcast [message1 v]<br>
 
-        <p>8. บล็อกรูปหกเหลี่ยมสีเขียวอ่อนที่มีเครื่องหมาย `and`, `or`, `not` จัดอยู่ในกลุ่มบล็อกใด</p>
-        <input type="radio" name="u5pre8" value="1"> Operators (ตัวดำเนินการ)<br>
-        <input type="radio" name="u5pre8" value="0"> Control (ควบคุม)<br>
-        <input type="radio" name="u5pre8" value="0"> Sensing (การรับรู้)<br>
-        <input type="radio" name="u5pre8" value="0"> Variables (ตัวแปร)<br>
+        <p>7. บล็อก when [space v] key pressed สามารถเปลี่ยนปุ่มที่ใช้เริ่มการทำงานได้อย่างไร</p>
+        <input type="radio" name="u5pre7" value="1"> คลิกที่เมนูแบบเลื่อนลงในบล็อกเพื่อเลือกปุ่มที่ต้องการ<br>
+        <input type="radio" name="u5pre7" value="0"> ต้องลบบล็อกแล้วสร้างใหม่เท่านั้น<br>
+        <input type="radio" name="u5pre7" value="0"> เปลี่ยนไม่ได้ ใช้ได้เฉพาะปุ่ม space<br>
+        <input type="radio" name="u5pre7" value="0"> ต้องไปตั้งค่าที่แถบเมนูด้านบน<br>
 
-        <p>9. หากต้องการตรวจสอบว่าตัวละครสัมผัสกับขอบฉาก (Edge) หรือไม่ ควรใช้บล็อกเงื่อนไขร่วมกับบล็อกใดจากหมวด Sensing</p>
-        <input type="radio" name="u5pre9" value="1"> (touching [edge v]?) <br>
-        <input type="radio" name="u5pre9" value="0"> (key [space v] pressed?) <br>
-        <input type="radio" name="u5pre9" value="0"> (mouse down?) <br>
-        <input type="radio" name="u5pre9" value="0"> (timer) <br>
+        <p>8. บล็อกใดใช้ส่งสัญญาณข้อความไปยังตัวละครอื่นเพื่อให้เริ่มทำงาน</p>
+        <input type="radio" name="u5pre8" value="1"> broadcast [message1 v]<br>
+        <input type="radio" name="u5pre8" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5pre8" value="0"> stop all<br>
+        <input type="radio" name="u5pre8" value="0"> hide variable [score v]<br>
 
-        <p>10. การนำเงื่อนไขมาใช้ร่วมกับตัวแปร เช่น ตรวจสอบว่า `[score] = 10` แล้วให้แสดงข้อความชนะเกม มีประโยชน์อย่างไร</p>
-        <input type="radio" name="u5pre10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยนการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
-        <input type="radio" name="u5pre10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
-        <input type="radio" name="u5pre10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
-        <input type="radio" name="u5pre10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
+        <p>9. บล็อกใดใช้รับสัญญาณข้อความที่ถูกส่งมา เพื่อเริ่มต้นชุดคำสั่งของตัวละครอีกตัว</p>
+        <input type="radio" name="u5pre9" value="1"> when I receive [message1 v]<br>
+        <input type="radio" name="u5pre9" value="0"> broadcast [message1 v]<br>
+        <input type="radio" name="u5pre9" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5pre9" value="0"> next costume<br>
+
+        <p>10. เพราะเหตุใดจึงควรวางบล็อก when green flag clicked ไว้บนสุดของชุดคำสั่งเสมอ</p>
+        <input type="radio" name="u5pre10" value="1"> เพื่อให้ชุดคำสั่งทั้งหมดเริ่มทำงานพร้อมกันเมื่อกดธงเขียว และเริ่มต้นโปรแกรมได้ตามที่ต้องการ<br>
+        <input type="radio" name="u5pre10" value="0"> เพื่อให้โปรแกรมโหลดข้อมูลจากอินเทอร์เน็ตเร็วขึ้น<br>
+        <input type="radio" name="u5pre10" value="0"> เพื่อให้ตัวละครเปลี่ยนสีโดยอัตโนมัติ<br>
+        <input type="radio" name="u5pre10" value="0"> เพื่อบังคับให้โปรแกรมปิดตัวลงทันที<br>
         <br>
         <button onclick="pretest(5)">ส่งคำตอบ</button>
         <p id="u5preScore" class="result"></p>
     </div>
+            
     <!-- ================= เนื้อหาบทเรียน ================= -->
     <div class="card" id="u5lesson" style="display:none;">
         <h2>เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน </h2>
 
-        <h3>5.1 ความหมายของคำสั่งเงื่อนไข</h3>
-        <p>คำสั่งเงื่อนไข (Conditional Statement) คือ คำสั่งที่ใช้สำหรับตัดสินใจและควบคุมการทำงานของโปรแกรมให้เลือกกระทำเส้นทางใดเส้นทางหนึ่ง ตามผลลัพธ์ของการตรวจสอบเงื่อนไขว่าเป็นจริง (True) หรือเป็นเท็จ (False) เปรียบเสมือนการตัดสินใจในชีวิตประจำวัน เช่น "ถ้าฝนตก จะกางร่ม แต่ถ้าฝนไม่ตก จะไม่กางร่ม"</p>
+        <h3>5.1 ความหมายของคำสั่งเริ่มต้นการทำงาน</h3>
+        <p>คำสั่งเริ่มต้นการทำงาน คือ บล็อกที่กำหนดว่าชุดคำสั่งจะเริ่มทำงานเมื่อเกิดเหตุการณ์ใดเหตุการณ์หนึ่ง เช่น เมื่อคลิกธงเขียว เมื่อกดปุ่มบนแป้นพิมพ์ หรือเมื่อคลิกที่ตัวละคร หากไม่มีบล็อกเริ่มต้น ชุดคำสั่งที่ต่อไว้จะไม่ทำงานเอง</p>
 
-        <h3>5.2 คำสั่ง If</h3>
-        <p>คำสั่ง <code>if &lt;...&gt; then</code> เป็นคำสั่งเงื่อนไขพื้นฐาน ใช้สำหรับตรวจสอบเงื่อนไข หากผลลัพธ์การตรวจสอบเป็นจริง (True) โปรแกรมจะทำชุดคำสั่งที่อยู่ภายในบล็อก <code>if</code> นั้น แต่ถ้าผลลัพธ์เป็นเท็จ (False) โปรแกรมจะข้ามคำสั่งนั้นไปทำคำสั่งถัดไปโดยไม่มีการทำงานสำรอง</p>
+        <h3>5.2 หมวด Events และรูปร่างของบล็อก</h3>
+        <p>บล็อกคำสั่งเริ่มต้นการทำงานอยู่ในหมวด <strong>Events (เหตุการณ์)</strong> มีลักษณะเป็น<strong>บล็อกหมวก</strong> คือส่วนบนโค้งมน ใช้วางเป็นบล็อกแรกของชุดคำสั่งเสมอ และไม่สามารถต่อจากบล็อกอื่นด้านบนได้</p>
 
-        <h3>5.3 คำสั่ง If–Else</h3>
-        <p>คำสั่ง <code>if &lt;...&gt; then ... else ...</code> เป็นคำสั่งเงื่อนไขทางเลือก เมื่อมีการตรวจสอบเงื่อนไขแล้ว หากเป็นจริงจะทำงานในส่วนของ <code>then</code> แต่หากเงื่อนไขเป็นเท็จ โปรแกรมจะหันไปทำงานในส่วนชุดคำสั่งที่อยู่ภายในช่อง <code>else</code> แทน ช่วยให้สามารถจัดการทางเลือกได้ครบทั้งสองกรณี</p>
+        <h3>5.3 when green flag clicked</h3>
+        <p>บล็อก <code>when green flag clicked</code> ใช้เริ่มการทำงานเมื่อคลิกที่ปุ่มธงสีเขียวเหนือเวที เป็นบล็อกที่ใช้บ่อยที่สุด นิยมวางไว้บนสุดของชุดคำสั่งเพื่อให้โปรแกรมเริ่มต้นตามที่ต้องการ และชุดคำสั่งที่ใช้บล็อกนี้จะเริ่มทำงานพร้อมกันเมื่อกดธงเขียว</p>
 
-        <h3>5.4 การใช้ตัวดำเนินการเปรียบเทียบ</h3>
-        <p>การสร้างเงื่อนไขใน Scratch จำเป็นต้องอาศัยกลุ่มบล็อกสีเขียวอ่อน <strong>Operators (ตัวดำเนินการ)</strong> เข้ามาช่วยในการเปรียบเทียบข้อมูล เช่น เครื่องหมายมากกว่า (<code>&gt;</code>), น้อยกว่า (<code>&lt;</code>), หรือเท่ากับ (<code>=</code>) รวมถึงตัวดำเนินการทางตรรกะ เช่น <code>and</code>, <code>or</code> และ <code>not</code> เพื่อสร้างเงื่อนไขที่ซับซ้อนและแม่นยำยิ่งขึ้น</p>
+        <h3>5.4 when this sprite clicked</h3>
+        <p>บล็อก <code>when this sprite clicked</code> ใช้เริ่มการทำงานเมื่อผู้เล่นคลิกที่ตัวละคร เหมาะกับการสร้างปุ่มหรือให้ตัวละครตอบสนองเมื่อถูกคลิก</p>
 
-        <h3>5.5 การใช้เงื่อนไขร่วมกับตัวแปร</h3>
-        <p>การนำเงื่อนไขมาทำงานร่วมกับตัวแปร (Variables) เช่น การตรวจสอบค่าคะแนน <code>score</code> หรือพลังชีวิต <code>HP</code> เพื่อควบคุมเหตุการณ์สำคัญในเกม เช่น <em>"ถ้า HP น้อยกว่าหรือเท่ากับ 0 ให้แสดงข้อความ Game Over"</em> หรือ <em>"ถ้า score เท่ากับ 10 ให้เปลี่ยนฉากไปด่านถัดไป"</em> ซึ่งช่วยเพิ่มความสมจริงและสร้างกลไกการเล่นเกมใน Scratch ได้อย่างสมบูรณ์</p>
+        <h3>5.5 when key pressed</h3>
+        <p>บล็อก <code>when [space v] key pressed</code> ใช้เริ่มการทำงานเมื่อกดปุ่มที่กำหนดบนแป้นพิมพ์ เช่น กดลูกศรขวาเพื่อให้ตัวละครเคลื่อนที่ไปทางขวา สามารถเปลี่ยนปุ่มได้โดยคลิกที่<strong>เมนูแบบเลื่อนลง</strong>ในบล็อกแล้วเลือกปุ่มที่ต้องการ</p>
+
+        <h3>5.6 การส่งและรับสัญญาณข้อความ</h3>
+        <ul>
+          <li><code>broadcast [message1 v]</code>: ส่งสัญญาณข้อความไปยังตัวละครอื่น</li>
+          <li><code>when I receive [message1 v]</code>: รับสัญญาณข้อความที่ส่งมา เพื่อเริ่มต้นชุดคำสั่งของตัวละครอีกตัว</li>
+        </ul>
+        <p>การใช้สองบล็อกนี้คู่กัน ช่วยให้ตัวละครหลายตัวทำงานสัมพันธ์กันได้</p>
     </div>
 
     <div class="card" id="u5lesson2" style="display:none;">
         <h3>สื่อวิดีโอประกอบบทเรียน</h3>
-        <p>ศึกษาเพิ่มเติมเกี่ยวกับการใช้งานเงื่อนไข (Conditions) ในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+        <p>ศึกษาเพิ่มเติมเกี่ยวกับคำสั่งเริ่มต้นการทำงาน (Events) ในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
+        <iframe width="100%" height="315" src="https://drive.google.com/file/d/1LEW4edBxCEmqQ3GLBhgzE07wQqOfB7V3/preview" frameborder="0" allowfullscreen></iframe>
         <br><br>
         <button onclick="finishLesson(5)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
     </div>
@@ -1040,65 +1049,65 @@
     <div class="card" id="u5posttest" style="display:none;">
         <h3>แบบทดสอบหลังเรียน (หน่วยที่ 5 คำสั่งเริ่มต้นการทำงาน )</h3>
 
-        <p>1. ข้อใดให้ความหมายของคำสั่งเงื่อนไข (Conditional Statement) ได้ถูกต้องที่สุด</p>
-        <input type="radio" name="u5post1" value="1"> คำสั่งสำหรับควบคุมการทำงานของโปรแกรมให้เลือกกระทำตามเงื่อนไขที่กำหนด<br>
-        <input type="radio" name="u5post1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายๆ รอบโดยอัตโนมัติ<br>
-        <input type="radio" name="u5post1" value="0"> เครื่องมือสำหรับสร้างตัวแปรเพื่อเก็บคะแนนในเกม<br>
-        <input type="radio" name="u5post1" value="0"> คำสั่งสำหรับหยุดการทำงานของโปรแกรมทั้งหมดทันที<br>
+        <p>1. ข้อใดให้ความหมายของ "คำสั่งเริ่มต้นการทำงาน" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
+        <input type="radio" name="u5post1" value="1"> บล็อกที่กำหนดว่าชุดคำสั่งจะเริ่มทำงานเมื่อเกิดเหตุการณ์ใดเหตุการณ์หนึ่ง<br>
+        <input type="radio" name="u5post1" value="0"> บล็อกสำหรับวนซ้ำคำสั่งเดิมหลายรอบ<br>
+        <input type="radio" name="u5post1" value="0"> บล็อกสำหรับสร้างตัวแปรเก็บคะแนน<br>
+        <input type="radio" name="u5post1" value="0"> บล็อกสำหรับหยุดการทำงานของโปรแกรมทั้งหมด<br>
 
-        <p>2. ในโปรแกรม Scratch บล็อกคำสั่งควบคุมเงื่อนไข (Control) จะอยู่ในกลุ่มบล็อกสีใด</p>
-        <input type="radio" name="u5post2" value="1"> สีส้ม (Control)<br>
-        <input type="radio" name="u5post2" value="0"> สีฟ้าเข้ม (Motion)<br>
-        <input type="radio" name="u5post2" value="0"> สีเขียวอ่อน (Operators)<br>
-        <input type="radio" name="u5post2" value="0"> สีม่วง (Looks)<br>
+        <p>2. บล็อกคำสั่งเริ่มต้นการทำงานใน Scratch อยู่ในหมวดบล็อกใด</p>
+        <input type="radio" name="u5post2" value="1"> Events (เหตุการณ์)<br>
+        <input type="radio" name="u5post2" value="0"> Motion (การเคลื่อนไหว)<br>
+        <input type="radio" name="u5post2" value="0"> Operators (ตัวดำเนินการ)<br>
+        <input type="radio" name="u5post2" value="0"> Variables (ตัวแปร)<br>
 
-        <p>3. ลักษณะของบล็อกเงื่อนไขแบบ `if` ใน Scratch มีรูปร่างอย่างไรเพื่อให้สามารถนำบล็อกเงื่อนไขย่อยไปใส่ข้างในได้</p>
-        <input type="radio" name="u5post3" value="1"> มีช่องว่างรูปหกเหลี่ยมสำหรับใส่เงื่อนไข และมีช่องว่างด้านในสำหรับใส่บล็อกคำสั่ง<br>
-        <input type="radio" name="u5post3" value="0"> เป็นบล็อกสี่เหลี่ยมผืนผ้าเรียบๆ ไม่มีช่องว่างด้านใน<br>
-        <input type="radio" name="u5post3" value="0"> เป็นบล็อกวงกลมมนสำหรับใส่ตัวเลขเท่านั้น<br>
-        <input type="radio" name="u5post3" value="0"> เป็นบล็อกปลายแหลมสำหรับส่งค่าข้อมูลออกไป<br>
+        <p>3. บล็อกคำสั่งเริ่มต้นการทำงานมีรูปร่างลักษณะอย่างไร</p>
+        <input type="radio" name="u5post3" value="1"> ส่วนบนโค้งมน (หมวก) ใช้วางเป็นบล็อกแรกของชุดคำสั่ง ไม่สามารถต่อจากบล็อกอื่นด้านบนได้<br>
+        <input type="radio" name="u5post3" value="0"> รูปหกเหลี่ยม ใช้ใส่ในช่องเงื่อนไข<br>
+        <input type="radio" name="u5post3" value="0"> รูปวงกลมมน ใช้ใส่ตัวเลข<br>
+        <input type="radio" name="u5post3" value="0"> สี่เหลี่ยมเรียบ ต่อได้ทั้งด้านบนและด้านล่าง<br>
 
-        <p>4. หากต้องการตรวจสอบว่าถ้าเงื่อนไขเป็นจริงให้ทำคำสั่งด้านใน แต่ถ้าเป็นเท็จจะไม่ทำอะไรเลย ควรใช้บล็อกใด</p>
-        <input type="radio" name="u5post4" value="1"> `if <...> then` <br>
-        <input type="radio" name="u5post4" value="0"> `if <...> then ... else ...` <br>
-        <input type="radio" name="u5post4" value="0"> `repeat <...>` <br>
-        <input type="radio" name="u5post4" value="0"> `forever` <br>
+        <p>4. หากต้องการให้โปรแกรมเริ่มทำงานเมื่อคลิกที่ปุ่มธงสีเขียว ต้องใช้บล็อกใด</p>
+        <input type="radio" name="u5post4" value="1"> when green flag clicked<br>
+        <input type="radio" name="u5post4" value="0"> when this sprite clicked<br>
+        <input type="radio" name="u5post4" value="0"> when [space v] key pressed<br>
+        <input type="radio" name="u5post4" value="0"> when I receive [message1 v]<br>
 
-        <p>5. บล็อกคำสั่ง `if-else` มีความแตกต่างจากบล็อก `if` ทั่วไปอย่างไร</p>
-        <input type="radio" name="u5post5" value="1"> มีทางเลือกสำรองให้ทำงานเมื่อเงื่อนไขเป็นเท็จ (False)<br>
-        <input type="radio" name="u5post5" value="0"> ใช้สำหรับวนซ้ำจำนวนรอบที่แน่นอนเท่านั้น<br>
-        <input type="radio" name="u5post5" value="0"> ไม่จำเป็นต้องใส่เงื่อนไขทางเข้า<br>
-        <input type="radio" name="u5post5" value="0"> ใช้สำหรับสร้างตัวแปรเสริมในระบบ<br>
+        <p>5. หากต้องการให้ชุดคำสั่งทำงานเมื่อผู้เล่นคลิกที่ตัวละคร ต้องใช้บล็อกใด</p>
+        <input type="radio" name="u5post5" value="1"> when this sprite clicked<br>
+        <input type="radio" name="u5post5" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5post5" value="0"> when backdrop switches to [backdrop1 v]<br>
+        <input type="radio" name="u5post5" value="0"> when I receive [message1 v]<br>
 
-        <p>6. บล็อกตัวดำเนินการเปรียบเทียบ (Operators) ที่ใช้ตรวจสอบว่าค่าสองค่าเท่ากันหรือไม่ มีลักษณะเครื่องหมายอย่างไรใน Scratch</p>
-        <input type="radio" name="u5post6" value="1"> [ ] = [ ] <br>
-        <input type="radio" name="u5post6" value="0"> [ ] < [ ] <br>
-        <input type="radio" name="u5post6" value="0"> [ ] > [ ] <br>
-        <input type="radio" name="u5post6" value="0"> [ ] + [ ] <br>
+        <p>6. หากต้องการให้ตัวละครเริ่มเคลื่อนที่เมื่อกดปุ่มลูกศรขวาบนแป้นพิมพ์ ต้องใช้บล็อกใด</p>
+        <input type="radio" name="u5post6" value="1"> when [right arrow v] key pressed<br>
+        <input type="radio" name="u5post6" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5post6" value="0"> when this sprite clicked<br>
+        <input type="radio" name="u5post6" value="0"> broadcast [message1 v]<br>
 
-        <p>7. หากต้องการตรวจสอบว่าคะแนนมากกว่าหรือเท่ากับ 50 หรือไม่ ควรใช้บล็อกตัวดำเนินการใด</p>
-        <input type="radio" name="u5post7" value="1"> [ ] > [ ] (ร่วมกับการเปรียบเทียบ หรือใช้บล็อกตามเงื่อนไขเหมาะสม)<br>
-        <input type="radio" name="u5post7" value="0"> [ ] = [ ] <br>
-        <input type="radio" name="u5post7" value="0"> join [ ] [ ] <br>
-        <input type="radio" name="u5post7" value="0"> pick random (1) to (10)<br>
+        <p>7. บล็อก when [space v] key pressed สามารถเปลี่ยนปุ่มที่ใช้เริ่มการทำงานได้อย่างไร</p>
+        <input type="radio" name="u5post7" value="1"> คลิกที่เมนูแบบเลื่อนลงในบล็อกเพื่อเลือกปุ่มที่ต้องการ<br>
+        <input type="radio" name="u5post7" value="0"> ต้องลบบล็อกแล้วสร้างใหม่เท่านั้น<br>
+        <input type="radio" name="u5post7" value="0"> เปลี่ยนไม่ได้ ใช้ได้เฉพาะปุ่ม space<br>
+        <input type="radio" name="u5post7" value="0"> ต้องไปตั้งค่าที่แถบเมนูด้านบน<br>
 
-        <p>8. บล็อกรูปหกเหลี่ยมสีเขียวอ่อนที่มีเครื่องหมาย `and`, `or`, `not` จัดอยู่ในกลุ่มบล็อกใด</p>
-        <input type="radio" name="u5post8" value="1"> Operators (ตัวดำเนินการ)<br>
-        <input type="radio" name="u5post8" value="0"> Control (ควบคุม)<br>
-        <input type="radio" name="u5post8" value="0"> Sensing (การรับรู้)<br>
-        <input type="radio" name="u5post8" value="0"> Variables (ตัวแปร)<br>
+        <p>8. บล็อกใดใช้ส่งสัญญาณข้อความไปยังตัวละครอื่นเพื่อให้เริ่มทำงาน</p>
+        <input type="radio" name="u5post8" value="1"> broadcast [message1 v]<br>
+        <input type="radio" name="u5post8" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5post8" value="0"> stop all<br>
+        <input type="radio" name="u5post8" value="0"> hide variable [score v]<br>
 
-        <p>9. หากต้องการตรวจสอบว่าตัวละครสัมผัสกับขอบฉาก (Edge) หรือไม่ ควรใช้บล็อกเงื่อนไขร่วมกับบล็อกใดจากหมวด Sensing</p>
-        <input type="radio" name="u5post9" value="1"> (touching [edge v]?) <br>
-        <input type="radio" name="u5post9" value="0"> (key [space v] pressed?) <br>
-        <input type="radio" name="u5post9" value="0"> (mouse down?) <br>
-        <input type="radio" name="u5post9" value="0"> (timer) <br>
+        <p>9. บล็อกใดใช้รับสัญญาณข้อความที่ถูกส่งมา เพื่อเริ่มต้นชุดคำสั่งของตัวละครอีกตัว</p>
+        <input type="radio" name="u5post9" value="1"> when I receive [message1 v]<br>
+        <input type="radio" name="u5post9" value="0"> broadcast [message1 v]<br>
+        <input type="radio" name="u5post9" value="0"> when green flag clicked<br>
+        <input type="radio" name="u5post9" value="0"> next costume<br>
 
-        <p>10. การนำเงื่อนไขมาใช้ร่วมกับตัวแปร เช่น ตรวจสอบว่า `[score] = 10` แล้วให้แสดงข้อความชนะเกม มีประโยชน์อย่างไร</p>
-        <input type="radio" name="u5post10" value="1"> ทำให้เกมมีความท้าทายและสามารถเปลี่ยนการดำเนินเรื่องตามสถานการณ์ของตัวแปรได้<br>
-        <input type="radio" name="u5post10" value="0"> ทำให้โปรแกรมโหลดข้อมูลเร็วขึ้นโดยอัตโนมัติ<br>
-        <input type="radio" name="u5post10" value="0"> ช่วยให้ไม่ต้องสร้างตัวละครเพิ่มเติม<br>
-        <input type="radio" name="u5post10" value="0"> บังคับให้โปรแกรมปิดตัวลงทันทีเมื่อจบเกม<br>
+        <p>10. เพราะเหตุใดจึงควรวางบล็อก when green flag clicked ไว้บนสุดของชุดคำสั่งเสมอ</p>
+        <input type="radio" name="u5post10" value="1"> เพื่อให้ชุดคำสั่งทั้งหมดเริ่มทำงานพร้อมกันเมื่อกดธงเขียว และเริ่มต้นโปรแกรมได้ตามที่ต้องการ<br>
+        <input type="radio" name="u5post10" value="0"> เพื่อให้โปรแกรมโหลดข้อมูลจากอินเทอร์เน็ตเร็วขึ้น<br>
+        <input type="radio" name="u5post10" value="0"> เพื่อให้ตัวละครเปลี่ยนสีโดยอัตโนมัติ<br>
+        <input type="radio" name="u5post10" value="0"> เพื่อบังคับให้โปรแกรมปิดตัวลงทันที<br>
         <br>  
         <button onclick="posttest(5)">ส่งคำตอบ</button>
         <p id="u5postScore" class="result"></p>
@@ -1234,7 +1243,7 @@
         <div class="card" id="u6lesson2" style="display:none;">
             <h3>สื่อวิดีโอประกอบบทเรียน</h3>
             <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมและการหยุดการทำงานในโปรแกรม Scratch</p>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="315" src="https://drive.google.com/file/d/1LEW4edBxCEmqQ3GLBhgzE07wQqOfB7V3/preview" frameborder="0" allowfullscreen></iframe>
             <br><br>
             <button onclick="finishLesson(6)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
         </div>
