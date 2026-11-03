@@ -1,0 +1,105 @@
+/* ===== ธีม WBI Scratch: หน้าตาแบบบล็อก Scratch ===== */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Sarabun:wght@400;500;600&display=swap');
+
+:root{
+  --page:#E9F1FC; --ink:#3B4566; --muted:#6B7592; --line:#D5E0F2; --soft:#F6F9FE;
+  --unit:#4C97FF; --unit-ink:#fff;
+}
+body{
+  font-family:'Sarabun',sans-serif; font-size:18px; line-height:1.7; color:var(--ink);
+  background-color:var(--page);
+  background-image:radial-gradient(#D3E1F7 1.5px,transparent 1.5px);
+  background-size:26px 26px;
+}
+h1,h2,h3,button{font-family:'Kanit',sans-serif}
+h2{font-size:1.7rem;font-weight:600;margin:0 0 .6em;color:var(--ink)}
+h3{font-size:1.2rem;font-weight:500;margin:1.4em 0 .4em;color:var(--ink)}
+
+/* การ์ด = บล็อก Scratch: แถบสีด้านบน + รอยบากเหมือนชิ้นต่อ */
+.card{
+  position:relative; background:#fff; max-width:820px; margin:34px auto;
+  padding:34px 36px 30px; border:2px solid var(--line); border-top:12px solid var(--unit);
+  border-radius:6px 6px 20px 20px;
+}
+.card::before{
+  content:""; position:absolute; top:-1px; left:30px; width:46px; height:10px;
+  background:var(--page); border-radius:0 0 9px 9px;
+}
+.card>h2:first-child,.card>h3:first-child{margin-top:0}
+
+/* คำถาม */
+p.q{position:relative;margin:30px 0 10px;padding-left:48px;font-weight:600;color:var(--ink)}
+.qn{
+  position:absolute;left:0;top:1px;width:34px;height:34px;border-radius:50%;
+  background:var(--unit);color:var(--unit-ink);font:500 1rem/34px 'Kanit',sans-serif;text-align:center;
+}
+
+/* ตัวเลือก: กดได้ทั้งแถบ */
+label.opt{
+  display:flex;align-items:center;gap:14px;margin:8px 0 8px 48px;padding:11px 16px;
+  background:var(--soft);border:2px solid var(--line);border-radius:12px;cursor:pointer;
+  transition:border-color .12s,background .12s;
+}
+label.opt:hover{border-color:var(--unit)}
+label.opt:has(input:checked){border-color:var(--unit);background:color-mix(in srgb,var(--unit) 12%,#fff)}
+label.opt input{
+  appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;margin:0;
+  border:2px solid #9AA7C4;border-radius:50%;background:#fff;
+}
+label.opt input:checked{border-color:var(--unit);background:radial-gradient(var(--unit) 0 45%,#fff 50%)}
+label.opt:has(input:focus-visible){outline:3px solid color-mix(in srgb,var(--unit) 50%,transparent);outline-offset:2px}
+label.opt .opt-text{flex:1}
+label.opt code{font-size:.9em}
+
+/* แถบความคืบหน้า */
+.prog{display:flex;align-items:center;gap:12px;margin:6px 0 0;font:500 .95rem 'Kanit',sans-serif;color:var(--muted)}
+.prog .bar{flex:1;height:10px;background:var(--line);border-radius:99px;overflow:hidden}
+.prog .bar i{display:block;height:100%;width:0;background:var(--unit);border-radius:99px;transition:width .25s}
+
+/* ปุ่มแบบกดแล้วยุบ */
+button{
+  font-size:1.05rem;font-weight:500;color:var(--unit-ink);background:var(--unit);
+  border:0;border-radius:12px;padding:12px 28px;margin-top:14px;cursor:pointer;
+  box-shadow:0 5px 0 color-mix(in srgb,var(--unit) 70%,#000);transition:transform .08s,box-shadow .08s;
+}
+button:hover{filter:brightness(1.05)}
+button:active{transform:translateY(4px);box-shadow:0 1px 0 color-mix(in srgb,var(--unit) 70%,#000)}
+button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* ผลคะแนน */
+.result{margin:18px 0 0;font:500 1.15rem 'Kanit',sans-serif}
+.result:not(:empty){padding:14px 18px;background:#FFF6D6;border:2px solid #FFBF00;border-radius:14px;color:#6A4B00}
+
+/* เนื้อหาบทเรียน */
+.card ul{padding-left:1.3em}
+.card li{margin:.35em 0}
+code{
+  font:500 .88em ui-monospace,Menlo,Consolas,monospace;color:#2F3F78;
+  background:#EEF3FF;border:1px solid #C9D7F0;border-radius:6px;padding:1px 8px;white-space:nowrap;
+}
+iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:14px;margin:12px 0}
+
+@media (max-width:600px){
+  body{font-size:17px}
+  .card{margin:20px 12px;padding:26px 18px 22px}
+  p.q{padding-left:42px} label.opt{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== โครงหน้า: หัวเว็บ แถบเลือกเรื่อง ช่องกรอก (ใช้แทน <style> เดิมทั้งหมด) ===== */
+body{margin:0}
+header{padding:28px 20px 34px;text-align:center;color:#fff;background:linear-gradient(135deg,#4C97FF 0%,#855CD6 100%)}
+header h1{margin:0;font-size:2.1rem;font-weight:600;color:#fff}
+header p{margin:6px 0 0;opacity:.95;color:#fff}
+.unit-nav{position:sticky;top:0;z-index:10;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:10px 12px;background:rgba(255,255,255,.96);box-shadow:0 2px 0 var(--line)}
+.unit-btn{--c:#4C97FF;--ci:#fff;margin:0;padding:7px 16px;font:500 .9rem 'Kanit',sans-serif;color:var(--ink);background:#fff;border:2px solid var(--c);border-radius:999px;box-shadow:none;text-decoration:none}
+.unit-btn:nth-child(2){--c:#9966FF}.unit-btn:nth-child(3){--c:#FFAB19;--ci:#4A3000}.unit-btn:nth-child(4){--c:#CF63CF}.unit-btn:nth-child(5){--c:#FFBF00;--ci:#4A3A00}.unit-btn:nth-child(6){--c:#EC5959}
+.unit-btn:hover{background:color-mix(in srgb,var(--c) 15%,#fff);filter:none}
+.unit-btn.active{background:var(--c);color:var(--ci);font-weight:500}
+.unit-btn:active{transform:none;box-shadow:none}
+.container{max-width:860px;margin:0 auto;padding:10px 16px 60px}
+.unit-section{display:none}
+.unit-section.active{display:block}
+input[type=text],input[type=number]{font:inherit;color:var(--ink);background:var(--soft);border:2px solid var(--line);border-radius:12px;margin-top:6px}
+input[type=text]:focus,input[type=number]:focus{outline:none;border-color:#4C97FF;box-shadow:0 0 0 4px rgba(76,151,255,.2)}
+.card label:not(.opt){font-weight:500}
