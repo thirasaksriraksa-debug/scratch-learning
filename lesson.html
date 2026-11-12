@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>บทเรียน Scratch (เรื่องที่ 1-6)</title>
 <link rel="stylesheet" href="scratch.css">
+<p><a href="index.html" style="color:#fff">← กลับหน้าแรก</a></p>  
 </head>
 <body>
 
@@ -1628,5 +1629,43 @@ function finish(n) {
 }
 </script>
 <script src="scratch.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var KEY = 'scratchPreScores';
+  function load() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { return {}; } }
+  function who() {
+    return {
+      name: (document.getElementById('name').value || '').trim(),
+      number: (document.getElementById('number').value || '').trim()
+    };
+  }
+  var _pre = pretest, _post = posttest;
+  pretest = function (n) {
+    _pre(n);
+    var w = who(), d = load();
+    d[n] = { score: scores[n].pre, name: w.name, number: w.number };
+    try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {}
+  };
+  posttest = function (n) {
+    var w = who(), s = load()[n];
+    if (s && w.name && s.name === w.name && s.number === w.number && scores[n].pre === 0) {
+      scores[n].pre = s.score;
+    }
+    _post(n);
+  };
+
+  var q = new URLSearchParams(location.search);
+  var n = parseInt(q.get('unit'), 10), view = q.get('view');
+  if (n >= 1 && n <= 6) {
+    switchUnit(n);
+    if (view === 'post') {
+      var first = document.querySelector('#unit' + n + '-content .card');
+      if (first) first.style.display = 'none';
+      var p = document.getElementById('u' + n + 'posttest');
+      if (p) p.style.display = 'block';
+    }
+  }
+});
+</script>
 </body>
 </html>
