@@ -66,18 +66,18 @@
     <span class="go">อ่านเลย</span>
   </a>
 
-  <a class="card tile t2" href="#" data-pick="pre" role="button">
+  <a class="card tile t2" href="test.html?type=pre">
     <div class="icon" aria-hidden="true">📝</div>
     <h2>แบบทดสอบก่อนเรียน</h2>
-    <span class="desc">วัดความรู้พื้นฐานก่อนเริ่มเรื่องนั้น ๆ</span>
-    <span class="go">เลือกเรื่อง</span>
+    <span class="desc">20 ข้อ ครอบคลุมเรื่องที่ 1–6 วัดความรู้ก่อนเริ่มเรียน</span>
+    <span class="go">ทำแบบทดสอบ</span>
   </a>
 
-  <a class="card tile t3" href="#" data-pick="post" role="button">
+  <a class="card tile t3" href="test.html?type=post">
     <div class="icon" aria-hidden="true">✅</div>
     <h2>แบบทดสอบหลังเรียน</h2>
-    <span class="desc">ทำหลังเรียนจบ เพื่อดูพัฒนาการของตนเอง</span>
-    <span class="go">เลือกเรื่อง</span>
+    <span class="desc">20 ข้อ ครอบคลุมเรื่องที่ 1–6 ทำหลังเรียนจบ</span>
+    <span class="go">ทำแบบทดสอบ</span>
   </a>
 </main>
 
@@ -111,49 +111,17 @@
   </div>
 </dialog>
 
-<!-- ป๊อปอัปเลือกเรื่อง สำหรับแบบทดสอบก่อน/หลังเรียน -->
-<dialog id="pickDialog" aria-labelledby="pickTitle">
-  <div class="dlg-body">
-    <h2 id="pickTitle">เลือกเรื่อง</h2>
-    <div class="unit-list" id="unitList">
-      <a data-unit="1" href="#">เรื่องที่ 1 ความหมายของโปรแกรม Scratch</a>
-      <a data-unit="2" href="#">เรื่องที่ 2 ส่วนประกอบหน้าต่าง</a>
-      <a data-unit="3" href="#">เรื่องที่ 3 ประเภทบล็อกคำสั่ง</a>
-      <a data-unit="4" href="#">เรื่องที่ 4 การสร้างตัวละครและฉาก</a>
-      <a data-unit="5" href="#">เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน</a>
-      <a data-unit="6" href="#">เรื่องที่ 6 คำสั่งหยุดการทำงาน</a>
-    </div>
-    <div class="dlg-foot"><button type="button" data-close>ปิด</button></div>
-  </div>
-</dialog>
-
 <script>
   var objDlg = document.getElementById('objectivesDialog');
-  var pickDlg = document.getElementById('pickDialog');
 
   document.getElementById('openObjectives').addEventListener('click', function (e) {
     e.preventDefault(); objDlg.showModal();
   });
 
-  document.querySelectorAll('[data-pick]').forEach(function (tile) {
-    tile.addEventListener('click', function (e) {
-      e.preventDefault();
-      var mode = tile.dataset.pick; // pre หรือ post
-      document.getElementById('pickTitle').textContent =
-        mode === 'pre' ? 'แบบทดสอบก่อนเรียน: เลือกเรื่อง' : 'แบบทดสอบหลังเรียน: เลือกเรื่อง';
-      document.querySelectorAll('#unitList a').forEach(function (a) {
-        a.href = 'lesson.html?unit=' + a.dataset.unit + '&view=' + mode;
-      });
-      pickDlg.showModal();
-    });
-  });
-
   document.querySelectorAll('[data-close]').forEach(function (b) {
     b.addEventListener('click', function () { b.closest('dialog').close(); });
   });
-  [objDlg, pickDlg].forEach(function (d) {
-    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
-  });
+  objDlg.addEventListener('click', function (e) { if (e.target === objDlg) objDlg.close(); });
 </script>
 </body>
 </html>
