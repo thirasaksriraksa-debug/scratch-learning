@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แบบทดสอบ Scratch (20 ข้อ)</title>
+<link rel="stylesheet" href="scratch.css">
+<style>
+  .err:not(:empty){margin:16px 0 0;padding:12px 16px;background:#FFE9E9;border:2px solid #EC5959;border-radius:12px;color:#7A1F1F;font:500 1rem 'Kanit',sans-serif}
+  .actions{display:flex;flex-wrap:wrap;gap:12px}
+  button:disabled{opacity:.55;cursor:not-allowed}
+  .sticky-prog{position:sticky;top:0;z-index:5;background:#fff;padding:10px 0 4px;margin:0 0 6px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="title">แบบทดสอบก่อนเรียน</h1>
+  <p>20 ข้อ ครอบคลุมเรื่องที่ 1–6</p>
+  <p><a href="index.html" style="color:#fff">← กลับหน้าแรก</a></p>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>ข้อมูลผู้เรียน</h2>
+    <label for="name">ชื่อ-นามสกุล</label>
+    <input id="name" type="text" placeholder="ชื่อ-นามสกุล" style="width:100%;padding:10px;box-sizing:border-box;">
+    <br><br>
+    <label for="number">เลขที่</label>
+    <input id="number" type="number" placeholder="เลขที่" style="width:100%;padding:10px;box-sizing:border-box;">
+  </div>
+
+  <div class="card" id="testCard">
+    <h3 id="testHeading">แบบทดสอบก่อนเรียน</h3>
+    <p style="margin:0">เลือกคำตอบที่ถูกต้องที่สุดเพียงข้อเดียว ตอบให้ครบทุกข้อแล้วกดส่งคำตอบ</p>
+    <div class="sticky-prog">
+      <div class="prog"><span id="progText">ตอบแล้ว 0/20</span><div class="bar"><i id="progBar"></i></div></div>
+    </div>
+    <div id="questions"></div>
+    <p class="err" id="err" role="alert"></p>
+    <br>
+    <button type="button" id="submitBtn">ส่งคำตอบ</button>
+    <p id="result" class="result"></p>
+    <div id="after" class="actions"></div>
+  </div>
+</div>
+
+<script>
+var DATA = [{"u": 1, "q": "ข้อใดคือความหมายของโปรแกรม Scratch ได้ถูกต้องที่สุด", "o": ["ภาษาโปรแกรมในรูปแบบบล็อกคำสั่ง (Block-based Programming) สำหรับสร้างงานกราฟิก เกม และนิทาน", "โปรแกรมสำหรับพิมพ์เอกสารและรายงานส่งครู", "โปรแกรมสำหรับตกแต่งภาพถ่ายและสร้างวิดีโอ", "ระบบปฏิบัติการสำหรับควบคุมคอมพิวเตอร์"]}, {"u": 1, "q": "หน่วยงานใดเป็นผู้พัฒนาโปรแกรม Scratch ขึ้นมา", "o": ["MIT Media Lab (สถาบันเทคโนโลยีแมตชูเซตส์)", "Microsoft Corporation", "Google LLC", "Apple Inc."]}, {"u": 1, "q": "ในโปรแกรม Scratch คำว่า \"Sprite\" หมายถึงอะไร", "o": ["ตัวละครหรือวัตถุที่สามารถเขียนโปรแกรมสั่งให้เคลื่อนไหวหรือทำงานได้", "ฉากหลังของเวที", "เสียงประกอบในเกม", "ชุดคำสั่งบล็อกสี"]}, {"u": 2, "q": "พื้นที่ที่ใช้แสดงผลการทำงานของโปรแกรม เช่น ตัวละครเคลื่อนไหวหรือพูดโต้ตอบ เรียกว่าอะไร", "o": ["เวที (Stage)", "พื้นที่เขียนโค้ด (Code Area)", "คลังบล็อกคำสั่ง (Block Palette)", "แถบเมนู (Menu Bar)"]}, {"u": 2, "q": "ส่วนที่รวบรวมบล็อกคำสั่งแยกตามหมวดหมู่และใช้เลือกบล็อกไปสร้างโปรแกรม เรียกว่าอะไร", "o": ["คลังบล็อกคำสั่ง (Block Palette)", "เวที (Stage)", "แท็บฉากหลัง (Backdrops)", "ปุ่มหยุด (Stop)"]}, {"u": 2, "q": "ปุ่มสัญลักษณ์ที่มุมซ้ายล่างของหน้าต่างโปรแกรม ใช้สำหรับทำอะไร", "o": ["เพิ่มส่วนขยาย (Extensions) เช่น ปากกา ข้อความเป็นเสียงพูด", "บันทึกไฟล์งานลงคอมพิวเตอร์", "เริ่มการทำงานของโปรแกรม", "ลบบล็อกคำสั่งทั้งหมด"]}, {"u": 3, "q": "หากต้องการให้ชุดคำสั่งภายในลูปทำงานซ้ำไปเรื่อยๆ ไม่มีที่สิ้นสุด ต้องใช้บล็อกใด", "o": ["forever", "repeat ( )", "wait ( ) secs", "stop all"]}, {"u": 3, "q": "หากต้องการให้ตัวละครทำซ้ำตามจำนวนครั้งที่กำหนด เช่น ทำซ้ำ 10 ครั้ง ควรใช้บล็อกใด", "o": ["repeat (10)", "forever", "wait (10) secs", "stop (all)"]}, {"u": 3, "q": "บล็อกคำสั่ง \"wait ( ) secs\" มีหน้าที่หลักตามข้อใด", "o": ["หน่วงเวลาหรือหยุดรอการทำงานชั่วคราวก่อนไปคำสั่งถัดไป", "สั่งให้โปรแกรมเริ่มทำงานใหม่ทันที", "สั่งหยุดการทำงานของสคริปต์ทั้งหมดทันที", "ตรวจจับเวลาที่ใช้ไปในการรันโปรแกรม"]}, {"u": 3, "q": "การใช้บล็อกทำซ้ำ (Loop) มีข้อดีอย่างไรในการเขียนโปรแกรม", "o": ["ลดความซ้ำซ้อนในการเขียนบล็อกคำสั่ง และทำให้โค้ดสั้นกระชับขึ้น", "ทำให้โปรแกรมสามารถรันได้โดยไม่ต้องใช้คอมพิวเตอร์", "ช่วยแปลงโค้ดเป็นภาษา Python โดยอัตโนมัติ", "ป้องกันไม่ให้โปรแกรมเกิดข้อผิดพลาดทางคณิตศาสตร์"]}, {"u": 4, "q": "หากต้องการเปลี่ยนฉากหลังของเวที ต้องเลือกแท็บใดหลังจากคลิกที่ฉาก (Stage)", "o": ["Backdrops (ฉากหลัง)", "Costumes (ชุดแต่งกาย)", "Motion (การเคลื่อนไหว)", "Variables (ตัวแปร)"]}, {"u": 4, "q": "ข้อใดคือความแตกต่างระหว่างตัวละคร (Sprite) กับฉาก (Stage)", "o": ["ตัวละครเคลื่อนที่ได้ แต่ฉากไม่สามารถเคลื่อนที่ได้", "ฉากมีบล็อก Motion ส่วนตัวละครไม่มี", "ตัวละครมีได้เพียง 1 ตัวต่อโปรเจกต์", "ฉากมีได้หลายฉากพร้อมกันบนเวทีเดียว"]}, {"u": 4, "q": "หากต้องการให้ตัวละครเปลี่ยนท่าทางเป็นชุดแต่งกายถัดไป ต้องใช้บล็อกคำสั่งใด", "o": ["next costume", "next backdrop", "move (10) steps", "go to x: (0) y: (0)"]}, {"u": 5, "q": "หากต้องการให้โปรแกรมเริ่มทำงานเมื่อคลิกที่ปุ่มธงสีเขียว ต้องใช้บล็อกใด", "o": ["when green flag clicked", "when this sprite clicked", "when [space v] key pressed", "when I receive [message1 v]"]}, {"u": 5, "q": "หากต้องการให้ชุดคำสั่งทำงานเมื่อผู้เล่นคลิกที่ตัวละคร ต้องใช้บล็อกใด", "o": ["when this sprite clicked", "when green flag clicked", "when backdrop switches to [backdrop1 v]", "when I receive [message1 v]"]}, {"u": 5, "q": "บล็อกใดใช้ส่งสัญญาณข้อความไปยังตัวละครอื่นเพื่อให้เริ่มทำงาน", "o": ["broadcast [message1 v]", "when green flag clicked", "stop all", "hide variable [score v]"]}, {"u": 5, "q": "บล็อกใดใช้รับสัญญาณข้อความที่ถูกส่งมา เพื่อเริ่มต้นชุดคำสั่งของตัวละครอีกตัว", "o": ["when I receive [message1 v]", "broadcast [message1 v]", "when green flag clicked", "next costume"]}, {"u": 6, "q": "หากต้องการหยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์ทันที ควรเลือกใช้ตัวเลือกใดในบล็อก stop", "o": ["all (ทั้งหมด)", "this script (สคริปต์นี้)", "other scripts in sprite (สคริปต์อื่นๆ ในตัวละคร)", "wait (หน่วงเวลา)"]}, {"u": 6, "q": "ในการสร้างเกม เมื่อตัวละครผู้เล่นชนกับอุปสรรคจนพลังชีวิตหมด (HP = 0) เราควรใช้บล็อก stop ร่วมกับคำสั่งใดเพื่อให้เกมหยุดทำงาน", "o": ["คำสั่งเงื่อนไข (If) และ stop [all]", "บล็อกการเคลื่อนไหว (Motion)", "บล็อกเปลี่ยนชุดตัวละคร (Next Costume)", "บล็อกเพิ่มเสียง (Play Sound)"]}, {"u": 6, "q": "หากมีสคริปต์หลายชุดทำงานอยู่ในตัวละครเดียวกัน แต่เราต้องการหยุดการทำงานเพียงแค่สคริปต์เดียวโดยไม่ให้กระทบสคริปต์อื่น ควรเลือกใช้คำสั่งใด", "o": ["stop [this script]", "stop [all]", "delete [all]", "hide"]}];
+var COLORS = {1:['#4C97FF','#fff'],2:['#9966FF','#fff'],3:['#FFAB19','#4A3000'],4:['#CF63CF','#fff'],5:['#FFBF00','#4A3A00'],6:['#EC5959','#fff']};
+var SHEET_URL = "https://script.google.com/macros/s/AKfycbz1EZolD0bokrEcEutHh78Ph5d1yvvAEq-Cuda6ycjVNAvYmkUXVk_HsUHRM3xbmWpx/exec";
+var KEY = 'scratchOverallPre';
+var TYPE = new URLSearchParams(location.search).get('type') === 'post' ? 'post' : 'pre';
+var LABEL = TYPE === 'post' ? 'แบบทดสอบหลังเรียน' : 'แบบทดสอบก่อนเรียน';
+var TOTAL = DATA.length, sent = false;
+
+document.title = LABEL + ' Scratch (' + TOTAL + ' ข้อ)';
+document.getElementById('title').textContent = LABEL;
+document.getElementById('testHeading').textContent = LABEL;
+
+function shuffle(a) {
+  a = a.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+// ลำดับข้อคงที่ (เรียงตามเรื่อง) แต่สลับลำดับตัวเลือกทุกครั้งที่เปิดหน้า
+var box = document.getElementById('questions');
+DATA.forEach(function (d, i) {
+  var wrap = document.createElement('div');
+  var c = COLORS[d.u];
+  wrap.style.setProperty('--unit', c[0]);
+  wrap.style.setProperty('--unit-ink', c[1]);
+  var html = '<p class="q"><span class="qn">' + (i + 1) + '</span>' + d.q + '</p>';
+  var opts = d.o.map(function (t, k) { return { t: t, ok: k === 0 ? 1 : 0 }; });
+  shuffle(opts).forEach(function (o) {
+    html += '<label class="opt"><input type="radio" name="q' + i + '" value="' + o.ok + '"><span class="opt-text">' + o.t + '</span></label>';
+  });
+  wrap.innerHTML = html;
+  box.appendChild(wrap);
+});
+
+function answered() {
+  return DATA.filter(function (d, i) { return document.querySelector('input[name="q' + i + '"]:checked'); }).length;
+}
+document.getElementById('testCard').addEventListener('change', function () {
+  var n = answered();
+  document.getElementById('progText').textContent = 'ตอบแล้ว ' + n + '/' + TOTAL;
+  document.getElementById('progBar').style.width = (n / TOTAL * 100) + '%';
+  document.getElementById('err').textContent = '';
+});
+
+document.getElementById('submitBtn').addEventListener('click', function () {
+  if (sent) return;
+  var name = document.getElementById('name').value.trim();
+  var number = document.getElementById('number').value.trim();
+  var err = document.getElementById('err');
+  if (!name || !number) {
+    err.textContent = 'กรุณากรอกชื่อ-นามสกุลและเลขที่ให้ครบ';
+    document.getElementById('name').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+  var left = TOTAL - answered();
+  if (left > 0) {
+    err.textContent = 'ยังตอบไม่ครบ เหลืออีก ' + left + ' ข้อ';
+    return;
+  }
+  var score = 0;
+  document.querySelectorAll('#questions input:checked').forEach(function (e) { score += parseInt(e.value, 10); });
+  sent = true;
+  this.disabled = true;
+  document.querySelectorAll('#questions input').forEach(function (e) { e.disabled = true; });
+
+  var pre = 0, saved = null;
+  try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) {}
+  var matched = !!(saved && saved.name === name && saved.number === number);
+  if (TYPE === 'pre') {
+    pre = score;
+    try { localStorage.setItem(KEY, JSON.stringify({ score: score, name: name, number: number })); } catch (e) {}
+  } else if (matched) {
+    pre = saved.score;
+  }
+
+  var data = {
+    unit: 'all',
+    name: name,
+    number: number,
+    pretest: pre,
+    posttest: TYPE === 'post' ? score : 0,
+    q1: ''
+  };
+  fetch(SHEET_URL, { method: 'POST', body: JSON.stringify(data) }).catch(function () {});
+
+  var res = document.getElementById('result');
+  var msg = 'คะแนน' + (TYPE === 'post' ? 'หลังเรียน' : 'ก่อนเรียน') + ' = ' + score + ' / ' + TOTAL;
+  if (TYPE === 'post' && matched) msg += '<br>คะแนนก่อนเรียน = ' + pre + ' / ' + TOTAL;
+  res.innerHTML = msg + '<br>บันทึกข้อมูลเรียบร้อย ขอบคุณ ' + name.replace(/</g, '&lt;');
+
+  var after = document.getElementById('after');
+  after.innerHTML = TYPE === 'pre'
+    ? '<button type="button" id="goBtn">เริ่มเรียนบทเรียน</button>'
+    : '<button type="button" id="goBtn">กลับหน้าแรก</button>';
+  document.getElementById('goBtn').addEventListener('click', function () {
+    location.href = TYPE === 'pre' ? 'lesson.html' : 'index.html';
+  });
+  res.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+</script>
+</body>
+</html>
