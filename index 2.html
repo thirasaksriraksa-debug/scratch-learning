@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทเรียนออนไลน์ Scratch สำหรับนักเรียน ม.2</title>
+<link rel="stylesheet" href="scratch.css">
+<style>
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:920px;margin:34px auto 0;padding:0 16px}
+  a.tile{
+    margin:0;max-width:none;display:flex;flex-direction:column;align-items:center;text-align:center;
+    gap:8px;padding:30px 20px 26px;text-decoration:none;color:var(--ink);cursor:pointer;
+    transition:transform .12s;
+  }
+  a.tile:hover,a.tile:focus-visible{transform:translateY(-4px)}
+  a.tile:focus-visible{outline:3px solid var(--unit);outline-offset:4px}
+  a.tile .icon{font-size:2.6rem;line-height:1}
+  a.tile h2{font-size:1.25rem;margin:4px 0 0}
+  a.tile .desc{font-size:.95rem;line-height:1.5;color:var(--muted)}
+  a.tile .go{
+    margin-top:10px;padding:8px 24px;border-radius:12px;background:var(--unit);color:var(--unit-ink);
+    font:500 1rem 'Kanit',sans-serif;box-shadow:0 4px 0 color-mix(in srgb,var(--unit) 70%,#000);
+  }
+  .t1{--unit:#4C97FF;--unit-ink:#fff}
+  .t2{--unit:#FFAB19;--unit-ink:#4A3000}
+  .t3{--unit:#59C059;--unit-ink:#0B3D0B}
+  .skip{text-align:center;margin:28px 0 60px}
+  .skip a{color:var(--ink);font-family:'Kanit',sans-serif}
+
+  dialog{
+    --unit:#4C97FF;--unit-ink:#fff;
+    width:calc(100% - 32px);max-width:640px;padding:0;color:var(--ink);background:#fff;
+    font:18px/1.7 'Sarabun',sans-serif;
+    border:2px solid var(--line);border-top:12px solid var(--unit);border-radius:6px 6px 20px 20px;
+  }
+  dialog::backdrop{background:rgba(30,40,80,.55)}
+  .dlg-body{padding:26px 32px 28px}
+  .dlg-body h2{margin:0 0 .4em}
+  .dlg-body h3{margin:1.2em 0 .3em}
+  .dlg-body ul,.dlg-body ol{margin:0;padding-left:1.3em}
+  .dlg-body li{margin:.3em 0}
+  .unit-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+  .unit-list a{
+    --c:#4C97FF;display:block;padding:10px 18px;border:2px solid var(--c);border-radius:12px;
+    color:var(--ink);text-decoration:none;font:500 1rem 'Kanit',sans-serif;background:#fff;
+  }
+  .unit-list a:nth-child(2){--c:#9966FF}.unit-list a:nth-child(3){--c:#FFAB19}
+  .unit-list a:nth-child(4){--c:#CF63CF}.unit-list a:nth-child(5){--c:#FFBF00}.unit-list a:nth-child(6){--c:#EC5959}
+  .unit-list a:hover,.unit-list a:focus-visible{background:color-mix(in srgb,var(--c) 18%,#fff)}
+  .dlg-foot{text-align:right}
+  @media (max-width:760px){.tiles{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>บทเรียนออนไลน์ Scratch</h1>
+  <p>สำหรับนักเรียน ม.2</p>
+</header>
+
+<main class="tiles">
+  <a class="card tile t1" href="#" id="openObjectives" role="button">
+    <div class="icon" aria-hidden="true">🎯</div>
+    <h2>จุดประสงค์ของเว็บนี้</h2>
+    <span class="desc">อ่านก่อนเริ่มเรียนว่าจะได้เรียนรู้อะไรบ้าง</span>
+    <span class="go">อ่านเลย</span>
+  </a>
+
+  <a class="card tile t2" href="#" data-pick="pre" role="button">
+    <div class="icon" aria-hidden="true">📝</div>
+    <h2>แบบทดสอบก่อนเรียน</h2>
+    <span class="desc">วัดความรู้พื้นฐานก่อนเริ่มเรื่องนั้น ๆ</span>
+    <span class="go">เลือกเรื่อง</span>
+  </a>
+
+  <a class="card tile t3" href="#" data-pick="post" role="button">
+    <div class="icon" aria-hidden="true">✅</div>
+    <h2>แบบทดสอบหลังเรียน</h2>
+    <span class="desc">ทำหลังเรียนจบ เพื่อดูพัฒนาการของตนเอง</span>
+    <span class="go">เลือกเรื่อง</span>
+  </a>
+</main>
+
+<p class="skip"><a href="lesson.html">เข้าสู่บทเรียนทั้ง 6 เรื่อง</a></p>
+
+<!-- ป๊อปอัปจุดประสงค์ (แก้ข้อความได้ตามต้องการ) -->
+<dialog id="objectivesDialog" aria-labelledby="objTitle">
+  <div class="dlg-body">
+    <h2 id="objTitle">จุดประสงค์ของบทเรียนออนไลน์ Scratch</h2>
+    <p>บทเรียนนี้ช่วยให้นักเรียนเรียนรู้การเขียนโปรแกรมด้วย Scratch ได้ด้วยตนเอง ทบทวนได้ทุกที่ทุกเวลา</p>
+
+    <h3>เมื่อเรียนจบ นักเรียนสามารถ</h3>
+    <ol>
+      <li>อธิบายความหมายของโปรแกรม Scratch และเรียกชื่อส่วนหลักบนหน้าจอได้</li>
+      <li>บอกหน้าที่ของเวที คลังบล็อกคำสั่ง พื้นที่เขียนโค้ด แท็บต่าง ๆ และรายการตัวละครได้</li>
+      <li>เลือกใช้บล็อกควบคุม เช่น forever, repeat และ wait ได้</li>
+      <li>เพิ่ม เปลี่ยนชุดแต่งกาย และลบตัวละคร รวมทั้งเปลี่ยนฉากหลังได้</li>
+      <li>เลือกบล็อกเริ่มต้นการทำงานให้เหมาะกับสถานการณ์ได้</li>
+      <li>ใช้บล็อก stop เพื่อหยุดการทำงานของสคริปต์หรือจบเกมได้</li>
+    </ol>
+
+    <h3>ขั้นตอนการเรียนในแต่ละเรื่อง</h3>
+    <ol>
+      <li>กรอกชื่อและเลขที่</li>
+      <li>ทำแบบทดสอบก่อนเรียน</li>
+      <li>อ่านเนื้อหาและดูวิดีโอ</li>
+      <li>ทำแบบทดสอบหลังเรียน</li>
+      <li>ตอบแบบประเมินความพึงพอใจ</li>
+    </ol>
+    <div class="dlg-foot"><button type="button" data-close>ปิด</button></div>
+  </div>
+</dialog>
+
+<!-- ป๊อปอัปเลือกเรื่อง สำหรับแบบทดสอบก่อน/หลังเรียน -->
+<dialog id="pickDialog" aria-labelledby="pickTitle">
+  <div class="dlg-body">
+    <h2 id="pickTitle">เลือกเรื่อง</h2>
+    <div class="unit-list" id="unitList">
+      <a data-unit="1" href="#">เรื่องที่ 1 ความหมายของโปรแกรม Scratch</a>
+      <a data-unit="2" href="#">เรื่องที่ 2 ส่วนประกอบหน้าต่าง</a>
+      <a data-unit="3" href="#">เรื่องที่ 3 ประเภทบล็อกคำสั่ง</a>
+      <a data-unit="4" href="#">เรื่องที่ 4 การสร้างตัวละครและฉาก</a>
+      <a data-unit="5" href="#">เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน</a>
+      <a data-unit="6" href="#">เรื่องที่ 6 คำสั่งหยุดการทำงาน</a>
+    </div>
+    <div class="dlg-foot"><button type="button" data-close>ปิด</button></div>
+  </div>
+</dialog>
+
+<script>
+  var objDlg = document.getElementById('objectivesDialog');
+  var pickDlg = document.getElementById('pickDialog');
+
+  document.getElementById('openObjectives').addEventListener('click', function (e) {
+    e.preventDefault(); objDlg.showModal();
+  });
+
+  document.querySelectorAll('[data-pick]').forEach(function (tile) {
+    tile.addEventListener('click', function (e) {
+      e.preventDefault();
+      var mode = tile.dataset.pick; // pre หรือ post
+      document.getElementById('pickTitle').textContent =
+        mode === 'pre' ? 'แบบทดสอบก่อนเรียน: เลือกเรื่อง' : 'แบบทดสอบหลังเรียน: เลือกเรื่อง';
+      document.querySelectorAll('#unitList a').forEach(function (a) {
+        a.href = 'lesson.html?unit=' + a.dataset.unit + '&view=' + mode;
+      });
+      pickDlg.showModal();
+    });
+  });
+
+  document.querySelectorAll('[data-close]').forEach(function (b) {
+    b.addEventListener('click', function () { b.closest('dialog').close(); });
+  });
+  [objDlg, pickDlg].forEach(function (d) {
+    d.addEventListener('click', function (e) { if (e.target === d) d.close(); });
+  });
+</script>
+</body>
+</html>
