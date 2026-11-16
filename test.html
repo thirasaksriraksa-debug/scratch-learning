@@ -85,6 +85,20 @@ DATA.forEach(function (d, i) {
 function answered() {
   return DATA.filter(function (d, i) { return document.querySelector('input[name="q' + i + '"]:checked'); }).length;
 }
+// ผลตอบทันที (เขียว=ถูก, แดง=ผิด) และล็อกข้อที่ตอบแล้ว
+// ตั้งเป็น true ถ้าต้องการให้แสดงสีในแบบทดสอบก่อนเรียนด้วย
+var FEEDBACK_PRE = false;
+var FEEDBACK = (TYPE === 'post') || FEEDBACK_PRE;
+function showAnswerColor(t) {
+  var group = document.querySelectorAll('input[name="' + t.name + '"]');
+  group.forEach(function (r) { r.disabled = true; var l = r.closest('label'); if (l) l.classList.add('locked'); });
+  var lab = t.closest('label');
+  if (lab) lab.classList.add(t.value === '1' ? 'is-correct' : 'is-wrong');
+}
+document.getElementById('questions').addEventListener('change', function (e) {
+  if (FEEDBACK && e.target.type === 'radio') showAnswerColor(e.target);
+});
+
 document.getElementById('testCard').addEventListener('change', function () {
   var n = answered();
   document.getElementById('progText').textContent = 'ตอบแล้ว ' + n + '/' + TOTAL;
