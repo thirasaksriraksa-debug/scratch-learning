@@ -120,3 +120,13 @@ input[type=text]:focus,input[type=number]:focus{outline:none;border-color:#4C97F
 [id^="u"][id*="lesson"] h3{
   padding-left:14px;border-left:6px solid var(--unit);border-radius:2px
 }
+
+/* ผลตอบทันที: ข้อที่เลือกถูก = เขียว, ผิด = แดง */
+label.opt.locked{cursor:default}
+label.opt.locked:hover{border-color:inherit}
+label.opt.is-correct,label.opt.is-correct:has(input:checked){border-color:#2E9E4F!important;background:#E6F7EA!important}
+label.opt.is-wrong,label.opt.is-wrong:has(input:checked){border-color:#E04848!important;background:#FFE9E9!important}
+label.opt.is-correct input:checked{border-color:#2E9E4F!important;background:radial-gradient(#2E9E4F 0 45%,#fff 50%)!important}
+label.opt.is-wrong input:checked{border-color:#E04848!important;background:radial-gradient(#E04848 0 45%,#fff 50%)!important}
+label.opt.is-correct .opt-text{color:#1B6B34;font-weight:500}
+label.opt.is-wrong .opt-text{color:#9B2626;font-weight:500}
