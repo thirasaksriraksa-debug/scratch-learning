@@ -225,7 +225,7 @@
     <p>ศึกษาเพิ่มเติมเกี่ยวกับส่วนประกอบของหน้าต่างโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
     <br><br>
-    <button onclick="finishLesson(2)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+    <button onclick="finishLesson(2)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
   </div>
     
 <div id="unit2-content" class="unit-section">
@@ -345,77 +345,9 @@
   </div>
 </div>
 
-<div id="unit3-content" class="unit-section">
-  <!-- แบบฝึกหัดหลังเรียน เรื่องที่ 3 -->
-  <div class="card">
-    <h3>แบบฝึกหัดหลังเรียน (เรื่องที่ 3 ประเภทของบล็อกคำสั่ง)</h3>
-    <p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
-    <input type="radio" name="u3pre1" value="1"> ใช้สำหรับควบคุมลำดับการทำงาน เงื่อนไข และการทำซ้ำของโปรแกรม<br>
-    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับเปลี่ยนสีชุดตัวละครและฉากหลัง<br>
-    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับคำนวณทางคณิตศาสตร์และตัวเลข<br>
-    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับบันทึกเสียงและดนตรีประกอบ<br>
-
-    <p>2. บล็อกคำสั่งเริ่มต้นการทำงานเมื่อคลิกธงเขียว (When Green Flag Clicked) อยู่ในหมวดหมู่ใด</p>
-    <input type="radio" name="u3pre2" value="1"> Events (เหตุการณ์)<br>
-    <input type="radio" name="u3pre2" value="0"> Control (ควบคุม)<br>
-    <input type="radio" name="u3pre2" value="0"> Motion (การเคลื่อนไหว)<br>
-    <input type="radio" name="u3pre2" value="0"> Looks (รูปร่าง)<br>
-
-    <p>3. หากต้องการให้ชุดคำสั่งภายในลูปทำงานซ้ำไปเรื่อยๆ ไม่มีที่สิ้นสุด ต้องใช้บล็อกใด</p>
-    <input type="radio" name="u3pre3" value="1"> forever<br>
-    <input type="radio" name="u3pre3" value="0"> repeat ( )<br>
-    <input type="radio" name="u3pre3" value="0"> wait ( ) secs<br>
-    <input type="radio" name="u3pre3" value="0"> stop all<br>
-
-    <p>4. หากต้องการให้ตัวละครทำซ้ำตามจำนวนครั้งที่กำหนด เช่น ทำซ้ำ 10 ครั้ง ควรใช้บล็อกใด</p>
-    <input type="radio" name="u3pre4" value="1"> repeat (10)<br>
-    <input type="radio" name="u3pre4" value="0"> forever<br>
-    <input type="radio" name="u3pre4" value="0"> wait (10) secs<br>
-    <input type="radio" name="u3pre4" value="0"> stop (all)<br>
-
-    <p>5. บล็อกคำสั่ง "wait ( ) secs" มีหน้าที่หลักตามข้อใด</p>
-    <input type="radio" name="u3pre5" value="1"> หน่วงเวลาหรือหยุดรอการทำงานชั่วคราวก่อนไปคำสั่งถัดไป<br>
-    <input type="radio" name="u3pre5" value="0"> สั่งให้โปรแกรมเริ่มทำงานใหม่ทันที<br>
-    <input type="radio" name="u3pre5" value="0"> สั่งหยุดการทำงานของสคริปต์ทั้งหมดทันที<br>
-    <input type="radio" name="u3pre5" value="0"> ตรวจจับเวลาที่ใช้ไปในการรันโปรแกรม<br>
-
-    <p>6. ข้อใดคือประโยชน์ของการใช้บล็อกการหน่วงเวลา (Wait)</p>
-    <input type="radio" name="u3pre6" value="1"> ช่วยให้การแสดงผลแอนิเมชันหรือเหตุการณ์มีความต่อเนื่องและไม่เร็วเกินไป<br>
-    <input type="radio" name="u3pre6" value="0"> ช่วยเพิ่มความเร็วในการประมวลผลของโค้ดให้สูงขึ้น<br>
-    <input type="radio" name="u3pre6" value="0"> ช่วยลดขนาดไฟล์ของโปรเจกต์ Scratch<br>
-    <input type="radio" name="u3pre6" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งการเคลื่อนไหว<br>
-
-    <p>7. หากต้องการหยุดการทำงานของสคริปต์เฉพาะตัวละครนี้หรือหยุดทั้งหมด ต้องใช้กลุ่มคำสั่งใด</p>
-    <input type="radio" name="u3pre7" value="1"> stop (all / this script)<br>
-    <input type="radio" name="u3pre7" value="0"> wait ( ) secs<br>
-    <input type="radio" name="u3pre7" value="0"> repeat until<br>
-    <input type="radio" name="u3pre7" value="0"> green flag clicked<br>
-
-    <p>8. การใช้บล็อกทำซ้ำ (Loop) มีข้อดีอย่างไรในการเขียนโปรแกรม</p>
-    <input type="radio" name="u3pre8" value="1"> ลดความซ้ำซ้อนในการเขียนบล็อกคำสั่ง และทำให้โค้ดสั้นกระชับขึ้น<br>
-    <input type="radio" name="u3pre8" value="0"> ทำให้โปรแกรมสามารถรันได้โดยไม่ต้องใช้คอมพิวเตอร์<br>
-    <input type="radio" name="u3pre8" value="0"> ช่วยแปลงโค้ดเป็นภาษา Python โดยอัตโนมัติ<br>
-    <input type="radio" name="u3pre8" value="0"> ป้องกันไม่ให้โปรแกรมเกิดข้อผิดพลาดทางคณิตศาสตร์<br>
-
-    <p>9. หากต้องการให้ตัวละครเดินไปข้างหน้า 10 ก้าว สลับกับการหยุดรอ 1 วินาที วนซ้ำแบบนี้ไปเรื่อยๆ ควรเลือกใช้บล็อกใดร่วมกัน</p>
-    <input type="radio" name="u3pre9" value="1"> forever, move steps, และ wait secs<br>
-    <input type="radio" name="u3pre9" value="0"> stop all และ go to x y<br>
-    <input type="radio" name="u3pre9" value="0"> turn degrees และ say for secs<br>
-    <input type="radio" name="u3pre9" value="0"> point in direction และ set size<br>
-
-    <p>10. บล็อกคำสั่งในกลุ่ม Control ส่วนใหญ่จะมีลักษณะเด่นทางกายภาพอย่างไร</p>
-    <input type="radio" name="u3pre10" value="1"> มีลักษณะเป็นช่องว่าง (C-shape) สำหรับนำบล็อกอื่นมาใส่ไว้ข้างใน<br>
-    <input type="radio" name="u3pre10" value="0"> มีลักษณะเป็นวงกลมสำหรับใส่ค่าตัวเลข<br>
-    <input type="radio" name="u3pre10" value="0"> มีขอบด้านบนโค้งมนและไม่มีช่องต่อ<br>
-    <input type="radio" name="u3pre10" value="0"> มีสีชมพูเข้มและมีปุ่มกดในตัว<br>
-    <br>
-    <button onclick="pretest(3)">ส่งคำตอบ</button>
-    <p id="u3preScore" class="result"></p>
-  </div>
-
-  <!-- เนื้อหาบทเรียน หน่วยที่ 3 -->
+  <!-- เนื้อหาบทเรียน เรื่องที่ 3 -->
   <div class="card" id="u3lesson" style="display:none;">
-    <h2>หน่วยที่ 3 การควบคุม (Control)</h2>
+    <h2>เรื่องที่ 3 ประเภทของบล็อกคำสั่ง</h2>
     <h3>3.1 ความหมายของคำสั่งควบคุมการทำงาน</h3>
     <p>กลุ่มคำสั่งควบคุม (Control Blocks) เป็นบล็อกคำสั่งที่มีสีส้ม ใช้สำหรับควบคุมลำดับการทำงานของโปรแกรม การสร้างเงื่อนไขทางเลือก การทำซ้ำ (Loop) รวมถึงการจัดการเวลาและการหยุดการทำงาน เพื่อให้โปรแกรมเป็นไปตามตรรกะที่ต้องการ</p>
 
@@ -437,16 +369,55 @@
     <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมการทำงานในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
     <iframe width="100%" height="315" src="https://drive.google.com/file/d/106OaKeZKA3GroDymr2g3XmhPMA4vbR1I/preview" frameborder="0" allowfullscreen></iframe>
     <br><br>
-    <button onclick="finishLesson(3)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+    <button onclick="finishLesson(3)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
   </div>
 
     <button onclick="posttest(3)">ส่งคำตอบ</button>
    <p id="u3postScore" class="result"></p>
   </div>
+    
+<div id="unit3-content" class="unit-section">
+  <!-- แบบฝึกหัดหลังเรียน เรื่องที่ 3 -->
+  <div class="card">
+    <h3>แบบฝึกหัดหลังเรียน (เรื่องที่ 3 ประเภทของบล็อกคำสั่ง)</h3>
+    <p>1. หมวดหมู่บล็อกคำสั่งควบคุม (Control) ในโปรแกรม Scratch มีลักษณะและหน้าที่เด่นอย่างไร</p>
+    <input type="radio" name="u3pre1" value="1"> ใช้สำหรับควบคุมลำดับการทำงาน เงื่อนไข และการทำซ้ำของโปรแกรม<br>
+    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับเปลี่ยนสีชุดตัวละครและฉากหลัง<br>
+    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับคำนวณทางคณิตศาสตร์และตัวเลข<br>
+    <input type="radio" name="u3pre1" value="0"> ใช้สำหรับบันทึกเสียงและดนตรีประกอบ<br>
 
-  <!-- แบบประเมินความพึงพอใจ หน่วยที่ 3 -->
+    <p>2. บล็อกคำสั่งเริ่มต้นการทำงานเมื่อคลิกธงเขียว (When Green Flag Clicked) อยู่ในหมวดหมู่ใด</p>
+    <input type="radio" name="u3pre2" value="0"> Control (ควบคุม)<br>
+    <input type="radio" name="u3pre2" value="1"> Events (เหตุการณ์)<br>
+    <input type="radio" name="u3pre2" value="0"> Motion (การเคลื่อนไหว)<br>
+    <input type="radio" name="u3pre2" value="0"> Looks (รูปร่าง)<br>
+
+    <p>3. ข้อใดคือประโยชน์ของการใช้บล็อกการหน่วงเวลา (Wait)</p>
+    <input type="radio" name="u3pre3" value="0"> ช่วยลดขนาดไฟล์ของโปรเจกต์ Scratch<br>
+    <input type="radio" name="u3pre3" value="0"> ช่วยเพิ่มความเร็วในการประมวลผลของโค้ดให้สูงขึ้น<br>
+    <input type="radio" name="u3pre3" value="1"> ช่วยให้การแสดงผลแอนิเมชันหรือเหตุการณ์มีความต่อเนื่องและไม่เร็วเกินไป<br>
+    <input type="radio" name="u3pre3" value="0"> ทำให้ไม่ต้องใช้บล็อกคำสั่งการเคลื่อนไหว<br>
+
+    <p>4. หากต้องการหยุดการทำงานของสคริปต์เฉพาะตัวละครนี้หรือหยุดทั้งหมด ต้องใช้กลุ่มคำสั่งใด</p>
+    <input type="radio" name="u3pre4" value="0"> green flag clicked<br>
+    <input type="radio" name="u3pre4" value="0"> wait ( ) secs<br>
+    <input type="radio" name="u3pre4" value="0"> repeat until<br>
+    <input type="radio" name="u3pre4" value="1"> stop (all / this script)<br>
+
+    <p>5. หากต้องการให้ตัวละครเดินไปข้างหน้า 10 ก้าว สลับกับการหยุดรอ 1 วินาที วนซ้ำแบบนี้ไปเรื่อยๆ ควรเลือกใช้บล็อกใดร่วมกัน</p>
+    <input type="radio" name="u3pre5" value="1"> forever, move steps, และ wait secs<br>
+    <input type="radio" name="u3pre5" value="0"> stop all และ go to x y<br>
+    <input type="radio" name="u3pre5" value="0"> turn degrees และ say for secs<br>
+    <input type="radio" name="u3pre5" value="0"> point in direction และ set size<br>
+    <br>
+      
+    <button onclick="pretest(3)">ส่งคำตอบ</button>
+    <p id="u3preScore" class="result"></p>
+  </div>
+
+  <!-- แบบประเมินความพึงพอใจ เรื่องที่ 3 -->
   <div class="card" id="u3survey" style="display:none;">
-    <h3>แบบประเมินความพึงพอใจ (หน่วยที่ 3)</h3>
+    <h3>แบบประเมินความพึงพอใจ (เรื่องที่ 3)</h3>
     <p>1. เนื้อหา บทเรียน หรือกิจกรรมบนเว็บไซต์มีความถูกต้อง ชัดเจน และตรงตามวัตถุประสงค์การเรียนรู้</p>
     <label><input type="radio" name="u3q1" value="5"> มากที่สุด</label><br>
     <label><input type="radio" name="u3q1" value="4"> มาก</label><br>
@@ -524,7 +495,7 @@
 
 <div id="unit4-content" class="unit-section">
         <div class="card">
-    <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage))</h3>
+    <h3>แบบฝึกหัดเรียน (เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage))</h3>
     <p>1. ข้อใดให้ความหมายของ "ตัวละคร (Sprite)" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
     <input type="radio" name="u4pre1" value="1"> วัตถุหรือตัวละครที่อยู่บนเวทีและสามารถสั่งให้ทำงานด้วยบล็อกคำสั่งได้<br>
     <input type="radio" name="u4pre1" value="0"> ภาพพื้นหลังของเวทีที่ไม่สามารถเคลื่อนที่ได้<br>
@@ -532,22 +503,22 @@
     <input type="radio" name="u4pre1" value="0"> แถบเมนูด้านบนของโปรแกรม<br>
 
     <p>2. หากต้องการเพิ่มตัวละครใหม่ในโปรแกรม Scratch ต้องคลิกปุ่มเลือกตัวละครที่บริเวณใด</p>
-    <input type="radio" name="u4pre2" value="1"> รายการตัวละคร (Sprite List) มุมขวาล่าง<br>
     <input type="radio" name="u4pre2" value="0"> แถบเมนูด้านบนสุด<br>
+    <input type="radio" name="u4pre2" value="1"> รายการตัวละคร (Sprite List) มุมขวาล่าง<br>
     <input type="radio" name="u4pre2" value="0"> คลังบล็อกคำสั่ง (Block Palette)<br>
     <input type="radio" name="u4pre2" value="0"> ปุ่มธงสีเขียวเหนือเวที<br>
 
     <p>3. วิธีใดต่อไปนี้ไม่ใช่วิธีการสร้างตัวละครใหม่ใน Scratch</p>
-    <input type="radio" name="u4pre3" value="1"> พิมพ์ชื่อตัวละครลงในบล็อก Motion<br>
-    <input type="radio" name="u4pre3" value="0"> เลือกจากคลังตัวละคร (Choose a Sprite)<br>
     <input type="radio" name="u4pre3" value="0"> วาดตัวละครเอง (Paint)<br>
+    <input type="radio" name="u4pre3" value="0"> เลือกจากคลังตัวละคร (Choose a Sprite)<br>
+    <input type="radio" name="u4pre3" value="1"> พิมพ์ชื่อตัวละครลงในบล็อก Motion<br>
     <input type="radio" name="u4pre3" value="0"> อัปโหลดรูปภาพจากเครื่อง (Upload Sprite)<br>
 
     <p>4. หากต้องการเปลี่ยนรูปร่างหน้าตาของตัวละคร ต้องเลือกแท็บใด</p>
-    <input type="radio" name="u4pre4" value="1"> Costumes (ชุดแต่งกาย)<br>
+    <input type="radio" name="u4pre4" value="0"> Extensions (ส่วนขยาย)<br>
     <input type="radio" name="u4pre4" value="0"> Code (โค้ด)<br>
     <input type="radio" name="u4pre4" value="0"> Sounds (เสียง)<br>
-    <input type="radio" name="u4pre4" value="0"> Extensions (ส่วนขยาย)<br>
+    <input type="radio" name="u4pre4" value="1"> Costumes (ชุดแต่งกาย)<br>
 
     <p>5. หากต้องการลบตัวละครที่ไม่ใช้งานออกจากโปรเจกต์ ควรทำอย่างไร</p>
     <input type="radio" name="u4pre5" value="1"> คลิกขวาที่ตัวละครในรายการตัวละครแล้วเลือก delete หรือกดสัญลักษณ์ถังขยะ<br>
@@ -555,35 +526,6 @@
     <input type="radio" name="u4pre5" value="0"> ปิดโปรแกรม Scratch แล้วเปิดใหม่<br>
     <input type="radio" name="u4pre5" value="0"> ลากบล็อกคำสั่งไปวางทับตัวละคร<br>
 
-    <p>6. "ฉาก (Stage)" ใน Scratch ทำหน้าที่อะไร</p>
-    <input type="radio" name="u4pre6" value="1"> เป็นพื้นที่แสดงผลและเป็นฉากหลังของตัวละครในโปรเจกต์<br>
-    <input type="radio" name="u4pre6" value="0"> เป็นตัวละครหลักที่ต้องมีทุกโปรเจกต์<br>
-    <input type="radio" name="u4pre6" value="0"> เป็นเครื่องมือสำหรับอัดเสียง<br>
-    <input type="radio" name="u4pre6" value="0"> เป็นบล็อกคำสั่งควบคุมการเคลื่อนไหว<br>
-
-    <p>7. หากต้องการเปลี่ยนฉากหลังของเวที ต้องเลือกแท็บใดหลังจากคลิกที่ฉาก (Stage)</p>
-    <input type="radio" name="u4pre7" value="1"> Backdrops (ฉากหลัง)<br>
-    <input type="radio" name="u4pre7" value="0"> Costumes (ชุดแต่งกาย)<br>
-    <input type="radio" name="u4pre7" value="0"> Motion (การเคลื่อนไหว)<br>
-    <input type="radio" name="u4pre7" value="0"> Variables (ตัวแปร)<br>
-
-    <p>8. ข้อใดคือความแตกต่างระหว่างตัวละคร (Sprite) กับฉาก (Stage)</p>
-    <input type="radio" name="u4pre8" value="1"> ตัวละครเคลื่อนที่ได้ แต่ฉากไม่สามารถเคลื่อนที่ได้<br>
-    <input type="radio" name="u4pre8" value="0"> ฉากมีบล็อก Motion ส่วนตัวละครไม่มี<br>
-    <input type="radio" name="u4pre8" value="0"> ตัวละครมีได้เพียง 1 ตัวต่อโปรเจกต์<br>
-    <input type="radio" name="u4pre8" value="0"> ฉากมีได้หลายฉากพร้อมกันบนเวทีเดียว<br>
-
-    <p>9. หากต้องการให้ตัวละครเปลี่ยนท่าทางเป็นชุดแต่งกายถัดไป ต้องใช้บล็อกคำสั่งใด</p>
-    <input type="radio" name="u4pre9" value="1"> next costume<br>
-    <input type="radio" name="u4pre9" value="0"> next backdrop<br>
-    <input type="radio" name="u4pre9" value="0"> move (10) steps<br>
-    <input type="radio" name="u4pre9" value="0"> go to x: (0) y: (0)<br>
-
-    <p>10. หากต้องการให้ฉากหลังเปลี่ยนเป็นภาพถัดไป ต้องใช้บล็อกคำสั่งใด</p>
-    <input type="radio" name="u4pre10" value="1"> next backdrop<br>
-    <input type="radio" name="u4pre10" value="0"> next costume<br>
-    <input type="radio" name="u4pre10" value="0"> switch costume to [costume1 v]<br>
-    <input type="radio" name="u4pre10" value="0"> glide (1) secs to x: (0) y: (0)<br>
     <br>
     <button onclick="pretest(4)">ส่งคำตอบ</button>
     <p id="u4preScore" class="result"></p>
@@ -627,7 +569,7 @@
     <p>ศึกษาเพิ่มเติมเกี่ยวกับการสร้างตัวละครและฉากในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
     <iframe width="100%" height="315" src="https://www.youtube.com/embed/jXJ6r3XzqGk" frameborder="0" allowfullscreen></iframe>
     <br><br>
-    <button onclick="finishLesson(4)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+    <button onclick="finishLesson(4)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
 </div>
 
     <button onclick="posttest(4)">ส่งคำตอบ</button>
@@ -720,7 +662,7 @@
 
 <div id="unit5-content" class="unit-section">
     <div class="card">
-        <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน )</h3>
+        <h3>แบบฝึกหัดหลังเรียน (เรื่องที่ 5 คำสั่งเริ่มต้นการทำงาน )</h3>
 
         <p>1. ข้อใดให้ความหมายของ "คำสั่งเริ่มต้นการทำงาน" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
         <input type="radio" name="u5pre1" value="1"> บล็อกที่กำหนดว่าชุดคำสั่งจะเริ่มทำงานเมื่อเกิดเหตุการณ์ใดเหตุการณ์หนึ่ง<br>
@@ -729,58 +671,29 @@
         <input type="radio" name="u5pre1" value="0"> บล็อกสำหรับหยุดการทำงานของโปรแกรมทั้งหมด<br>
 
         <p>2. บล็อกคำสั่งเริ่มต้นการทำงานใน Scratch อยู่ในหมวดบล็อกใด</p>
-        <input type="radio" name="u5pre2" value="1"> Events (เหตุการณ์)<br>
         <input type="radio" name="u5pre2" value="0"> Motion (การเคลื่อนไหว)<br>
+        <input type="radio" name="u5pre2" value="1"> Events (เหตุการณ์)<br>
         <input type="radio" name="u5pre2" value="0"> Operators (ตัวดำเนินการ)<br>
         <input type="radio" name="u5pre2" value="0"> Variables (ตัวแปร)<br>
 
         <p>3. บล็อกคำสั่งเริ่มต้นการทำงานมีรูปร่างลักษณะอย่างไร</p>
-        <input type="radio" name="u5pre3" value="1"> ส่วนบนโค้งมน (หมวก) ใช้วางเป็นบล็อกแรกของชุดคำสั่ง ไม่สามารถต่อจากบล็อกอื่นด้านบนได้<br>
-        <input type="radio" name="u5pre3" value="0"> รูปหกเหลี่ยม ใช้ใส่ในช่องเงื่อนไข<br>
         <input type="radio" name="u5pre3" value="0"> รูปวงกลมมน ใช้ใส่ตัวเลข<br>
+        <input type="radio" name="u5pre3" value="0"> รูปหกเหลี่ยม ใช้ใส่ในช่องเงื่อนไข<br>
+        <input type="radio" name="u5pre3" value="1"> ส่วนบนโค้งมน (หมวก) ใช้วางเป็นบล็อกแรกของชุดคำสั่ง ไม่สามารถต่อจากบล็อกอื่นด้านบนได้<br>
         <input type="radio" name="u5pre3" value="0"> สี่เหลี่ยมเรียบ ต่อได้ทั้งด้านบนและด้านล่าง<br>
 
-        <p>4. หากต้องการให้โปรแกรมเริ่มทำงานเมื่อคลิกที่ปุ่มธงสีเขียว ต้องใช้บล็อกใด</p>
-        <input type="radio" name="u5pre4" value="1"> when green flag clicked<br>
+        <p>4. หากต้องการให้ตัวละครเริ่มเคลื่อนที่เมื่อกดปุ่มลูกศรขวาบนแป้นพิมพ์ ต้องใช้บล็อกใด</p>
+        <input type="radio" name="u5pre4" value="0"> broadcast [message1 v]<br>
+        <input type="radio" name="u5pre4" value="0"> when green flag clicked<br>
         <input type="radio" name="u5pre4" value="0"> when this sprite clicked<br>
-        <input type="radio" name="u5pre4" value="0"> when [space v] key pressed<br>
-        <input type="radio" name="u5pre4" value="0"> when I receive [message1 v]<br>
+        <input type="radio" name="u5pre4" value="1"> when [right arrow v] key pressed<br>
 
-        <p>5. หากต้องการให้ชุดคำสั่งทำงานเมื่อผู้เล่นคลิกที่ตัวละคร ต้องใช้บล็อกใด</p>
-        <input type="radio" name="u5pre5" value="1"> when this sprite clicked<br>
-        <input type="radio" name="u5pre5" value="0"> when green flag clicked<br>
-        <input type="radio" name="u5pre5" value="0"> when backdrop switches to [backdrop1 v]<br>
-        <input type="radio" name="u5pre5" value="0"> when I receive [message1 v]<br>
+        <p>5. บล็อก when [space v] key pressed สามารถเปลี่ยนปุ่มที่ใช้เริ่มการทำงานได้อย่างไร</p>
+        <input type="radio" name="u5pre5" value="1"> คลิกที่เมนูแบบเลื่อนลงในบล็อกเพื่อเลือกปุ่มที่ต้องการ<br>
+        <input type="radio" name="u5pre5" value="0"> ต้องลบบล็อกแล้วสร้างใหม่เท่านั้น<br>
+        <input type="radio" name="u5pre5" value="0"> เปลี่ยนไม่ได้ ใช้ได้เฉพาะปุ่ม space<br>
+        <input type="radio" name="u5pre5" value="0"> ต้องไปตั้งค่าที่แถบเมนูด้านบน<br>
 
-        <p>6. หากต้องการให้ตัวละครเริ่มเคลื่อนที่เมื่อกดปุ่มลูกศรขวาบนแป้นพิมพ์ ต้องใช้บล็อกใด</p>
-        <input type="radio" name="u5pre6" value="1"> when [right arrow v] key pressed<br>
-        <input type="radio" name="u5pre6" value="0"> when green flag clicked<br>
-        <input type="radio" name="u5pre6" value="0"> when this sprite clicked<br>
-        <input type="radio" name="u5pre6" value="0"> broadcast [message1 v]<br>
-
-        <p>7. บล็อก when [space v] key pressed สามารถเปลี่ยนปุ่มที่ใช้เริ่มการทำงานได้อย่างไร</p>
-        <input type="radio" name="u5pre7" value="1"> คลิกที่เมนูแบบเลื่อนลงในบล็อกเพื่อเลือกปุ่มที่ต้องการ<br>
-        <input type="radio" name="u5pre7" value="0"> ต้องลบบล็อกแล้วสร้างใหม่เท่านั้น<br>
-        <input type="radio" name="u5pre7" value="0"> เปลี่ยนไม่ได้ ใช้ได้เฉพาะปุ่ม space<br>
-        <input type="radio" name="u5pre7" value="0"> ต้องไปตั้งค่าที่แถบเมนูด้านบน<br>
-
-        <p>8. บล็อกใดใช้ส่งสัญญาณข้อความไปยังตัวละครอื่นเพื่อให้เริ่มทำงาน</p>
-        <input type="radio" name="u5pre8" value="1"> broadcast [message1 v]<br>
-        <input type="radio" name="u5pre8" value="0"> when green flag clicked<br>
-        <input type="radio" name="u5pre8" value="0"> stop all<br>
-        <input type="radio" name="u5pre8" value="0"> hide variable [score v]<br>
-
-        <p>9. บล็อกใดใช้รับสัญญาณข้อความที่ถูกส่งมา เพื่อเริ่มต้นชุดคำสั่งของตัวละครอีกตัว</p>
-        <input type="radio" name="u5pre9" value="1"> when I receive [message1 v]<br>
-        <input type="radio" name="u5pre9" value="0"> broadcast [message1 v]<br>
-        <input type="radio" name="u5pre9" value="0"> when green flag clicked<br>
-        <input type="radio" name="u5pre9" value="0"> next costume<br>
-
-        <p>10. เพราะเหตุใดจึงควรวางบล็อก when green flag clicked ไว้บนสุดของชุดคำสั่งเสมอ</p>
-        <input type="radio" name="u5pre10" value="1"> เพื่อให้ชุดคำสั่งทั้งหมดเริ่มทำงานพร้อมกันเมื่อกดธงเขียว และเริ่มต้นโปรแกรมได้ตามที่ต้องการ<br>
-        <input type="radio" name="u5pre10" value="0"> เพื่อให้โปรแกรมโหลดข้อมูลจากอินเทอร์เน็ตเร็วขึ้น<br>
-        <input type="radio" name="u5pre10" value="0"> เพื่อให้ตัวละครเปลี่ยนสีโดยอัตโนมัติ<br>
-        <input type="radio" name="u5pre10" value="0"> เพื่อบังคับให้โปรแกรมปิดตัวลงทันที<br>
         <br>
         <button onclick="pretest(5)">ส่งคำตอบ</button>
         <p id="u5preScore" class="result"></p>
@@ -818,7 +731,7 @@
         <p>ศึกษาเพิ่มเติมเกี่ยวกับคำสั่งเริ่มต้นการทำงาน (Events) ในโปรแกรม Scratch จากวิดีโอด้านล่างนี้</p>
         <iframe width="100%" height="315" src="https://drive.google.com/file/d/1LEW4edBxCEmqQ3GLBhgzE07wQqOfB7V3/preview" frameborder="0" allowfullscreen></iframe>
         <br><br>
-        <button onclick="finishLesson(5)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+        <button onclick="finishLesson(5)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
     </div>
  
         <button onclick="posttest(5)">ส่งคำตอบ</button>
@@ -911,9 +824,9 @@
 
 <!-- เรื่องที่ 6 (การใช้คำสั่งหยุดการทำงาน) -->
     <div id="unit6-content" class="unit-section">
-        <!-- แบบทดสอบก่อนเรียน เรื่องที่ 6 -->
+        <!-- แบบฝึกหัดหลังเรียน เรื่องที่ 6 -->
         <div class="card">
-            <h3>แบบทดสอบก่อนเรียน (เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน)</h3>
+            <h3>แบบฝึกหัดหลังเรียน (เรื่องที่ 6 การใช้คำสั่งหยุดการทำงาน)</h3>
             
             <p>1. บล็อกคำสั่งเกี่ยวกับการหยุดการทำงาน (Stop) ในโปรแกรม Scratch จัดอยู่ในกลุ่มบล็อกหมวดหมู่และสีใด</p>
             <input type="radio" name="u6pre1" value="1"> สีส้ม (Control - ควบคุม)<br>
@@ -921,59 +834,29 @@
             <input type="radio" name="u6pre1" value="0"> สีม่วง (Looks - รูปร่าง)<br>
             <input type="radio" name="u6pre1" value="0"> สีเหลือง (Events - เหตุการณ์)<br>
 
-            <p>2. หากต้องการหยุดการทำงานของสคริปต์และโปรแกรมทั้งหมดในโปรเจกต์ทันที ควรเลือกใช้ตัวเลือกใดในบล็อก stop</p>
-            <input type="radio" name="u6pre2" value="1"> all (ทั้งหมด)<br>
-            <input type="radio" name="u6pre2" value="0"> this script (สคริปต์นี้)<br>
-            <input type="radio" name="u6pre2" value="0"> other scripts in sprite (สคริปต์อื่นๆ ในตัวละคร)<br>
-            <input type="radio" name="u6pre2" value="0"> wait (หน่วงเวลา)<br>
+            <p>2. ปุ่มสีแดง (Stop Sign) ที่อยู่บริเวณมุมบนขวาของเวที (Stage) ในโปรแกรม Scratch มีผลลัพธ์การทำงานเทียบเท่ากับบล็อกใด</p>
+            <input type="radio" name="u6pre2" value="0"> stop [this script]<br>
+            <input type="radio" name="u6pre2" value="1"> stop [all]<br>
+            <input type="radio" name="u6pre2" value="0"> forever<br>
+            <input type="radio" name="u6pre2" value="0"> wait [1] secs<br>
 
-            <p>3. บล็อกคำสั่ง <code>stop [this script v]</code> มีหน้าที่หลักตามข้อใด</p>
-            <input type="radio" name="u6pre3" value="1"> หยุดการทำงานเฉพาะชุดคำสั่ง (สคริปต์) ที่กำลังทำงานอยู่นั้น<br>
-            <input type="radio" name="u6pre3" value="0"> หยุดการทำงานของโปรแกรมทั้งหมด<br>
-            <input type="radio" name="u6pre3" value="0"> ลบทิ้งตัวละครทั้งหมดบนเวที<br>
-            <input type="radio" name="u6pre3" value="0"> รีเซ็ตค่าตัวแปรทั้งหมดเป็น 0<br>
+            <p>3. ข้อใดคือประโยชน์ของการใช้คำสั่งหยุดการทำงาน (Stop) ในการพัฒนาเกมด้วย Scratch</p>
+            <input type="radio" name="u6pre3" value="0"> ช่วยเพิ่มขนาดของหน้าจอเวที<br>
+            <input type="radio" name="u6pre3" value="0"> ช่วยให้ตัวละครวิ่งเร็วขึ้น<br>
+            <input type="radio" name="u6pre3" value="1"> ช่วยควบคุมจุดสิ้นสุดของเกม เช่น จบเกมเมื่อหมดเวลาหรือแพ้<br>
+            <input type="radio" name="u6pre3" value="0"> ช่วยบันทึกไฟล์งานลงคอมพิวเตอร์อัตโนมัติ<br>
 
-            <p>4. ตัวเลือก <code>other scripts in sprite</code> ในบล็อก stop มีหน้าที่ทำอะไร</p>
-            <input type="radio" name="u6pre4" value="1"> หยุดสคริปต์อื่นๆ ทั้งหมดในตัวละครตัวนี้ ยกเว้นสคริปต์ที่กำลังสั่งงานอยู่<br>
-            <input type="radio" name="u6pre4" value="0"> หยุดการทำงานของทุกตัวละครในเกม<br>
-            <input type="radio" name="u6pre4" value="0"> เริ่มต้นเกมใหม่ทันที<br>
-            <input type="radio" name="u6pre4" value="0"> ลบตัวละครทิ้งจากเวที<br>
+            <p>4. บล็อก stop มีลักษณะทางกายภาพอย่างไรในโปรแกรม Scratch</p>
+            <input type="radio" name="u6pre4" value="0"> เป็นบล็อกรูปหกเหลี่ยมสำหรับใส่เงื่อนไข<br>
+            <input type="radio" name="u6pre4" value="0"> เป็นบล็อกรูปวงกลมสำหรับใส่ตัวเลข<br>
+            <input type="radio" name="u6pre4" value="0"> เป็นบล็อกรูปทรง C-shape สำหรับครอบคำสั่งอื่น<br>
+            <input type="radio" name="u6pre4" value="1"> เป็นบล็อกคำสั่งปลายเปิด (ไม่มีเขี้ยวต่อด้านล่างสุด)<br>
 
-            <p>5. ในการสร้างเกม เมื่อตัวละครผู้เล่นชนกับอุปสรรคจนพลังชีวิตหมด (HP = 0) เราควรใช้บล็อก stop ร่วมกับคำสั่งใดเพื่อให้เกมหยุดทำงาน</p>
-            <input type="radio" name="u6pre5" value="1"> คำสั่งเงื่อนไข (If) และ stop [all]<br>
-            <input type="radio" name="u6pre5" value="0"> บล็อกการเคลื่อนไหว (Motion)<br>
-            <input type="radio" name="u6pre5" value="0"> บล็อกเปลี่ยนชุดตัวละคร (Next Costume)<br>
-            <input type="radio" name="u6pre5" value="0"> บล็อกเพิ่มเสียง (Play Sound)<br>
-
-            <p>6. ปุ่มสีแดง (Stop Sign) ที่อยู่บริเวณมุมบนขวาของเวที (Stage) ในโปรแกรม Scratch มีผลลัพธ์การทำงานเทียบเท่ากับบล็อกใด</p>
-            <input type="radio" name="u6pre6" value="1"> stop [all]<br>
-            <input type="radio" name="u6pre6" value="0"> stop [this script]<br>
-            <input type="radio" name="u6pre6" value="0"> forever<br>
-            <input type="radio" name="u6pre6" value="0"> wait [1] secs<br>
-
-            <p>7. หากมีสคริปต์หลายชุดทำงานอยู่ในตัวละครเดียวกัน แต่เราต้องการหยุดการทำงานเพียงแค่สคริปต์เดียวโดยไม่ให้กระทบสคริปต์อื่น ควรเลือกใช้คำสั่งใด</p>
-            <input type="radio" name="u6pre7" value="1"> stop [this script]<br>
-            <input type="radio" name="u6pre7" value="0"> stop [all]<br>
-            <input type="radio" name="u6pre7" value="0"> delete [all]<br>
-            <input type="radio" name="u6pre7" value="0"> hide<br>
-
-            <p>8. ข้อใดคือประโยชน์ของการใช้คำสั่งหยุดการทำงาน (Stop) ในการพัฒนาเกมด้วย Scratch</p>
-            <input type="radio" name="u6pre8" value="1"> ช่วยควบคุมจุดสิ้นสุดของเกม เช่น จบเกมเมื่อหมดเวลาหรือแพ้<br>
-            <input type="radio" name="u6pre8" value="0"> ช่วยให้ตัวละครวิ่งเร็วขึ้น<br>
-            <input type="radio" name="u6pre8" value="0"> ช่วยเพิ่มขนาดของหน้าจอเวที<br>
-            <input type="radio" name="u6pre8" value="0"> ช่วยบันทึกไฟล์งานลงคอมพิวเตอร์อัตโนมัติ<br>
-
-            <p>9. บล็อก stop มีลักษณะทางกายภาพอย่างไรในโปรแกรม Scratch</p>
-            <input type="radio" name="u6pre9" value="1"> เป็นบล็อกคำสั่งปลายเปิด (ไม่มีเขี้ยวต่อด้านล่างสุด)<br>
-            <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปวงกลมสำหรับใส่ตัวเลข<br>
-            <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปทรง C-shape สำหรับครอบคำสั่งอื่น<br>
-            <input type="radio" name="u6pre9" value="0"> เป็นบล็อกรูปหกเหลี่ยมสำหรับใส่เงื่อนไข<br>
-
-            <p>10. หากต้องการให้ตัวละครแสดงข้อความ "Game Over" แล้วหยุดการทำงานทั้งหมดของโปรแกรม ควรจัดลำดับบล็อกอย่างไร</p>
-            <input type="radio" name="u6pre10" value="1"> แสดงข้อความ -> หน่วงเวลาเล็กน้อย (ถ้ามี) -> ใช้บล็อก stop [all]<br>
-            <input type="radio" name="u6pre10" value="0"> ใช้บล็อก stop [all] ก่อน แล้วค่อยแสดงข้อความ<br>
-            <input type="radio" name="u6pre10" value="0"> ใช้บล็อกเคลื่อนไหวแทนการหยุดโปรแกรม<br>
-            <input type="radio" name="u6pre10" value="0"> วนซ้ำคำสั่ง stop ไปเรื่อยๆ ด้วย forever<br>
+            <p>5. หากต้องการให้ตัวละครแสดงข้อความ "Game Over" แล้วหยุดการทำงานทั้งหมดของโปรแกรม ควรจัดลำดับบล็อกอย่างไร</p>
+            <input type="radio" name="u6pre5" value="1"> แสดงข้อความ -> หน่วงเวลาเล็กน้อย (ถ้ามี) -> ใช้บล็อก stop [all]<br>
+            <input type="radio" name="u6pre5" value="0"> ใช้บล็อก stop [all] ก่อน แล้วค่อยแสดงข้อความ<br>
+            <input type="radio" name="u6pre5" value="0"> ใช้บล็อกเคลื่อนไหวแทนการหยุดโปรแกรม<br>
+            <input type="radio" name="u6pre5" value="0"> วนซ้ำคำสั่ง stop ไปเรื่อยๆ ด้วย forever<br>
 
             <br>
             <button onclick="pretest(6)">ส่งคำตอบ</button>
@@ -999,7 +882,7 @@
             <p>ศึกษาเพิ่มเติมเกี่ยวกับการควบคุมและการหยุดการทำงานในโปรแกรม Scratch</p>
             <iframe width="100%" height="315" src="https://drive.google.com/file/d/1LEW4edBxCEmqQ3GLBhgzE07wQqOfB7V3/preview" frameborder="0" allowfullscreen></iframe>
             <br><br>
-            <button onclick="finishLesson(6)">เรียนจบแล้ว ไปทำแบบทดสอบหลังเรียน</button>
+            <button onclick="finishLesson(6)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
         </div>
 
             <button onclick="posttest(6)">ส่งคำตอบ</button>
