@@ -1098,6 +1098,16 @@ document.addEventListener('DOMContentLoaded', function () {
     _post(n);
   };
 
+  function showAnswerColor(t) {
+    var group = document.querySelectorAll('input[name="' + t.name + '"]');
+    group.forEach(function (r) { r.disabled = true; var l = r.closest('label'); if (l) l.classList.add('locked'); });
+    var lab = t.closest('label');
+    if (lab) lab.classList.add(t.value === '1' ? 'is-correct' : 'is-wrong');
+  }
+document.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.type === 'radio' && /^u\dpre\d$/.test(t.name)) showAnswerColor(t);
+  });
   renderUnit(1);
   var q = new URLSearchParams(location.search);
   var n = parseInt(q.get('unit'), 10), view = q.get('view');
