@@ -372,9 +372,6 @@
     <button onclick="finishLesson(3)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
   </div>
 
-    <button onclick="posttest(3)">ส่งคำตอบ</button>
-   <p id="u3postScore" class="result"></p>
-  </div>
     
 <div id="unit3-content" class="unit-section">
   <!-- แบบฝึกหัดหลังเรียน เรื่องที่ 3 -->
@@ -534,13 +531,10 @@
     <button onclick="finishLesson(4)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
 </div>
 
-    <button onclick="posttest(4)">ส่งคำตอบ</button>
-    <p id="u4postScore" class="result"></p>
-</div>
     
 <div id="unit4-content" class="unit-section">
         <div class="card">
-    <h3>แบบฝึกหัดเรียน (เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage))</h3>
+    <h3>แบบฝึกหัดหลังเรียน (เรื่องที่ 4 การสร้างตัวละคร (Sprite) และฉาก (Stage))</h3>
     <p>1. ข้อใดให้ความหมายของ "ตัวละคร (Sprite)" ในโปรแกรม Scratch ได้ถูกต้องที่สุด</p>
     <input type="radio" name="u4pre1" value="1"> วัตถุหรือตัวละครที่อยู่บนเวทีและสามารถสั่งให้ทำงานด้วยบล็อกคำสั่งได้<br>
     <input type="radio" name="u4pre1" value="0"> ภาพพื้นหลังของเวทีที่ไม่สามารถเคลื่อนที่ได้<br>
@@ -695,9 +689,6 @@
         <button onclick="finishLesson(5)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
     </div>
  
-        <button onclick="posttest(5)">ส่งคำตอบ</button>
-        <p id="u5postScore" class="result"></p>
-    </div>
 
  <div id="unit5-content" class="unit-section">
     <div class="card">
@@ -843,9 +834,6 @@
             <button onclick="finishLesson(6)">เรียนจบแล้ว ไปทำแบบฝึกหัดหลังเรียน</button>
         </div>
 
-            <button onclick="posttest(6)">ส่งคำตอบ</button>
-            <p id="u6postScore" class="result"></p>
-        </div>
 
     <!-- เรื่องที่ 6 (การใช้คำสั่งหยุดการทำงาน) -->
     <div id="unit6-content" class="unit-section">
@@ -965,7 +953,8 @@
             <button type="button" onclick="finish(6)">ส่งคำตอบ</button>
             <p id="u6finish"></p>
     </div>
-</div>  
+</div>
+</div><!-- /container -->
 
 <script>
 let scores = {
@@ -976,14 +965,15 @@ let scores = {
     5: {pre:0 }, 
     6: {pre:0 }
 };
+
 // ลำดับการเรียนในแต่ละเรื่อง: เนื้อหา -> แบบฝึกหัด 5 ข้อ -> แบบประเมิน 10 ข้อ
 let progress = {};   // progress[n] = { lessonDone: bool, exerciseDone: bool }
-    
+
 function getProgress(n) {
     if (!progress[n]) progress[n] = { lessonDone: false, exerciseDone: false };
     return progress[n];
 }
-    
+
 function showEl(el, show) {
     if (el) el.style.display = show ? 'block' : 'none';
 }
