@@ -976,15 +976,39 @@ let scores = {
     5: {pre:0 }, 
     6: {pre:0 }
 };
+// ลำดับการเรียนในแต่ละเรื่อง: เนื้อหา -> แบบฝึกหัด 5 ข้อ -> แบบประเมิน 10 ข้อ
+let progress = {};   // progress[n] = { lessonDone: bool, exerciseDone: bool }
+    
+function getProgress(n) {
+    if (!progress[n]) progress[n] = { lessonDone: false, exerciseDone: false };
+    return progress[n];
+}
+    
+function showEl(el, show) {
+    if (el) el.style.display = show ? 'block' : 'none';
+}
+
+function renderUnit(n) {
+    const p = getProgress(n);
+    for (let i = 1; i <= 6; i++) {
+        const on = (i === n);
+        showEl(document.getElementById('u' + i + 'lesson'), on);
+        showEl(document.getElementById('u' + i + 'lesson2'), on);
+        const content = document.getElementById('unit' + i + '-content');
+        showEl(content, on);
+        if (content) {
+            const exercise = content.querySelector('.card');          // แบบฝึกหัด
+            const survey = document.getElementById('u' + i + 'survey'); // แบบประเมิน
+            const pi = getProgress(i);
+            showEl(exercise, on && pi.lessonDone);
+            showEl(survey, on && pi.exerciseDone);
+        }
+    }
+}
 
 function switchUnit(unitNumber) {
-    document.querySelectorAll('.unit-section').forEach(sec => sec.style.display = 'none');
     document.querySelectorAll('.unit-btn').forEach(btn => btn.classList.remove('active'));
-    
-    let targetSec = document.getElementById('unit' + unitNumber + '-content');
-    if (targetSec) {
-        targetSec.style.display = 'block';
-    }
+    renderUnit(unitNumber);
     let btns = document.querySelectorAll('#unitNav .unit-btn');
     if (btns[unitNumber - 1]) {
         btns[unitNumber - 1].classList.add('active');
@@ -992,6 +1016,7 @@ function switchUnit(unitNumber) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// ส่งแบบฝึกหัด -> แสดงคะแนน แล้วเปิดแบบประเมิน
 function pretest(n) {
     let score = 0;
     for (let i = 1; i <= 5; i++) {
@@ -999,10 +1024,8 @@ function pretest(n) {
     }
     scores[n].pre = score;
     document.getElementById("u" + n + "preScore").innerHTML = "คะแนนแบบฝึกหัด = " + score + " / 5";
-    let lesson = document.getElementById("u" + n + "lesson");
-    let lesson2 = document.getElementById("u" + n + "lesson2");
-    if(lesson) lesson.style.display = "block";
-    if(lesson2) lesson2.style.display = "block";
+    getProgress(n).exerciseDone = true;
+    showEl(document.getElementById("u" + n + "survey"), true);
 }
 
 function posttest(n) {
@@ -1016,14 +1039,14 @@ function posttest(n) {
     if(survey) survey.style.display = "block";
 }
 
+// เรียนจบแล้ว -> เปิดแบบฝึกหัด
 function finishLesson(n) {
-    let posttestCard = document.getElementById("u" + n + "posttest");
-    if(posttestCard) {
-        posttestCard.style.display = "block";
-        window.scrollTo({
-            top: posttestCard.offsetTop,
-            behavior: "smooth"
-        });
+    getProgress(n).lessonDone = true;
+    const content = document.getElementById("unit" + n + "-content");
+    const exercise = content ? content.querySelector('.card') : null;
+    if (exercise) {
+        exercise.style.display = "block";
+        exercise.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 }
 
@@ -1085,6 +1108,7 @@ document.addEventListener('DOMContentLoaded', function () {
     _post(n);
   };
 
+  renderUnit(1);
   var q = new URLSearchParams(location.search);
   var n = parseInt(q.get('unit'), 10), view = q.get('view');
   if (n >= 1 && n <= 6) {
