@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>แบบทดสอบ Scratch (20 ข้อ)</title>
 <link rel="stylesheet" href="scratch.css">
+<script src="gate.js"></script>  
 <style>
   .err:not(:empty){margin:16px 0 0;padding:12px 16px;background:#FFE9E9;border:2px solid #EC5959;border-radius:12px;color:#7A1F1F;font:500 1rem 'Kanit',sans-serif}
   .actions{display:flex;flex-wrap:wrap;gap:12px}
@@ -55,6 +56,21 @@ var LABEL = TYPE === 'post' ? 'แบบทดสอบหลังเรีย�
 var TOTAL = DATA.length, sent = false;
 
 document.title = LABEL + ' Scratch (' + TOTAL + ' ข้อ)';
+if (TYPE === 'post') {
+  var gate = postTestStatus();
+  if (!gate.unlocked) {
+    var cont = document.querySelector('.container');
+    cont.style.display = 'none';
+    var lock = document.createElement('div');
+    lock.className = 'container';
+    lock.innerHTML = '<div class="card"><h2>🔒 ยังทำแบบทดสอบหลังเรียนไม่ได้</h2>' +
+      '<p>ต้องทำสิ่งต่อไปนี้ให้เสร็จก่อน</p><ul>' +
+      postTestNeeds(gate).map(function (t) { return '<li>' + t + '</li>'; }).join('') +
+      '</ul><div class="actions"><button type="button" onclick="location.href=\'lesson.html\'">ไปที่บทเรียน</button>' +
+      '<button type="button" onclick="location.href=\'index.html\'">กลับหน้าแรก</button></div></div>';
+    cont.parentNode.insertBefore(lock, cont);
+  }
+}
 document.getElementById('title').textContent = LABEL;
 document.getElementById('testHeading').textContent = LABEL;
 
@@ -87,13 +103,18 @@ function answered() {
 }
 // ผลตอบทันที (เขียว=ถูก, แดง=ผิด) และล็อกข้อที่ตอบแล้ว
 // ตั้งเป็น true ถ้าต้องการให้แสดงสีในแบบทดสอบก่อนเรียนด้วย
-var FEEDBACK_PRE = false;
+var FEEDBACK_PRE = true;
 var FEEDBACK = (TYPE === 'post') || FEEDBACK_PRE;
 function showAnswerColor(t) {
   var group = document.querySelectorAll('input[name="' + t.name + '"]');
   group.forEach(function (r) { r.disabled = true; var l = r.closest('label'); if (l) l.classList.add('locked'); });
   var lab = t.closest('label');
   if (lab) lab.classList.add(t.value === '1' ? 'is-correct' : 'is-wrong');
+  if (TYPE === 'post' && t.value !== '1') {
+  group.forEach(function (r) {
+    if (r.value === '1') { var c = r.closest('label'); if (c) c.classList.add('is-correct'); }
+  });
+}
 }
 document.getElementById('questions').addEventListener('change', function (e) {
   if (FEEDBACK && e.target.type === 'radio') showAnswerColor(e.target);
