@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>การแก้ปัญหาด้วย Scratch สำหรับนักเรียน ม.2</title>
 <link rel="stylesheet" href="scratch.css">
+<script src="gate.js"></script>
 <style>
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:920px;margin:34px auto 0;padding:0 16px}
   a.tile{
@@ -24,6 +25,12 @@
   .t1{--unit:#4C97FF;--unit-ink:#fff}
   .t2{--unit:#FFAB19;--unit-ink:#4A3000}
   .t3{--unit:#59C059;--unit-ink:#0B3D0B}
+  a.tile.locked{cursor:not-allowed;filter:grayscale(.85);opacity:.75}
+  a.tile.locked:hover{transform:none}
+  a.tile.locked .go{background:#9AA7C4;color:#fff;box-shadow:0 4px 0 #7A86A3}
+  .lock-note{display:none;font-size:.9rem;line-height:1.5;color:#7A1F1F;text-align:left}
+  a.tile.locked .lock-note{display:block}
+  .lock-note ul{margin:4px 0 0;padding-left:1.2em}
   .skip{text-align:center;margin:28px 0 60px}
   .skip a{color:var(--ink);font-family:'Kanit',sans-serif}
 
@@ -73,11 +80,12 @@
     <span class="go">ทำแบบทดสอบ</span>
   </a>
 
-  <a class="card tile t3" href="test.html?type=post">
+  <a class="card tile t3" id="postTile" href="test.html?type=post">
     <div class="icon" aria-hidden="true">✅</div>
     <h2>แบบทดสอบหลังเรียน</h2>
     <span class="desc">20 ข้อ ครอบคลุมเรื่องที่ 1–6 ทำหลังเรียนจบ</span>
-    <span class="go">ทำแบบทดสอบ</span>
+    <span class="lock-note" id="lockNote"></span>
+    <span class="go" id="postGo">ทำแบบทดสอบ</span>
   </a>
 </main>
 
@@ -112,6 +120,22 @@
 </dialog>
 
 <script>
+  var postTile = document.getElementById('postTile');
+function refreshLock() {
+  var s = postTestStatus(), locked = !s.unlocked;
+  postTile.classList.toggle('locked', locked);
+  postTile.setAttribute('aria-disabled', locked ? 'true' : 'false');
+  document.getElementById('postGo').textContent = locked ? '🔒 ยังไม่เปิด' : 'ทำแบบทดสอบ';
+  var note = document.getElementById('lockNote');
+  note.innerHTML = locked
+    ? 'ต้องทำก่อน:<ul>' + postTestNeeds(s).map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul>'
+    : '';
+}
+postTile.addEventListener('click', function (e) {
+  if (postTile.classList.contains('locked')) e.preventDefault();
+});
+refreshLock();
+window.addEventListener('pageshow', refreshLock);
   var objDlg = document.getElementById('objectivesDialog');
 
   document.getElementById('openObjectives').addEventListener('click', function (e) {
